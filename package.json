@@ -37,6 +37,7 @@
     "quickstart": "npm run build && tsx examples/quickstart.ts",
     "evaluate": "tsx experiments/evaluate.ts",
     "evaluate:adversarial": "tsx experiments/run-adversarial-eval.ts",
+    "benchmark:waste": "tsx experiments/agent-waste-benchmark/run.ts",
     "demo:build": "tsx demo/generate-data.ts",
     "demo": "node demo/serve.mjs",
     "site:build": "node site-build.mjs",

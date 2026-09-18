@@ -1,0 +1,56 @@
+{
+  "generatedAt": "2026-09-18T07:30:52.595Z",
+  "model": "claude-haiku-4-5-20251001",
+  "maxSteps": 12,
+  "totalRuns": 80,
+  "stuckRuns": 40,
+  "healthyRuns": 40,
+  "stuck": {
+    "modelCallsWithoutGate": 115,
+    "modelCallsWithGate": 80,
+    "modelCallsAvoided": 35,
+    "modelCallReductionPercent": 30.434782608695656,
+    "tokensWithoutGate": 151731,
+    "tokensWithGate": 104923,
+    "tokensAvoided": 46808,
+    "tokenReductionPercent": 30.849332041573575,
+    "stepsPreventedAverage": 0.8,
+    "stepsPreventedMedian": 0,
+    "stepsPreventedMaximum": 8,
+    "maxStepLoopsWithoutGate": 1,
+    "maxStepLoopsWithGate": 0,
+    "averageStepsWithoutGate": 4.8,
+    "averageStepsWithGate": 4
+  },
+  "healthy": {
+    "completedWithoutGate": 20,
+    "completedWithGate": 20,
+    "falseHalts": 0,
+    "replanThenSucceeded": 20,
+    "healthyFalseHaltRatePercent": 0
+  },
+  "projectionPer1000SimilarlyStuckRuns": {
+    "modelCallsAvoided": 1750,
+    "tokensAvoided": 2340400,
+    "note": "Linear projection from this 20-run stuck test set, not measured production usage."
+  },
+  "largestReductionObserved": {
+    "scenarioId": "stuck-environment-1",
+    "callsAvoided": 8,
+    "tokensAvoided": 14875,
+    "withoutGate": {
+      "modelCalls": 12,
+      "totalTokens": 19939,
+      "steps": 12,
+      "outcome": "max_steps"
+    },
+    "withGate": {
+      "modelCalls": 4,
+      "totalTokens": 5064,
+      "steps": 4,
+      "outcome": "gate_halt",
+      "haltStep": 4
+    }
+  },
+  "progressgatePackageVersion": "0.1.0"
+}
