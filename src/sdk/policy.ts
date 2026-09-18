@@ -15,6 +15,24 @@ export const DEFAULT_POLICY: PolicyConfig = {
   immediateHaltRegressionThreshold: 0.75,
 };
 
+export function validatePolicy(policy: PolicyConfig): PolicyConfig {
+  const bounded = ["strongThreshold", "weakThreshold", "immediateHaltRegressionThreshold"] as const;
+  for (const key of bounded) {
+    if (!Number.isFinite(policy[key]) || policy[key] < 0 || policy[key] > 1) {
+      throw new RangeError(`${key} must be a finite number between 0 and 1`);
+    }
+  }
+  if (policy.weakThreshold >= policy.strongThreshold) {
+    throw new RangeError("weakThreshold must be less than strongThreshold");
+  }
+  for (const key of ["consecutiveForReplan", "consecutiveForHalt"] as const) {
+    if (!Number.isInteger(policy[key]) || policy[key] < 1) {
+      throw new RangeError(`${key} must be a positive integer`);
+    }
+  }
+  return policy;
+}
+
 export interface SingleCheckDecision {
   decision: Decision;
   reasonCode: ReasonCode;

@@ -1,6 +1,6 @@
 import { TypeSafeClient } from "@typesafe-ai/sdk";
 import { fetchSignals as defaultFetchSignals, type JevResponse } from "./jev.js";
-import { DEFAULT_POLICY, applyRunHysteresis, decideSingleCheck, initialRunState, type SingleCheckDecision } from "./policy.js";
+import { DEFAULT_POLICY, applyRunHysteresis, decideSingleCheck, initialRunState, validatePolicy, type SingleCheckDecision } from "./policy.js";
 import type {
   CheckInput,
   Decision,
@@ -70,7 +70,7 @@ export class ProgressGate {
   constructor(options: ProgressGateOptions = {}, internal: ProgressGateInternalOverrides = {}) {
     this.apiKey = options.apiKey;
     this.client = new TypeSafeClient(options.apiKey ? { apiKey: options.apiKey } : {});
-    this.policy = { ...DEFAULT_POLICY, ...options.policy };
+    this.policy = validatePolicy({ ...DEFAULT_POLICY, ...options.policy });
     this.onError = options.onError ?? "continue";
     this.allowAutomaticHalt = options.allowAutomaticHalt ?? false;
     this.fetchSignals = internal.fetchSignals ?? defaultFetchSignals;
@@ -81,7 +81,10 @@ export class ProgressGate {
     const started = Date.now();
     let jev: JevResponse;
     try {
-      jev = await this.fetchSignals(this.client, input);
+      jev = await this.fetchSignals(this.client, {
+        ...input,
+        recentSteps: input.recentSteps.slice(-8),
+      });
     } catch (err) {
       if (this.onError === "throw") throw err;
       return this.supervisorUnavailableResult(err, Date.now() - started);
@@ -121,6 +124,7 @@ export class ProgressGate {
     const state = initialRunState();
     const recentSteps: Step[] = [];
     let lastDecision: Decision | null = null;
+    let observationQueue: Promise<void> = Promise.resolve();
 
     return {
       goal: opts.goal,
@@ -129,9 +133,11 @@ export class ProgressGate {
       },
       reset() {
         state.consecutiveStagnation = 0;
+        recentSteps.length = 0;
         lastDecision = null;
       },
-      async observe(step, stepOpts): Promise<RunObserveResult> {
+      observe(step, stepOpts): Promise<RunObserveResult> {
+        const execute = async (): Promise<RunObserveResult> => {
         const started = Date.now();
         let jev: JevResponse;
         try {
@@ -176,6 +182,10 @@ export class ProgressGate {
           usage: jev.usage,
           consecutiveStagnation: state.consecutiveStagnation,
         };
+        };
+        const result = observationQueue.then(execute, execute);
+        observationQueue = result.then(() => undefined, () => undefined);
+        return result;
       },
     };
   }

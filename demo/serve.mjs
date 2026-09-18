@@ -1,15 +1,34 @@
 import { createServer } from "node:http";
 import { readFile } from "node:fs/promises";
-import { extname, join } from "node:path";
+import { extname, isAbsolute, relative, resolve } from "node:path";
 
-const ROOT = new URL(".", import.meta.url).pathname;
+const ROOT = resolve(new URL(".", import.meta.url).pathname);
 const TYPES = { ".html": "text/html", ".js": "text/javascript", ".json": "application/json", ".css": "text/css" };
 
-const server = createServer(async (req, res) => {
-  const path = req.url === "/" ? "/index.html" : req.url.split("?")[0];
+function safeFilePath(requestUrl) {
+  const rawPath = requestUrl?.split("?")[0] ?? "/";
+  let decodedPath;
   try {
-    const file = await readFile(join(ROOT, path));
-    res.writeHead(200, { "Content-Type": TYPES[extname(path)] ?? "application/octet-stream" });
+    decodedPath = decodeURIComponent(rawPath);
+  } catch {
+    return null;
+  }
+  const requestedPath = decodedPath === "/" ? "index.html" : decodedPath.replace(/^\/+/, "");
+  const filePath = resolve(ROOT, requestedPath);
+  const outsideRoot = relative(ROOT, filePath);
+  return outsideRoot.startsWith("..") || isAbsolute(outsideRoot) ? null : filePath;
+}
+
+const server = createServer(async (req, res) => {
+  const filePath = safeFilePath(req.url);
+  if (!filePath) {
+    res.writeHead(404);
+    res.end("not found");
+    return;
+  }
+  try {
+    const file = await readFile(filePath);
+    res.writeHead(200, { "Content-Type": TYPES[extname(filePath)] ?? "application/octet-stream" });
     res.end(file);
   } catch {
     res.writeHead(404);

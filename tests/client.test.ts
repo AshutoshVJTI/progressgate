@@ -79,6 +79,68 @@ describe("semantic busywork", () => {
     assert.equal(second.decision, "CONTINUE");
     assert.equal(second.consecutiveStagnation, 0);
   });
+
+  test("reset clears the trajectory sent to the next observation", async () => {
+    const observedRecentSteps: Step[][] = [];
+    const gate = makeGate({}, {
+      fetchSignals: async (_client, input) => {
+        observedRecentSteps.push([...input.recentSteps]);
+        return jevResult(BUSYWORK_SIGNALS);
+      },
+    });
+    const run = gate.run({ goal: "fix the deploy" });
+
+    await run.observe({ action: "first attempt", result: "permission denied" });
+    run.reset();
+    await run.observe({ action: "fresh attempt", result: "checked the new account" });
+
+    assert.equal(observedRecentSteps[0].length, 0);
+    assert.equal(observedRecentSteps[1].length, 0);
+  });
+
+  test("serializes concurrent observations in call order", async () => {
+    const observedRecentSteps: Step[][] = [];
+    let releaseFirst!: () => void;
+    const firstCall = new Promise<void>((resolve) => { releaseFirst = resolve; });
+    let calls = 0;
+    const gate = makeGate({}, {
+      fetchSignals: async (_client, input) => {
+        observedRecentSteps.push([...input.recentSteps]);
+        calls += 1;
+        if (calls === 1) await firstCall;
+        return jevResult(PROGRESS_SIGNALS);
+      },
+    });
+    const run = gate.run({ goal: "ship the feature" });
+    const first = run.observe({ action: "one", result: "done" });
+    const second = run.observe({ action: "two", result: "done" });
+    await Promise.resolve();
+    assert.equal(observedRecentSteps.length, 1);
+    releaseFirst();
+    await Promise.all([first, second]);
+
+    assert.equal(observedRecentSteps.length, 2);
+    assert.equal(observedRecentSteps[1][0].action, "one");
+  });
+});
+
+describe("input and policy validation", () => {
+  test("stateless checks cap recent history at eight steps", async () => {
+    let receivedLength = 0;
+    const gate = makeGate({}, {
+      fetchSignals: async (_client, input) => {
+        receivedLength = input.recentSteps.length;
+        return jevResult(PROGRESS_SIGNALS);
+      },
+    });
+    const recentSteps = Array.from({ length: 12 }, (_, i) => ({ action: `a${i}`, result: `r${i}` }));
+    await gate.check({ goal: "g", recentSteps, latestStep: STEP });
+    assert.equal(receivedLength, 8);
+  });
+
+  test("rejects invalid policy thresholds", () => {
+    assert.throws(() => makeGate({ policy: { weakThreshold: 0.8, strongThreshold: 0.7 } }), /weakThreshold/);
+  });
 });
 
 describe("uncertain single results", () => {

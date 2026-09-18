@@ -13,6 +13,8 @@ import type { Step } from "../src/sdk/index.js";
 // Whatever your graph's shared state type is -- this is illustrative, not a real
 // LangGraph import.
 interface GraphState {
+  /** Stable per-session identifier; do not use goal as an identity. */
+  runId: string;
   goal: string;
   steps: Step[];
   progressGateDecision?: "CONTINUE" | "WARN" | "REPLAN" | "HALT";
@@ -20,7 +22,7 @@ interface GraphState {
 }
 
 const gate = new ProgressGate({ apiKey: process.env.TYPESAFE_API_KEY });
-const runsByGoal = new Map<string, ReturnType<ProgressGate["run"]>>();
+const runsById = new Map<string, ReturnType<ProgressGate["run"]>>();
 
 /**
  * Add this as a node immediately after your tool-execution node, before the node that
@@ -29,14 +31,16 @@ const runsByGoal = new Map<string, ReturnType<ProgressGate["run"]>>();
  * replanning node (REPLAN), or to an end/human-handoff node (HALT).
  */
 async function progressGateNode(state: GraphState): Promise<GraphState> {
-  let run = runsByGoal.get(state.goal);
+  let run = runsById.get(state.runId);
   if (!run) {
     run = gate.run({ goal: state.goal });
-    runsByGoal.set(state.goal, run);
+    runsById.set(state.runId, run);
   }
 
   const latestStep = state.steps[state.steps.length - 1];
   const result = await run.observe(latestStep);
+
+  if (result.decision === "HALT") runsById.delete(state.runId);
 
   return {
     ...state,
@@ -48,6 +52,11 @@ async function progressGateNode(state: GraphState): Promise<GraphState> {
   };
 }
 
+/** Call this when a graph run completes successfully or is cancelled. */
+function clearProgressGateRun(runId: string): void {
+  runsById.delete(runId);
+}
+
 // Conditional edge function: graph.addConditionalEdges("progressGate", routeOnDecision, {...})
 function routeOnDecision(state: GraphState): "agent" | "replan" | "halt" {
   if (state.progressGateDecision === "HALT") return "halt";
@@ -55,4 +64,4 @@ function routeOnDecision(state: GraphState): "agent" | "replan" | "halt" {
   return "agent"; // CONTINUE or WARN both loop back to the normal agent node
 }
 
-export { progressGateNode, routeOnDecision };
+export { clearProgressGateRun, progressGateNode, routeOnDecision };
