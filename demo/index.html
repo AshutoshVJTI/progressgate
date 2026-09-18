@@ -1,0 +1,334 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>ProgressGate demo</title>
+<style>
+  :root {
+    --paper: #f3f0e8;
+    --paper-2: #eae5d8;
+    --ink: #16140f;
+    --ink-muted: #625d51;
+    --rule: #d4cdbc;
+    --accent: #3f6b12;
+    --accent-bright: #b6ff3c;
+    --dark: #141310;
+    --dark-rule: #38352c;
+    --amber-dark: #c9a94a;
+    --red-dark: #e2664f;
+    --sans: "Helvetica Neue", Helvetica, Arial, "Segoe UI", sans-serif;
+    --mono: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--dark);
+    color: #ece9df;
+    font-family: var(--sans);
+    -webkit-font-smoothing: antialiased;
+  }
+  .wrap { max-width: 1120px; margin: 0 auto; padding: 0 clamp(20px, 4vw, 40px); }
+  code, .mono { font-family: var(--mono); }
+  a { color: inherit; }
+
+  nav.top {
+    display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; row-gap: 10px;
+    padding: 18px 0; border-bottom: 1px solid var(--dark-rule);
+  }
+  .nav-left { display: flex; align-items: baseline; gap: 10px; }
+  .brand-link { color: inherit; text-decoration: none; }
+  .brand-link:focus-visible { outline: 2px solid var(--accent-bright); outline-offset: 4px; }
+  .rule-mark { width: 4px; height: 15px; background: var(--accent-bright); flex: none; }
+  .brand-name { font-weight: 700; font-size: 15px; letter-spacing: -0.01em; }
+  .nav-right { display: flex; gap: 22px; font-size: 13px; }
+  .nav-right a { text-decoration: none; color: #d2ccb9; border-bottom: 1px solid transparent; padding-bottom: 2px; }
+  .nav-right a:hover { color: #f5f3ec; border-bottom-color: var(--accent-bright); }
+
+  .intro { padding: 32px 0 24px; }
+  .intro p { font-size: 14px; color: #9a9587; max-width: 60ch; line-height: 1.55; margin: 0; }
+
+  .controls { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; padding-bottom: 24px; }
+  .tabs { display: flex; gap: 8px; }
+  .tab {
+    font-family: var(--mono); font-size: 12.5px; background: transparent; color: #9a9587;
+    border: 1px solid var(--dark-rule); border-radius: 2px; padding: 9px 14px; cursor: pointer;
+  }
+  .tab:hover { border-color: #6f6b5d; color: #d2ccb9; }
+  .tab.active { border-color: #6f6b5d; color: #d2ccb9; font-weight: 700; }
+  button.play {
+    font-family: var(--mono); font-size: 14px; font-weight: 800; letter-spacing: 0.04em;
+    background: var(--accent-bright); color: var(--dark); min-width: 84px;
+    border: 1.5px solid var(--accent-bright); border-radius: 2px; padding: 11px 22px; cursor: pointer;
+    box-shadow: 0 0 0 3px rgba(182, 255, 60, 0.12), 0 8px 18px rgba(0, 0, 0, 0.22);
+    transition: transform 180ms ease, box-shadow 180ms ease, background 180ms ease;
+  }
+  button.play:hover { background: #c5ff68; box-shadow: 0 0 0 4px rgba(182, 255, 60, 0.18), 0 10px 22px rgba(0, 0, 0, 0.28); transform: translateY(-1px); }
+  button.play:active { transform: translateY(1px); }
+  button.play:focus-visible, .tab:focus-visible { outline: 2px solid var(--accent-bright); outline-offset: 3px; }
+  button.play:disabled { opacity: 0.4; cursor: default; }
+  .goal { font-family: var(--mono); font-size: 12.5px; color: #9a9587; }
+
+  /* ---------- trace panel ---------- */
+  .trace-panel { color: #ece9df; padding: 36px 0 40px; border-top: 1px solid var(--dark-rule); border-bottom: 1px solid var(--dark-rule); }
+  .panel-label {
+    font-family: var(--mono); font-size: 10.5px; letter-spacing: 0.1em; text-transform: uppercase;
+    color: var(--accent-bright); margin-bottom: 14px;
+  }
+  .trace-layout { display: grid; grid-template-columns: 1.3fr 1fr; gap: 32px; align-items: start; }
+  @media (max-width: 900px) { .trace-layout { grid-template-columns: 1fr; } }
+
+  .trace-scroll { overflow-x: auto; }
+  table.trace { border-collapse: separate; border-spacing: 0; width: 100%; min-width: 460px; font-size: 13px; }
+  table.trace thead th {
+    text-align: left; font-family: var(--mono); font-size: 10px; letter-spacing: 0.06em; text-transform: uppercase;
+    color: #b0aa93; font-weight: 400; padding: 0 10px 10px 0; border-bottom: 1px solid var(--dark-rule);
+  }
+  table.trace td { padding: 12px 10px 12px 0; border-bottom: 1px solid var(--dark-rule); vertical-align: top; }
+  td.step-num { font-family: var(--mono); color: #6f6b5d; width: 28px; }
+  td.action-cell .a { color: #f5f3ec; font-weight: 600; }
+  td.action-cell .r { color: #d2ccb9; font-size: 12px; margin-top: 3px; }
+  td.gate-cell { font-family: var(--mono); font-weight: 700; font-size: 12px; white-space: nowrap; }
+  td.gate-cell.CONTINUE { color: var(--accent-bright); }
+  td.gate-cell.WARN { color: var(--amber-dark); }
+  td.gate-cell.REPLAN { color: var(--amber-dark); }
+  td.gate-cell.HALT { color: var(--red-dark); }
+
+  .trace-row { opacity: 0; transition: opacity 0.3s ease; }
+  .trace-row.visible { opacity: 1; }
+  .trace-row.current td { color: #f5f3ec; }
+
+  /* ---------- decision detail (right column) ---------- */
+  .decision-box { border: 1px solid var(--dark-rule); border-radius: 2px; padding: 14px 16px; margin-bottom: 16px; }
+  .decision-box .word { font-family: var(--mono); font-size: 20px; font-weight: 800; letter-spacing: 0.01em; }
+  .decision-box .reason { color: #9a9587; font-size: 11.5px; margin-top: 4px; }
+  .decision-box.CONTINUE { border-color: var(--dark-rule); }
+  .decision-box.CONTINUE .word { color: var(--accent-bright); }
+  .decision-box.WARN { border-color: var(--amber-dark); }
+  .decision-box.WARN .word { color: var(--amber-dark); }
+  .decision-box.REPLAN { border-color: var(--amber-dark); }
+  .decision-box.REPLAN .word { color: var(--amber-dark); }
+  .decision-box.HALT { border-color: var(--red-dark); }
+  .decision-box.HALT .word { color: var(--red-dark); }
+
+  .pipeline { display: flex; gap: 6px; margin-bottom: 20px; }
+  .pipe-node {
+    flex: 1; text-align: center; font-family: var(--mono); font-size: 9.5px; letter-spacing: 0.04em;
+    border: 1px solid var(--dark-rule); border-radius: 2px; padding: 7px 3px; color: #6f6b5d;
+  }
+  .pipe-node.active { font-weight: 700; }
+  .pipe-node.active.CONTINUE { border-color: var(--accent-bright); color: var(--accent-bright); }
+  .pipe-node.active.WARN { border-color: var(--amber-dark); color: var(--amber-dark); }
+  .pipe-node.active.REPLAN { border-color: var(--amber-dark); color: var(--amber-dark); }
+  .pipe-node.active.HALT { border-color: var(--red-dark); color: var(--red-dark); }
+
+  .signals { display: flex; flex-direction: column; gap: 10px; }
+  .signal-row { display: grid; grid-template-columns: minmax(0, 156px) minmax(64px, 1fr) 32px; align-items: center; gap: 10px; font-family: var(--mono); font-size: 11px; }
+  .signal-name { color: #9a9587; white-space: nowrap; }
+  .signal-track { background: var(--dark-rule); height: 6px; }
+  .signal-fill { height: 100%; width: 0%; transition: width 0.35s ease; background: #6f8fb8; }
+  .signal-fill.high { background: var(--amber-dark); }
+
+  .estimate { margin-top: 18px; min-height: 0; }
+  .estimate-primary { border: 1px solid var(--accent-bright); border-radius: 2px; padding: 12px 14px; }
+  .estimate-primary .num { color: var(--accent-bright); font-family: var(--mono); font-size: 15px; font-weight: 700; }
+  .estimate-note { font-size: 11px; color: #9a9587; margin-top: 8px; line-height: 1.5; }
+  .estimate-note .label { color: var(--amber-dark); font-family: var(--mono); font-size: 9.5px; letter-spacing: 0.05em; text-transform: uppercase; display: block; margin-bottom: 4px; }
+
+  .footer-note { color: #9a9587; font-size: 12px; line-height: 1.6; max-width: 80ch; padding: 26px 0 44px; }
+  .footer-note code { color: #d2ccb9; background: #24221c; padding: 1px 5px; border-radius: 2px; }
+
+  @media (max-width: 520px) {
+    .tabs { width: 100%; }
+    .tab { flex: 1; padding-inline: 8px; }
+    .signal-row { grid-template-columns: minmax(0, 148px) minmax(48px, 1fr) 30px; gap: 8px; font-size: 10.5px; }
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <nav class="top">
+      <a class="nav-left brand-link" href="../landing/index.html" aria-label="ProgressGate home">
+        <div class="rule-mark"></div>
+        <span class="brand-name">ProgressGate</span>
+      </a>
+      <div class="nav-right">
+        <a href="../landing/index.html">Home</a>
+        <a href="https://github.com/ashutoshvjti/progressgate" rel="noopener">GitHub</a>
+        <a href="https://www.npmjs.com/package/progressgate" rel="noopener">npm</a>
+      </div>
+    </nav>
+
+    <div class="intro">
+      <p>Built on TypeSafe Jev. Every signal below is a real, captured API response, replayed here for repeatable playback.</p>
+    </div>
+
+    <div class="controls">
+      <button class="play" id="playBtn">Play</button>
+      <div class="tabs">
+        <button class="tab active" data-scenario="A">A. Productive exploration</button>
+        <button class="tab" data-scenario="B">B. Semantic busywork</button>
+      </div>
+      <span class="goal" id="goalLabel"></span>
+    </div>
+  </div>
+
+  <div class="trace-panel">
+    <div class="wrap">
+      <div class="trace-layout">
+        <div>
+          <div class="panel-label">Agent trajectory</div>
+          <div class="trace-scroll">
+            <table class="trace">
+              <thead>
+                <tr><th>Step</th><th>Action / result</th><th>Gate</th></tr>
+              </thead>
+              <tbody id="steps"></tbody>
+            </table>
+          </div>
+        </div>
+
+        <div>
+          <div class="decision-box CONTINUE" id="banner">
+            <div class="word" id="bannerDecision">CONTINUE</div>
+            <div class="reason" id="bannerReason"></div>
+          </div>
+
+          <div class="pipeline" id="pipeline"></div>
+
+          <div class="panel-label">Jev semantic signals</div>
+          <div class="signals" id="signals"></div>
+
+          <div class="estimate" id="estimate" style="display:none"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <div class="footer-note">
+      Every check is one Jev <code>systemOne</code> call returning six atomic signals: <code>assumptionContradicted</code>,
+      <code>strategyNovelty</code>, <code>materialProgress</code>, <code>newUsefulEvidence</code>, <code>regression</code>,
+      <code>holisticStalled</code>. A deterministic policy, not Jev, turns those into CONTINUE / WARN / REPLAN / HALT
+      using hysteresis, not a single threshold. ProgressGate does not decide whether the task is complete. That's your
+      own tests or agent logic. <code>allowAutomaticHalt</code> defaults to false in real usage. HALT is shown here
+      for illustration. The dollar and token figures after HALT are assumptions configured for this demo, not a measurement.
+    </div>
+  </div>
+
+<script>
+const PIPELINE = ["CONTINUE", "WARN", "REPLAN", "HALT"];
+let data = null;
+let current = "A";
+let playing = false;
+
+async function load() {
+  const res = await fetch("data.json");
+  data = await res.json();
+  render(0);
+}
+
+function scenarioData() {
+  return data.scenarios.find((s) => s.id === current);
+}
+
+function signalRow(name, value) {
+  const highClass = value >= 0.5 ? "high" : "";
+  return '<div class="signal-row">' +
+    '<div class="signal-name">' + name + '</div>' +
+    '<div class="signal-track"><div class="signal-fill ' + highClass + '" style="width:' + (value * 100).toFixed(0) + '%"></div></div>' +
+    '<div>' + (value * 100).toFixed(0) + '%</div>' +
+    '</div>';
+}
+
+function renderPipeline(decision) {
+  const pipeline = document.getElementById("pipeline");
+  pipeline.innerHTML = "";
+  for (const node of PIPELINE) {
+    const el = document.createElement("div");
+    el.className = "pipe-node" + (node === decision ? " active " + node : "");
+    el.textContent = node;
+    pipeline.appendChild(el);
+  }
+}
+
+function render(upToIndex) {
+  const s = scenarioData();
+  document.getElementById("goalLabel").textContent = "goal: " + s.goal;
+
+  const stepsEl = document.getElementById("steps");
+  stepsEl.innerHTML = "";
+  s.steps.forEach((step, i) => {
+    const tr = document.createElement("tr");
+    tr.className = "trace-row" + (i <= upToIndex ? " visible" : "") + (i === upToIndex ? " current" : "");
+    tr.innerHTML =
+      '<td class="step-num">' + String(step.index).padStart(2, "0") + '</td>' +
+      '<td class="action-cell"><div class="a">' + step.action + '</div><div class="r">' + step.result + '</div></td>' +
+      '<td class="gate-cell ' + step.decision + '">' + step.decision + '</td>';
+    stepsEl.appendChild(tr);
+  });
+
+  const shown = s.steps[Math.min(upToIndex, s.steps.length - 1)];
+
+  const banner = document.getElementById("banner");
+  banner.className = "decision-box " + shown.decision;
+  document.getElementById("bannerDecision").textContent = shown.decision;
+  document.getElementById("bannerReason").textContent =
+    shown.reasonCode + (shown.consecutiveStagnation > 0 ? ". Consecutive stagnation: " + shown.consecutiveStagnation : "");
+
+  renderPipeline(shown.decision);
+
+  document.getElementById("signals").innerHTML =
+    signalRow("assumptionContradicted", shown.signals.assumptionContradicted) +
+    signalRow("strategyNovelty", shown.signals.strategyNovelty) +
+    signalRow("materialProgress", shown.signals.materialProgress) +
+    signalRow("newUsefulEvidence", shown.signals.newUsefulEvidence) +
+    signalRow("regression", shown.signals.regression) +
+    signalRow("holisticStalled", shown.signals.holisticStalled);
+
+  const estimateEl = document.getElementById("estimate");
+  const isTerminal = upToIndex === s.steps.length - 1 && s.estimate;
+  if (isTerminal) {
+    const est = s.estimate;
+    estimateEl.style.display = "block";
+    estimateEl.innerHTML =
+      '<div class="estimate-primary"><div class="num">' + est.stepsPrevented + ' additional agent steps avoided in this demo scenario</div></div>' +
+      '<div class="estimate-note">' +
+      '<span class="label">Example assumption, not measured</span>' +
+      'If this were an ungated loop assumed to run to ' + est.assumedMaxStepsWithoutGate + ' steps at ~' +
+      (data.assumptions.tokensPerWastedAgentStep.input + data.assumptions.tokensPerWastedAgentStep.output) +
+      ' tokens per step, that would be roughly ' + (est.tokensAvoided.input + est.tokensAvoided.output).toLocaleString() +
+      ' tokens, about $' + est.estimatedCostAvoidedUsd.toFixed(3) + '.</div>';
+  } else {
+    estimateEl.style.display = "none";
+  }
+}
+
+async function play() {
+  if (playing) return;
+  playing = true;
+  document.getElementById("playBtn").disabled = true;
+  const s = scenarioData();
+  for (let i = 0; i < s.steps.length; i++) {
+    render(i);
+    await new Promise((r) => setTimeout(r, 1100));
+  }
+  playing = false;
+  document.getElementById("playBtn").disabled = false;
+}
+
+document.querySelectorAll(".tab").forEach((tab) => {
+  tab.addEventListener("click", () => {
+    document.querySelectorAll(".tab").forEach((t) => t.classList.remove("active"));
+    tab.classList.add("active");
+    current = tab.dataset.scenario;
+    render(0);
+  });
+});
+
+document.getElementById("playBtn").addEventListener("click", play);
+
+load();
+</script>
+</body>
+</html>

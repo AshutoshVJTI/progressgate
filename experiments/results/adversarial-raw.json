@@ -1,0 +1,3978 @@
+{
+  "resultsA": [
+    {
+      "design": "A",
+      "fixtureId": "busy-dns-tls",
+      "expected": "SEMANTIC_BUSYWORK",
+      "predicted": "SEMANTIC_BUSYWORK",
+      "correct": true,
+      "latencyMs": 259,
+      "usage": {
+        "inputTokens": 1105,
+        "outputTokens": 125
+      },
+      "signals": {
+        "state": "STALLED",
+        "stateConfidence": 0.61,
+        "advanced": 0.49,
+        "progressing": 0.4,
+        "repeating": 0.77,
+        "newEvidence": 0.83,
+        "p_REGRESSING": 0,
+        "p_STALLED": 0.71,
+        "p_COMPLETE": 0,
+        "p_PROGRESSING": 0.29
+      }
+    },
+    {
+      "design": "A",
+      "fixtureId": "prod-dns-tls",
+      "expected": "PRODUCTIVE_EXPLORATION",
+      "predicted": "PRODUCTIVE_EXPLORATION",
+      "correct": true,
+      "latencyMs": 316,
+      "usage": {
+        "inputTokens": 1143,
+        "outputTokens": 125
+      },
+      "signals": {
+        "state": "PROGRESSING",
+        "stateConfidence": 1,
+        "advanced": 0.91,
+        "progressing": 0.92,
+        "repeating": 0.6,
+        "newEvidence": 0.95,
+        "p_REGRESSING": 0,
+        "p_PROGRESSING": 1,
+        "p_COMPLETE": 0,
+        "p_STALLED": 0
+      }
+    },
+    {
+      "design": "A",
+      "fixtureId": "busy-parser",
+      "expected": "SEMANTIC_BUSYWORK",
+      "predicted": "SEMANTIC_BUSYWORK",
+      "correct": true,
+      "latencyMs": 148,
+      "usage": {
+        "inputTokens": 1126,
+        "outputTokens": 125
+      },
+      "signals": {
+        "state": "STALLED",
+        "stateConfidence": 0.83,
+        "advanced": 0.08,
+        "progressing": 0.21,
+        "repeating": 0.91,
+        "newEvidence": 0.17,
+        "p_REGRESSING": 0,
+        "p_COMPLETE": 0,
+        "p_STALLED": 0.87,
+        "p_PROGRESSING": 0.13
+      }
+    },
+    {
+      "design": "A",
+      "fixtureId": "prod-parser",
+      "expected": "PRODUCTIVE_EXPLORATION",
+      "predicted": "PRODUCTIVE_EXPLORATION",
+      "correct": true,
+      "latencyMs": 186,
+      "usage": {
+        "inputTokens": 1160,
+        "outputTokens": 125
+      },
+      "signals": {
+        "state": "PROGRESSING",
+        "stateConfidence": 0.99,
+        "advanced": 0.96,
+        "progressing": 0.97,
+        "repeating": 0.56,
+        "newEvidence": 0.97,
+        "p_PROGRESSING": 0.99,
+        "p_COMPLETE": 0.01,
+        "p_REGRESSING": 0,
+        "p_STALLED": 0
+      }
+    },
+    {
+      "design": "A",
+      "fixtureId": "busy-permissions",
+      "expected": "SEMANTIC_BUSYWORK",
+      "predicted": "SEMANTIC_BUSYWORK",
+      "correct": true,
+      "latencyMs": 207,
+      "usage": {
+        "inputTokens": 1090,
+        "outputTokens": 125
+      },
+      "signals": {
+        "state": "STALLED",
+        "stateConfidence": 0.98,
+        "advanced": 0.17,
+        "progressing": 0.21,
+        "repeating": 0.94,
+        "newEvidence": 0.32,
+        "p_STALLED": 0.99,
+        "p_REGRESSING": 0,
+        "p_PROGRESSING": 0.01,
+        "p_COMPLETE": 0
+      }
+    },
+    {
+      "design": "A",
+      "fixtureId": "prod-permissions",
+      "expected": "PRODUCTIVE_EXPLORATION",
+      "predicted": "PRODUCTIVE_EXPLORATION",
+      "correct": true,
+      "latencyMs": 121,
+      "usage": {
+        "inputTokens": 1109,
+        "outputTokens": 125
+      },
+      "signals": {
+        "state": "PROGRESSING",
+        "stateConfidence": 1,
+        "advanced": 0.93,
+        "progressing": 0.95,
+        "repeating": 0.48,
+        "newEvidence": 0.95,
+        "p_COMPLETE": 0,
+        "p_PROGRESSING": 1,
+        "p_REGRESSING": 0,
+        "p_STALLED": 0
+      }
+    },
+    {
+      "design": "A",
+      "fixtureId": "busy-cache",
+      "expected": "SEMANTIC_BUSYWORK",
+      "predicted": "SEMANTIC_BUSYWORK",
+      "correct": true,
+      "latencyMs": 197,
+      "usage": {
+        "inputTokens": 1123,
+        "outputTokens": 125
+      },
+      "signals": {
+        "state": "STALLED",
+        "stateConfidence": 0.99,
+        "advanced": 0.04,
+        "progressing": 0.06,
+        "repeating": 0.97,
+        "newEvidence": 0.07,
+        "p_COMPLETE": 0,
+        "p_PROGRESSING": 0.01,
+        "p_REGRESSING": 0,
+        "p_STALLED": 0.99
+      }
+    },
+    {
+      "design": "A",
+      "fixtureId": "prod-cache",
+      "expected": "PRODUCTIVE_EXPLORATION",
+      "predicted": "PRODUCTIVE_EXPLORATION",
+      "correct": true,
+      "latencyMs": 118,
+      "usage": {
+        "inputTokens": 1079,
+        "outputTokens": 125
+      },
+      "signals": {
+        "state": "PROGRESSING",
+        "stateConfidence": 0.99,
+        "advanced": 0.97,
+        "progressing": 0.96,
+        "repeating": 0.73,
+        "newEvidence": 0.97,
+        "p_STALLED": 0,
+        "p_PROGRESSING": 1,
+        "p_COMPLETE": 0,
+        "p_REGRESSING": 0
+      }
+    },
+    {
+      "design": "A",
+      "fixtureId": "busy-retry",
+      "expected": "SEMANTIC_BUSYWORK",
+      "predicted": "SEMANTIC_BUSYWORK",
+      "correct": true,
+      "latencyMs": 163,
+      "usage": {
+        "inputTokens": 1106,
+        "outputTokens": 125
+      },
+      "signals": {
+        "state": "STALLED",
+        "stateConfidence": 1,
+        "advanced": 0.07,
+        "progressing": 0.14,
+        "repeating": 0.95,
+        "newEvidence": 0.15,
+        "p_REGRESSING": 0,
+        "p_PROGRESSING": 0,
+        "p_STALLED": 1,
+        "p_COMPLETE": 0
+      }
+    },
+    {
+      "design": "A",
+      "fixtureId": "prod-retry",
+      "expected": "PRODUCTIVE_EXPLORATION",
+      "predicted": "VERIFIED_SUCCESS",
+      "correct": false,
+      "latencyMs": 243,
+      "usage": {
+        "inputTokens": 1088,
+        "outputTokens": 124
+      },
+      "signals": {
+        "state": "COMPLETE",
+        "stateConfidence": 1,
+        "advanced": 0.81,
+        "progressing": 0.96,
+        "repeating": 0.73,
+        "newEvidence": 0.69,
+        "p_STALLED": 0,
+        "p_REGRESSING": 0,
+        "p_PROGRESSING": 0,
+        "p_COMPLETE": 1
+      }
+    },
+    {
+      "design": "A",
+      "fixtureId": "busy-docker",
+      "expected": "SEMANTIC_BUSYWORK",
+      "predicted": "SEMANTIC_BUSYWORK",
+      "correct": true,
+      "latencyMs": 135,
+      "usage": {
+        "inputTokens": 1104,
+        "outputTokens": 125
+      },
+      "signals": {
+        "state": "STALLED",
+        "stateConfidence": 1,
+        "advanced": 0.1,
+        "progressing": 0.09,
+        "repeating": 0.88,
+        "newEvidence": 0.18,
+        "p_REGRESSING": 0,
+        "p_PROGRESSING": 0,
+        "p_COMPLETE": 0,
+        "p_STALLED": 1
+      }
+    },
+    {
+      "design": "A",
+      "fixtureId": "prod-docker",
+      "expected": "PRODUCTIVE_EXPLORATION",
+      "predicted": "PRODUCTIVE_EXPLORATION",
+      "correct": true,
+      "latencyMs": 252,
+      "usage": {
+        "inputTokens": 1120,
+        "outputTokens": 125
+      },
+      "signals": {
+        "state": "PROGRESSING",
+        "stateConfidence": 1,
+        "advanced": 0.97,
+        "progressing": 0.96,
+        "repeating": 0.42,
+        "newEvidence": 0.97,
+        "p_REGRESSING": 0,
+        "p_PROGRESSING": 1,
+        "p_STALLED": 0,
+        "p_COMPLETE": 0
+      }
+    },
+    {
+      "design": "A",
+      "fixtureId": "busy-sql",
+      "expected": "SEMANTIC_BUSYWORK",
+      "predicted": "SEMANTIC_BUSYWORK",
+      "correct": true,
+      "latencyMs": 181,
+      "usage": {
+        "inputTokens": 1140,
+        "outputTokens": 125
+      },
+      "signals": {
+        "state": "STALLED",
+        "stateConfidence": 1,
+        "advanced": 0.09,
+        "progressing": 0.14,
+        "repeating": 0.95,
+        "newEvidence": 0.28,
+        "p_PROGRESSING": 0,
+        "p_COMPLETE": 0,
+        "p_REGRESSING": 0,
+        "p_STALLED": 1
+      }
+    },
+    {
+      "design": "A",
+      "fixtureId": "prod-sql",
+      "expected": "PRODUCTIVE_EXPLORATION",
+      "predicted": "PRODUCTIVE_EXPLORATION",
+      "correct": true,
+      "latencyMs": 117,
+      "usage": {
+        "inputTokens": 1084,
+        "outputTokens": 125
+      },
+      "signals": {
+        "state": "PROGRESSING",
+        "stateConfidence": 1,
+        "advanced": 0.95,
+        "progressing": 0.94,
+        "repeating": 0.45,
+        "newEvidence": 0.96,
+        "p_STALLED": 0,
+        "p_REGRESSING": 0,
+        "p_PROGRESSING": 1,
+        "p_COMPLETE": 0
+      }
+    },
+    {
+      "design": "A",
+      "fixtureId": "busy-jwt",
+      "expected": "SEMANTIC_BUSYWORK",
+      "predicted": "SEMANTIC_BUSYWORK",
+      "correct": true,
+      "latencyMs": 130,
+      "usage": {
+        "inputTokens": 1123,
+        "outputTokens": 125
+      },
+      "signals": {
+        "state": "STALLED",
+        "stateConfidence": 0.7,
+        "advanced": 0.18,
+        "progressing": 0.38,
+        "repeating": 0.88,
+        "newEvidence": 0.35,
+        "p_COMPLETE": 0,
+        "p_STALLED": 0.77,
+        "p_REGRESSING": 0,
+        "p_PROGRESSING": 0.23
+      }
+    },
+    {
+      "design": "A",
+      "fixtureId": "prod-jwt",
+      "expected": "PRODUCTIVE_EXPLORATION",
+      "predicted": "PRODUCTIVE_EXPLORATION",
+      "correct": true,
+      "latencyMs": 232,
+      "usage": {
+        "inputTokens": 1099,
+        "outputTokens": 125
+      },
+      "signals": {
+        "state": "PROGRESSING",
+        "stateConfidence": 0.99,
+        "advanced": 0.94,
+        "progressing": 0.97,
+        "repeating": 0.66,
+        "newEvidence": 0.95,
+        "p_REGRESSING": 0,
+        "p_COMPLETE": 0,
+        "p_STALLED": 0,
+        "p_PROGRESSING": 1
+      }
+    },
+    {
+      "design": "A",
+      "fixtureId": "busy-flaky-test",
+      "expected": "SEMANTIC_BUSYWORK",
+      "predicted": "SEMANTIC_BUSYWORK",
+      "correct": true,
+      "latencyMs": 99,
+      "usage": {
+        "inputTokens": 1119,
+        "outputTokens": 125
+      },
+      "signals": {
+        "state": "STALLED",
+        "stateConfidence": 0.95,
+        "advanced": 0.16,
+        "progressing": 0.15,
+        "repeating": 0.83,
+        "newEvidence": 0.37,
+        "p_STALLED": 0.96,
+        "p_REGRESSING": 0,
+        "p_PROGRESSING": 0.04,
+        "p_COMPLETE": 0
+      }
+    },
+    {
+      "design": "A",
+      "fixtureId": "busy-wrong-env",
+      "expected": "SEMANTIC_BUSYWORK",
+      "predicted": "SEMANTIC_BUSYWORK",
+      "correct": true,
+      "latencyMs": 305,
+      "usage": {
+        "inputTokens": 1137,
+        "outputTokens": 125
+      },
+      "signals": {
+        "state": "STALLED",
+        "stateConfidence": 0.96,
+        "advanced": 0.11,
+        "progressing": 0.15,
+        "repeating": 0.92,
+        "newEvidence": 0.19,
+        "p_REGRESSING": 0,
+        "p_PROGRESSING": 0.03,
+        "p_COMPLETE": 0,
+        "p_STALLED": 0.97
+      }
+    },
+    {
+      "design": "A",
+      "fixtureId": "busy-memleak",
+      "expected": "SEMANTIC_BUSYWORK",
+      "predicted": "SEMANTIC_BUSYWORK",
+      "correct": true,
+      "latencyMs": 138,
+      "usage": {
+        "inputTokens": 1136,
+        "outputTokens": 125
+      },
+      "signals": {
+        "state": "STALLED",
+        "stateConfidence": 0.98,
+        "advanced": 0.13,
+        "progressing": 0.12,
+        "repeating": 0.95,
+        "newEvidence": 0.2,
+        "p_COMPLETE": 0,
+        "p_STALLED": 0.99,
+        "p_PROGRESSING": 0.01,
+        "p_REGRESSING": 0
+      }
+    },
+    {
+      "design": "A",
+      "fixtureId": "busy-cert-chain",
+      "expected": "SEMANTIC_BUSYWORK",
+      "predicted": "PRODUCTIVE_EXPLORATION",
+      "correct": false,
+      "latencyMs": 180,
+      "usage": {
+        "inputTokens": 1093,
+        "outputTokens": 125
+      },
+      "signals": {
+        "state": "PROGRESSING",
+        "stateConfidence": 0.83,
+        "advanced": 0.27,
+        "progressing": 0.65,
+        "repeating": 0.86,
+        "newEvidence": 0.38,
+        "p_STALLED": 0.13,
+        "p_REGRESSING": 0,
+        "p_PROGRESSING": 0.87,
+        "p_COMPLETE": 0
+      }
+    },
+    {
+      "design": "A",
+      "fixtureId": "busy-ci-disk",
+      "expected": "SEMANTIC_BUSYWORK",
+      "predicted": "SEMANTIC_BUSYWORK",
+      "correct": true,
+      "latencyMs": 175,
+      "usage": {
+        "inputTokens": 1125,
+        "outputTokens": 125
+      },
+      "signals": {
+        "state": "STALLED",
+        "stateConfidence": 0.98,
+        "advanced": 0.11,
+        "progressing": 0.15,
+        "repeating": 0.84,
+        "newEvidence": 0.31,
+        "p_STALLED": 0.99,
+        "p_REGRESSING": 0,
+        "p_PROGRESSING": 0.01,
+        "p_COMPLETE": 0
+      }
+    },
+    {
+      "design": "A",
+      "fixtureId": "busy-rate-limit",
+      "expected": "SEMANTIC_BUSYWORK",
+      "predicted": "SEMANTIC_BUSYWORK",
+      "correct": true,
+      "latencyMs": 196,
+      "usage": {
+        "inputTokens": 1126,
+        "outputTokens": 125
+      },
+      "signals": {
+        "state": "STALLED",
+        "stateConfidence": 0.94,
+        "advanced": 0.13,
+        "progressing": 0.21,
+        "repeating": 0.82,
+        "newEvidence": 0.32,
+        "p_PROGRESSING": 0.04,
+        "p_REGRESSING": 0,
+        "p_COMPLETE": 0,
+        "p_STALLED": 0.96
+      }
+    },
+    {
+      "design": "A",
+      "fixtureId": "busy-deadlock",
+      "expected": "SEMANTIC_BUSYWORK",
+      "predicted": "SEMANTIC_BUSYWORK",
+      "correct": true,
+      "latencyMs": 109,
+      "usage": {
+        "inputTokens": 1107,
+        "outputTokens": 125
+      },
+      "signals": {
+        "state": "STALLED",
+        "stateConfidence": 0.92,
+        "advanced": 0.16,
+        "progressing": 0.19,
+        "repeating": 0.79,
+        "newEvidence": 0.48,
+        "p_STALLED": 0.94,
+        "p_COMPLETE": 0,
+        "p_REGRESSING": 0,
+        "p_PROGRESSING": 0.06
+      }
+    },
+    {
+      "design": "A",
+      "fixtureId": "prod-flaky-narrow",
+      "expected": "PRODUCTIVE_EXPLORATION",
+      "predicted": "PRODUCTIVE_EXPLORATION",
+      "correct": true,
+      "latencyMs": 374,
+      "usage": {
+        "inputTokens": 1112,
+        "outputTokens": 125
+      },
+      "signals": {
+        "state": "PROGRESSING",
+        "stateConfidence": 1,
+        "advanced": 0.95,
+        "progressing": 0.96,
+        "repeating": 0.61,
+        "newEvidence": 0.97,
+        "p_COMPLETE": 0,
+        "p_PROGRESSING": 1,
+        "p_STALLED": 0,
+        "p_REGRESSING": 0
+      }
+    },
+    {
+      "design": "A",
+      "fixtureId": "prod-memleak-narrow",
+      "expected": "PRODUCTIVE_EXPLORATION",
+      "predicted": "PRODUCTIVE_EXPLORATION",
+      "correct": true,
+      "latencyMs": 115,
+      "usage": {
+        "inputTokens": 1119,
+        "outputTokens": 125
+      },
+      "signals": {
+        "state": "PROGRESSING",
+        "stateConfidence": 0.99,
+        "advanced": 0.95,
+        "progressing": 0.97,
+        "repeating": 0.87,
+        "newEvidence": 0.96,
+        "p_REGRESSING": 0,
+        "p_PROGRESSING": 0.99,
+        "p_COMPLETE": 0.01,
+        "p_STALLED": 0
+      }
+    },
+    {
+      "design": "A",
+      "fixtureId": "prod-ssl-narrow",
+      "expected": "PRODUCTIVE_EXPLORATION",
+      "predicted": "PRODUCTIVE_EXPLORATION",
+      "correct": true,
+      "latencyMs": 197,
+      "usage": {
+        "inputTokens": 1102,
+        "outputTokens": 125
+      },
+      "signals": {
+        "state": "PROGRESSING",
+        "stateConfidence": 1,
+        "advanced": 0.97,
+        "progressing": 0.97,
+        "repeating": 0.72,
+        "newEvidence": 0.97,
+        "p_REGRESSING": 0,
+        "p_COMPLETE": 0,
+        "p_STALLED": 0,
+        "p_PROGRESSING": 1
+      }
+    },
+    {
+      "design": "A",
+      "fixtureId": "prod-ci-disk-narrow",
+      "expected": "PRODUCTIVE_EXPLORATION",
+      "predicted": "PRODUCTIVE_EXPLORATION",
+      "correct": true,
+      "latencyMs": 209,
+      "usage": {
+        "inputTokens": 1107,
+        "outputTokens": 125
+      },
+      "signals": {
+        "state": "PROGRESSING",
+        "stateConfidence": 1,
+        "advanced": 0.95,
+        "progressing": 0.95,
+        "repeating": 0.59,
+        "newEvidence": 0.96,
+        "p_STALLED": 0,
+        "p_COMPLETE": 0,
+        "p_PROGRESSING": 1,
+        "p_REGRESSING": 0
+      }
+    },
+    {
+      "design": "A",
+      "fixtureId": "prod-rate-limit-narrow",
+      "expected": "PRODUCTIVE_EXPLORATION",
+      "predicted": "PRODUCTIVE_EXPLORATION",
+      "correct": true,
+      "latencyMs": 125,
+      "usage": {
+        "inputTokens": 1081,
+        "outputTokens": 125
+      },
+      "signals": {
+        "state": "PROGRESSING",
+        "stateConfidence": 1,
+        "advanced": 0.92,
+        "progressing": 0.93,
+        "repeating": 0.66,
+        "newEvidence": 0.95,
+        "p_COMPLETE": 0,
+        "p_REGRESSING": 0,
+        "p_STALLED": 0,
+        "p_PROGRESSING": 1
+      }
+    },
+    {
+      "design": "A",
+      "fixtureId": "prod-deadlock-narrow",
+      "expected": "PRODUCTIVE_EXPLORATION",
+      "predicted": "PRODUCTIVE_EXPLORATION",
+      "correct": true,
+      "latencyMs": 148,
+      "usage": {
+        "inputTokens": 1052,
+        "outputTokens": 125
+      },
+      "signals": {
+        "state": "PROGRESSING",
+        "stateConfidence": 0.99,
+        "advanced": 0.95,
+        "progressing": 0.96,
+        "repeating": 0.7,
+        "newEvidence": 0.96,
+        "p_COMPLETE": 0.01,
+        "p_PROGRESSING": 0.99,
+        "p_STALLED": 0,
+        "p_REGRESSING": 0
+      }
+    },
+    {
+      "design": "A",
+      "fixtureId": "prod-timeout-signature",
+      "expected": "PRODUCTIVE_EXPLORATION",
+      "predicted": "PRODUCTIVE_EXPLORATION",
+      "correct": true,
+      "latencyMs": 162,
+      "usage": {
+        "inputTokens": 1123,
+        "outputTokens": 125
+      },
+      "signals": {
+        "state": "PROGRESSING",
+        "stateConfidence": 1,
+        "advanced": 0.89,
+        "progressing": 0.94,
+        "repeating": 0.78,
+        "newEvidence": 0.95,
+        "p_COMPLETE": 0,
+        "p_REGRESSING": 0,
+        "p_STALLED": 0,
+        "p_PROGRESSING": 1
+      }
+    },
+    {
+      "design": "A",
+      "fixtureId": "unverified-deploy",
+      "expected": "UNVERIFIED_SUCCESS",
+      "predicted": "PRODUCTIVE_EXPLORATION",
+      "correct": false,
+      "latencyMs": 199,
+      "usage": {
+        "inputTokens": 1068,
+        "outputTokens": 125
+      },
+      "signals": {
+        "state": "PROGRESSING",
+        "stateConfidence": 0.91,
+        "advanced": 0.5,
+        "progressing": 0.62,
+        "repeating": 0.72,
+        "newEvidence": 0.67,
+        "p_STALLED": 0,
+        "p_REGRESSING": 0,
+        "p_PROGRESSING": 0.94,
+        "p_COMPLETE": 0.06
+      }
+    },
+    {
+      "design": "A",
+      "fixtureId": "verified-deploy",
+      "expected": "VERIFIED_SUCCESS",
+      "predicted": "VERIFIED_SUCCESS",
+      "correct": true,
+      "latencyMs": 204,
+      "usage": {
+        "inputTokens": 1070,
+        "outputTokens": 124
+      },
+      "signals": {
+        "state": "COMPLETE",
+        "stateConfidence": 0.97,
+        "advanced": 0.82,
+        "progressing": 0.96,
+        "repeating": 0.69,
+        "newEvidence": 0.91,
+        "p_COMPLETE": 0.98,
+        "p_REGRESSING": 0,
+        "p_STALLED": 0,
+        "p_PROGRESSING": 0.02
+      }
+    },
+    {
+      "design": "A",
+      "fixtureId": "unverified-tests",
+      "expected": "UNVERIFIED_SUCCESS",
+      "predicted": "PRODUCTIVE_EXPLORATION",
+      "correct": false,
+      "latencyMs": 212,
+      "usage": {
+        "inputTokens": 1047,
+        "outputTokens": 125
+      },
+      "signals": {
+        "state": "PROGRESSING",
+        "stateConfidence": 0.95,
+        "advanced": 0.06,
+        "progressing": 0.34,
+        "repeating": 0.7,
+        "newEvidence": 0.33,
+        "p_STALLED": 0.04,
+        "p_REGRESSING": 0,
+        "p_PROGRESSING": 0.96,
+        "p_COMPLETE": 0
+      }
+    },
+    {
+      "design": "A",
+      "fixtureId": "verified-tests",
+      "expected": "VERIFIED_SUCCESS",
+      "predicted": "VERIFIED_SUCCESS",
+      "correct": true,
+      "latencyMs": 186,
+      "usage": {
+        "inputTokens": 1049,
+        "outputTokens": 124
+      },
+      "signals": {
+        "state": "COMPLETE",
+        "stateConfidence": 1,
+        "advanced": 0.75,
+        "progressing": 0.91,
+        "repeating": 0.7,
+        "newEvidence": 0.88,
+        "p_COMPLETE": 1,
+        "p_STALLED": 0,
+        "p_REGRESSING": 0,
+        "p_PROGRESSING": 0
+      }
+    },
+    {
+      "design": "A",
+      "fixtureId": "unverified-migration",
+      "expected": "UNVERIFIED_SUCCESS",
+      "predicted": "PRODUCTIVE_EXPLORATION",
+      "correct": false,
+      "latencyMs": 161,
+      "usage": {
+        "inputTokens": 1042,
+        "outputTokens": 125
+      },
+      "signals": {
+        "state": "PROGRESSING",
+        "stateConfidence": 0.99,
+        "advanced": 0.67,
+        "progressing": 0.63,
+        "repeating": 0.72,
+        "newEvidence": 0.68,
+        "p_REGRESSING": 0,
+        "p_COMPLETE": 0.01,
+        "p_STALLED": 0,
+        "p_PROGRESSING": 0.99
+      }
+    },
+    {
+      "design": "A",
+      "fixtureId": "verified-migration",
+      "expected": "VERIFIED_SUCCESS",
+      "predicted": "VERIFIED_SUCCESS",
+      "correct": true,
+      "latencyMs": 234,
+      "usage": {
+        "inputTokens": 1045,
+        "outputTokens": 124
+      },
+      "signals": {
+        "state": "COMPLETE",
+        "stateConfidence": 0.95,
+        "advanced": 0.91,
+        "progressing": 0.95,
+        "repeating": 0.69,
+        "newEvidence": 0.93,
+        "p_REGRESSING": 0,
+        "p_COMPLETE": 0.96,
+        "p_STALLED": 0,
+        "p_PROGRESSING": 0.04
+      }
+    },
+    {
+      "design": "A",
+      "fixtureId": "unverified-bugfix",
+      "expected": "UNVERIFIED_SUCCESS",
+      "predicted": "PRODUCTIVE_EXPLORATION",
+      "correct": false,
+      "latencyMs": 168,
+      "usage": {
+        "inputTokens": 1040,
+        "outputTokens": 125
+      },
+      "signals": {
+        "state": "PROGRESSING",
+        "stateConfidence": 1,
+        "advanced": 0.71,
+        "progressing": 0.56,
+        "repeating": 0.67,
+        "newEvidence": 0.73,
+        "p_COMPLETE": 0,
+        "p_REGRESSING": 0,
+        "p_PROGRESSING": 1,
+        "p_STALLED": 0
+      }
+    },
+    {
+      "design": "A",
+      "fixtureId": "verified-bugfix",
+      "expected": "VERIFIED_SUCCESS",
+      "predicted": "VERIFIED_SUCCESS",
+      "correct": true,
+      "latencyMs": 148,
+      "usage": {
+        "inputTokens": 1046,
+        "outputTokens": 124
+      },
+      "signals": {
+        "state": "COMPLETE",
+        "stateConfidence": 0.68,
+        "advanced": 0.89,
+        "progressing": 0.95,
+        "repeating": 0.73,
+        "newEvidence": 0.9,
+        "p_COMPLETE": 0.76,
+        "p_PROGRESSING": 0.24,
+        "p_REGRESSING": 0,
+        "p_STALLED": 0
+      }
+    },
+    {
+      "design": "A",
+      "fixtureId": "unverified-cache-fix",
+      "expected": "UNVERIFIED_SUCCESS",
+      "predicted": "PRODUCTIVE_EXPLORATION",
+      "correct": false,
+      "latencyMs": 254,
+      "usage": {
+        "inputTokens": 1059,
+        "outputTokens": 125
+      },
+      "signals": {
+        "state": "PROGRESSING",
+        "stateConfidence": 0.99,
+        "advanced": 0.6,
+        "progressing": 0.54,
+        "repeating": 0.74,
+        "newEvidence": 0.78,
+        "p_REGRESSING": 0,
+        "p_COMPLETE": 0,
+        "p_STALLED": 0,
+        "p_PROGRESSING": 1
+      }
+    },
+    {
+      "design": "A",
+      "fixtureId": "verified-cache-fix",
+      "expected": "VERIFIED_SUCCESS",
+      "predicted": "VERIFIED_SUCCESS",
+      "correct": true,
+      "latencyMs": 155,
+      "usage": {
+        "inputTokens": 1059,
+        "outputTokens": 124
+      },
+      "signals": {
+        "state": "COMPLETE",
+        "stateConfidence": 0.61,
+        "advanced": 0.92,
+        "progressing": 0.96,
+        "repeating": 0.64,
+        "newEvidence": 0.9,
+        "p_STALLED": 0,
+        "p_REGRESSING": 0,
+        "p_PROGRESSING": 0.29,
+        "p_COMPLETE": 0.71
+      }
+    },
+    {
+      "design": "A",
+      "fixtureId": "unverified-email",
+      "expected": "UNVERIFIED_SUCCESS",
+      "predicted": "PRODUCTIVE_EXPLORATION",
+      "correct": false,
+      "latencyMs": 155,
+      "usage": {
+        "inputTokens": 1040,
+        "outputTokens": 125
+      },
+      "signals": {
+        "state": "PROGRESSING",
+        "stateConfidence": 0.99,
+        "advanced": 0.58,
+        "progressing": 0.51,
+        "repeating": 0.62,
+        "newEvidence": 0.69,
+        "p_REGRESSING": 0,
+        "p_COMPLETE": 0,
+        "p_STALLED": 0,
+        "p_PROGRESSING": 1
+      }
+    },
+    {
+      "design": "A",
+      "fixtureId": "verified-email",
+      "expected": "VERIFIED_SUCCESS",
+      "predicted": "VERIFIED_SUCCESS",
+      "correct": true,
+      "latencyMs": 120,
+      "usage": {
+        "inputTokens": 1037,
+        "outputTokens": 124
+      },
+      "signals": {
+        "state": "COMPLETE",
+        "stateConfidence": 0.48,
+        "advanced": 0.89,
+        "progressing": 0.96,
+        "repeating": 0.6,
+        "newEvidence": 0.89,
+        "p_COMPLETE": 0.61,
+        "p_STALLED": 0,
+        "p_REGRESSING": 0,
+        "p_PROGRESSING": 0.39
+      }
+    },
+    {
+      "design": "A",
+      "fixtureId": "unverified-perf",
+      "expected": "UNVERIFIED_SUCCESS",
+      "predicted": "PRODUCTIVE_EXPLORATION",
+      "correct": false,
+      "latencyMs": 517,
+      "usage": {
+        "inputTokens": 1040,
+        "outputTokens": 125
+      },
+      "signals": {
+        "state": "PROGRESSING",
+        "stateConfidence": 1,
+        "advanced": 0.56,
+        "progressing": 0.52,
+        "repeating": 0.71,
+        "newEvidence": 0.7,
+        "p_COMPLETE": 0,
+        "p_STALLED": 0,
+        "p_PROGRESSING": 1,
+        "p_REGRESSING": 0
+      }
+    },
+    {
+      "design": "A",
+      "fixtureId": "verified-perf",
+      "expected": "VERIFIED_SUCCESS",
+      "predicted": "VERIFIED_SUCCESS",
+      "correct": true,
+      "latencyMs": 102,
+      "usage": {
+        "inputTokens": 1058,
+        "outputTokens": 124
+      },
+      "signals": {
+        "state": "COMPLETE",
+        "stateConfidence": 0.98,
+        "advanced": 0.95,
+        "progressing": 0.97,
+        "repeating": 0.83,
+        "newEvidence": 0.89,
+        "p_REGRESSING": 0,
+        "p_PROGRESSING": 0.01,
+        "p_STALLED": 0,
+        "p_COMPLETE": 0.99
+      }
+    },
+    {
+      "design": "A",
+      "fixtureId": "unverified-a11y",
+      "expected": "UNVERIFIED_SUCCESS",
+      "predicted": "PRODUCTIVE_EXPLORATION",
+      "correct": false,
+      "latencyMs": 164,
+      "usage": {
+        "inputTokens": 1066,
+        "outputTokens": 125
+      },
+      "signals": {
+        "state": "PROGRESSING",
+        "stateConfidence": 0.88,
+        "advanced": 0.09,
+        "progressing": 0.48,
+        "repeating": 0.64,
+        "newEvidence": 0.47,
+        "p_REGRESSING": 0.08,
+        "p_COMPLETE": 0,
+        "p_PROGRESSING": 0.91,
+        "p_STALLED": 0.01
+      }
+    },
+    {
+      "design": "A",
+      "fixtureId": "verified-a11y",
+      "expected": "VERIFIED_SUCCESS",
+      "predicted": "VERIFIED_SUCCESS",
+      "correct": true,
+      "latencyMs": 158,
+      "usage": {
+        "inputTokens": 1074,
+        "outputTokens": 124
+      },
+      "signals": {
+        "state": "COMPLETE",
+        "stateConfidence": 0.59,
+        "advanced": 0.69,
+        "progressing": 0.94,
+        "repeating": 0.72,
+        "newEvidence": 0.88,
+        "p_REGRESSING": 0,
+        "p_PROGRESSING": 0.3,
+        "p_COMPLETE": 0.7,
+        "p_STALLED": 0
+      }
+    },
+    {
+      "design": "A",
+      "fixtureId": "unverified-security",
+      "expected": "UNVERIFIED_SUCCESS",
+      "predicted": "PRODUCTIVE_EXPLORATION",
+      "correct": false,
+      "latencyMs": 117,
+      "usage": {
+        "inputTokens": 1042,
+        "outputTokens": 125
+      },
+      "signals": {
+        "state": "PROGRESSING",
+        "stateConfidence": 1,
+        "advanced": 0.86,
+        "progressing": 0.67,
+        "repeating": 0.59,
+        "newEvidence": 0.83,
+        "p_REGRESSING": 0,
+        "p_PROGRESSING": 1,
+        "p_STALLED": 0,
+        "p_COMPLETE": 0
+      }
+    },
+    {
+      "design": "A",
+      "fixtureId": "verified-security",
+      "expected": "VERIFIED_SUCCESS",
+      "predicted": "VERIFIED_SUCCESS",
+      "correct": true,
+      "latencyMs": 144,
+      "usage": {
+        "inputTokens": 1042,
+        "outputTokens": 124
+      },
+      "signals": {
+        "state": "COMPLETE",
+        "stateConfidence": 0.93,
+        "advanced": 0.92,
+        "progressing": 0.95,
+        "repeating": 0.63,
+        "newEvidence": 0.91,
+        "p_REGRESSING": 0,
+        "p_PROGRESSING": 0.05,
+        "p_STALLED": 0,
+        "p_COMPLETE": 0.95
+      }
+    },
+    {
+      "design": "A",
+      "fixtureId": "unverified-webhook",
+      "expected": "UNVERIFIED_SUCCESS",
+      "predicted": "PRODUCTIVE_EXPLORATION",
+      "correct": false,
+      "latencyMs": 147,
+      "usage": {
+        "inputTokens": 1037,
+        "outputTokens": 125
+      },
+      "signals": {
+        "state": "PROGRESSING",
+        "stateConfidence": 1,
+        "advanced": 0.62,
+        "progressing": 0.52,
+        "repeating": 0.77,
+        "newEvidence": 0.57,
+        "p_REGRESSING": 0,
+        "p_STALLED": 0,
+        "p_PROGRESSING": 1,
+        "p_COMPLETE": 0
+      }
+    },
+    {
+      "design": "A",
+      "fixtureId": "verified-webhook",
+      "expected": "VERIFIED_SUCCESS",
+      "predicted": "PRODUCTIVE_EXPLORATION",
+      "correct": false,
+      "latencyMs": 215,
+      "usage": {
+        "inputTokens": 1046,
+        "outputTokens": 125
+      },
+      "signals": {
+        "state": "PROGRESSING",
+        "stateConfidence": 0.65,
+        "advanced": 0.85,
+        "progressing": 0.93,
+        "repeating": 0.76,
+        "newEvidence": 0.88,
+        "p_REGRESSING": 0,
+        "p_PROGRESSING": 0.74,
+        "p_STALLED": 0,
+        "p_COMPLETE": 0.26
+      }
+    }
+  ],
+  "resultsB": [
+    {
+      "design": "B",
+      "fixtureId": "busy-dns-tls",
+      "expected": "SEMANTIC_BUSYWORK",
+      "predicted": "SEMANTIC_BUSYWORK",
+      "correct": true,
+      "latencyMs": 167,
+      "usage": {
+        "inputTokens": 1234,
+        "outputTokens": 192
+      },
+      "signals": {
+        "externalEvidence": 0.52,
+        "relevantStateChanged": 0.18,
+        "assumptionContradicted": 0.79,
+        "strategyNovelty": 0.69,
+        "blockerChanged": "SAME_BLOCKER",
+        "successClaimed": 0.04,
+        "verifiedSuccess": 0.35
+      }
+    },
+    {
+      "design": "B",
+      "fixtureId": "prod-dns-tls",
+      "expected": "PRODUCTIVE_EXPLORATION",
+      "predicted": "PRODUCTIVE_EXPLORATION",
+      "correct": true,
+      "latencyMs": 116,
+      "usage": {
+        "inputTokens": 1272,
+        "outputTokens": 191
+      },
+      "signals": {
+        "externalEvidence": 0.42,
+        "relevantStateChanged": 0.33,
+        "assumptionContradicted": 0.23,
+        "strategyNovelty": 0.75,
+        "blockerChanged": "NEW_BLOCKER",
+        "successClaimed": 0.08,
+        "verifiedSuccess": 0.34
+      }
+    },
+    {
+      "design": "B",
+      "fixtureId": "busy-parser",
+      "expected": "SEMANTIC_BUSYWORK",
+      "predicted": "SEMANTIC_BUSYWORK",
+      "correct": true,
+      "latencyMs": 253,
+      "usage": {
+        "inputTokens": 1255,
+        "outputTokens": 192
+      },
+      "signals": {
+        "externalEvidence": 0.27,
+        "relevantStateChanged": 0.19,
+        "assumptionContradicted": 0.9,
+        "strategyNovelty": 0.2,
+        "blockerChanged": "SAME_BLOCKER",
+        "successClaimed": 0.06,
+        "verifiedSuccess": 0.32
+      }
+    },
+    {
+      "design": "B",
+      "fixtureId": "prod-parser",
+      "expected": "PRODUCTIVE_EXPLORATION",
+      "predicted": "UNVERIFIED_SUCCESS",
+      "correct": false,
+      "latencyMs": 96,
+      "usage": {
+        "inputTokens": 1289,
+        "outputTokens": 191
+      },
+      "signals": {
+        "externalEvidence": 0.49,
+        "relevantStateChanged": 0.38,
+        "assumptionContradicted": 0.08,
+        "strategyNovelty": 0.78,
+        "blockerChanged": "NEW_BLOCKER",
+        "successClaimed": 0.61,
+        "verifiedSuccess": 0.33
+      }
+    },
+    {
+      "design": "B",
+      "fixtureId": "busy-permissions",
+      "expected": "SEMANTIC_BUSYWORK",
+      "predicted": "SEMANTIC_BUSYWORK",
+      "correct": true,
+      "latencyMs": 112,
+      "usage": {
+        "inputTokens": 1219,
+        "outputTokens": 192
+      },
+      "signals": {
+        "externalEvidence": 0.46,
+        "relevantStateChanged": 0.13,
+        "assumptionContradicted": 0.6,
+        "strategyNovelty": 0.27,
+        "blockerChanged": "SAME_BLOCKER",
+        "successClaimed": 0.04,
+        "verifiedSuccess": 0.33
+      }
+    },
+    {
+      "design": "B",
+      "fixtureId": "prod-permissions",
+      "expected": "PRODUCTIVE_EXPLORATION",
+      "predicted": "PRODUCTIVE_EXPLORATION",
+      "correct": true,
+      "latencyMs": 98,
+      "usage": {
+        "inputTokens": 1238,
+        "outputTokens": 191
+      },
+      "signals": {
+        "externalEvidence": 0.5,
+        "relevantStateChanged": 0.4,
+        "assumptionContradicted": 0.08,
+        "strategyNovelty": 0.76,
+        "blockerChanged": "NEW_BLOCKER",
+        "successClaimed": 0.33,
+        "verifiedSuccess": 0.43
+      }
+    },
+    {
+      "design": "B",
+      "fixtureId": "busy-cache",
+      "expected": "SEMANTIC_BUSYWORK",
+      "predicted": "UNCERTAIN",
+      "correct": false,
+      "latencyMs": 207,
+      "usage": {
+        "inputTokens": 1252,
+        "outputTokens": 192
+      },
+      "signals": {
+        "externalEvidence": 0.26,
+        "relevantStateChanged": 0.1,
+        "assumptionContradicted": 0.54,
+        "strategyNovelty": 0.1,
+        "blockerChanged": "SAME_BLOCKER",
+        "successClaimed": 0.06,
+        "verifiedSuccess": 0.25
+      }
+    },
+    {
+      "design": "B",
+      "fixtureId": "prod-cache",
+      "expected": "PRODUCTIVE_EXPLORATION",
+      "predicted": "PRODUCTIVE_EXPLORATION",
+      "correct": true,
+      "latencyMs": 151,
+      "usage": {
+        "inputTokens": 1208,
+        "outputTokens": 191
+      },
+      "signals": {
+        "externalEvidence": 0.39,
+        "relevantStateChanged": 0.27,
+        "assumptionContradicted": 0.07,
+        "strategyNovelty": 0.71,
+        "blockerChanged": "NEW_BLOCKER",
+        "successClaimed": 0.28,
+        "verifiedSuccess": 0.33
+      }
+    },
+    {
+      "design": "B",
+      "fixtureId": "busy-retry",
+      "expected": "SEMANTIC_BUSYWORK",
+      "predicted": "UNCERTAIN",
+      "correct": false,
+      "latencyMs": 112,
+      "usage": {
+        "inputTokens": 1235,
+        "outputTokens": 192
+      },
+      "signals": {
+        "externalEvidence": 0.6,
+        "relevantStateChanged": 0.12,
+        "assumptionContradicted": 0.13,
+        "strategyNovelty": 0.14,
+        "blockerChanged": "SAME_BLOCKER",
+        "successClaimed": 0.03,
+        "verifiedSuccess": 0.29
+      }
+    },
+    {
+      "design": "B",
+      "fixtureId": "prod-retry",
+      "expected": "PRODUCTIVE_EXPLORATION",
+      "predicted": "VERIFIED_SUCCESS",
+      "correct": false,
+      "latencyMs": 123,
+      "usage": {
+        "inputTokens": 1217,
+        "outputTokens": 193
+      },
+      "signals": {
+        "externalEvidence": 0.83,
+        "relevantStateChanged": 0.52,
+        "assumptionContradicted": 0.06,
+        "strategyNovelty": 0.21,
+        "blockerChanged": "BLOCKER_RESOLVED",
+        "successClaimed": 0.93,
+        "verifiedSuccess": 0.86
+      }
+    },
+    {
+      "design": "B",
+      "fixtureId": "busy-docker",
+      "expected": "SEMANTIC_BUSYWORK",
+      "predicted": "UNCERTAIN",
+      "correct": false,
+      "latencyMs": 167,
+      "usage": {
+        "inputTokens": 1233,
+        "outputTokens": 192
+      },
+      "signals": {
+        "externalEvidence": 0.42,
+        "relevantStateChanged": 0.29,
+        "assumptionContradicted": 0.31,
+        "strategyNovelty": 0.27,
+        "blockerChanged": "SAME_BLOCKER",
+        "successClaimed": 0.05,
+        "verifiedSuccess": 0.24
+      }
+    },
+    {
+      "design": "B",
+      "fixtureId": "prod-docker",
+      "expected": "PRODUCTIVE_EXPLORATION",
+      "predicted": "PRODUCTIVE_EXPLORATION",
+      "correct": true,
+      "latencyMs": 173,
+      "usage": {
+        "inputTokens": 1249,
+        "outputTokens": 191
+      },
+      "signals": {
+        "externalEvidence": 0.65,
+        "relevantStateChanged": 0.34,
+        "assumptionContradicted": 0.07,
+        "strategyNovelty": 0.68,
+        "blockerChanged": "NEW_BLOCKER",
+        "successClaimed": 0.12,
+        "verifiedSuccess": 0.4
+      }
+    },
+    {
+      "design": "B",
+      "fixtureId": "busy-sql",
+      "expected": "SEMANTIC_BUSYWORK",
+      "predicted": "SEMANTIC_BUSYWORK",
+      "correct": true,
+      "latencyMs": 89,
+      "usage": {
+        "inputTokens": 1269,
+        "outputTokens": 192
+      },
+      "signals": {
+        "externalEvidence": 0.56,
+        "relevantStateChanged": 0.36,
+        "assumptionContradicted": 0.78,
+        "strategyNovelty": 0.31,
+        "blockerChanged": "SAME_BLOCKER",
+        "successClaimed": 0.06,
+        "verifiedSuccess": 0.31
+      }
+    },
+    {
+      "design": "B",
+      "fixtureId": "prod-sql",
+      "expected": "PRODUCTIVE_EXPLORATION",
+      "predicted": "PRODUCTIVE_EXPLORATION",
+      "correct": true,
+      "latencyMs": 233,
+      "usage": {
+        "inputTokens": 1213,
+        "outputTokens": 191
+      },
+      "signals": {
+        "externalEvidence": 0.56,
+        "relevantStateChanged": 0.51,
+        "assumptionContradicted": 0.08,
+        "strategyNovelty": 0.77,
+        "blockerChanged": "NEW_BLOCKER",
+        "successClaimed": 0.18,
+        "verifiedSuccess": 0.46
+      }
+    },
+    {
+      "design": "B",
+      "fixtureId": "busy-jwt",
+      "expected": "SEMANTIC_BUSYWORK",
+      "predicted": "SEMANTIC_BUSYWORK",
+      "correct": true,
+      "latencyMs": 216,
+      "usage": {
+        "inputTokens": 1252,
+        "outputTokens": 192
+      },
+      "signals": {
+        "externalEvidence": 0.58,
+        "relevantStateChanged": 0.19,
+        "assumptionContradicted": 0.77,
+        "strategyNovelty": 0.23,
+        "blockerChanged": "SAME_BLOCKER",
+        "successClaimed": 0.05,
+        "verifiedSuccess": 0.35
+      }
+    },
+    {
+      "design": "B",
+      "fixtureId": "prod-jwt",
+      "expected": "PRODUCTIVE_EXPLORATION",
+      "predicted": "PRODUCTIVE_EXPLORATION",
+      "correct": true,
+      "latencyMs": 193,
+      "usage": {
+        "inputTokens": 1228,
+        "outputTokens": 191
+      },
+      "signals": {
+        "externalEvidence": 0.56,
+        "relevantStateChanged": 0.32,
+        "assumptionContradicted": 0.07,
+        "strategyNovelty": 0.59,
+        "blockerChanged": "NEW_BLOCKER",
+        "successClaimed": 0.46,
+        "verifiedSuccess": 0.39
+      }
+    },
+    {
+      "design": "B",
+      "fixtureId": "busy-flaky-test",
+      "expected": "SEMANTIC_BUSYWORK",
+      "predicted": "SEMANTIC_BUSYWORK",
+      "correct": true,
+      "latencyMs": 224,
+      "usage": {
+        "inputTokens": 1248,
+        "outputTokens": 192
+      },
+      "signals": {
+        "externalEvidence": 0.5,
+        "relevantStateChanged": 0.49,
+        "assumptionContradicted": 0.57,
+        "strategyNovelty": 0.48,
+        "blockerChanged": "SAME_BLOCKER",
+        "successClaimed": 0.05,
+        "verifiedSuccess": 0.36
+      }
+    },
+    {
+      "design": "B",
+      "fixtureId": "busy-wrong-env",
+      "expected": "SEMANTIC_BUSYWORK",
+      "predicted": "UNCERTAIN",
+      "correct": false,
+      "latencyMs": 184,
+      "usage": {
+        "inputTokens": 1266,
+        "outputTokens": 192
+      },
+      "signals": {
+        "externalEvidence": 0.86,
+        "relevantStateChanged": 0.11,
+        "assumptionContradicted": 0.5,
+        "strategyNovelty": 0.2,
+        "blockerChanged": "SAME_BLOCKER",
+        "successClaimed": 0.08,
+        "verifiedSuccess": 0.33
+      }
+    },
+    {
+      "design": "B",
+      "fixtureId": "busy-memleak",
+      "expected": "SEMANTIC_BUSYWORK",
+      "predicted": "UNCERTAIN",
+      "correct": false,
+      "latencyMs": 233,
+      "usage": {
+        "inputTokens": 1265,
+        "outputTokens": 192
+      },
+      "signals": {
+        "externalEvidence": 0.5,
+        "relevantStateChanged": 0.15,
+        "assumptionContradicted": 0.06,
+        "strategyNovelty": 0.31,
+        "blockerChanged": "SAME_BLOCKER",
+        "successClaimed": 0.04,
+        "verifiedSuccess": 0.3
+      }
+    },
+    {
+      "design": "B",
+      "fixtureId": "busy-cert-chain",
+      "expected": "SEMANTIC_BUSYWORK",
+      "predicted": "UNCERTAIN",
+      "correct": false,
+      "latencyMs": 206,
+      "usage": {
+        "inputTokens": 1222,
+        "outputTokens": 192
+      },
+      "signals": {
+        "externalEvidence": 0.46,
+        "relevantStateChanged": 0.12,
+        "assumptionContradicted": 0.06,
+        "strategyNovelty": 0.38,
+        "blockerChanged": "SAME_BLOCKER",
+        "successClaimed": 0.04,
+        "verifiedSuccess": 0.36
+      }
+    },
+    {
+      "design": "B",
+      "fixtureId": "busy-ci-disk",
+      "expected": "SEMANTIC_BUSYWORK",
+      "predicted": "SEMANTIC_BUSYWORK",
+      "correct": true,
+      "latencyMs": 183,
+      "usage": {
+        "inputTokens": 1254,
+        "outputTokens": 192
+      },
+      "signals": {
+        "externalEvidence": 0.57,
+        "relevantStateChanged": 0.2,
+        "assumptionContradicted": 0.87,
+        "strategyNovelty": 0.5,
+        "blockerChanged": "SAME_BLOCKER",
+        "successClaimed": 0.04,
+        "verifiedSuccess": 0.37
+      }
+    },
+    {
+      "design": "B",
+      "fixtureId": "busy-rate-limit",
+      "expected": "SEMANTIC_BUSYWORK",
+      "predicted": "SEMANTIC_BUSYWORK",
+      "correct": true,
+      "latencyMs": 132,
+      "usage": {
+        "inputTokens": 1255,
+        "outputTokens": 192
+      },
+      "signals": {
+        "externalEvidence": 0.68,
+        "relevantStateChanged": 0.16,
+        "assumptionContradicted": 0.75,
+        "strategyNovelty": 0.33,
+        "blockerChanged": "SAME_BLOCKER",
+        "successClaimed": 0.05,
+        "verifiedSuccess": 0.26
+      }
+    },
+    {
+      "design": "B",
+      "fixtureId": "busy-deadlock",
+      "expected": "SEMANTIC_BUSYWORK",
+      "predicted": "SEMANTIC_BUSYWORK",
+      "correct": true,
+      "latencyMs": 121,
+      "usage": {
+        "inputTokens": 1236,
+        "outputTokens": 192
+      },
+      "signals": {
+        "externalEvidence": 0.29,
+        "relevantStateChanged": 0.22,
+        "assumptionContradicted": 0.6,
+        "strategyNovelty": 0.3,
+        "blockerChanged": "SAME_BLOCKER",
+        "successClaimed": 0.05,
+        "verifiedSuccess": 0.34
+      }
+    },
+    {
+      "design": "B",
+      "fixtureId": "prod-flaky-narrow",
+      "expected": "PRODUCTIVE_EXPLORATION",
+      "predicted": "PRODUCTIVE_EXPLORATION",
+      "correct": true,
+      "latencyMs": 90,
+      "usage": {
+        "inputTokens": 1241,
+        "outputTokens": 191
+      },
+      "signals": {
+        "externalEvidence": 0.67,
+        "relevantStateChanged": 0.3,
+        "assumptionContradicted": 0.06,
+        "strategyNovelty": 0.82,
+        "blockerChanged": "NEW_BLOCKER",
+        "successClaimed": 0.12,
+        "verifiedSuccess": 0.43
+      }
+    },
+    {
+      "design": "B",
+      "fixtureId": "prod-memleak-narrow",
+      "expected": "PRODUCTIVE_EXPLORATION",
+      "predicted": "PRODUCTIVE_EXPLORATION",
+      "correct": true,
+      "latencyMs": 92,
+      "usage": {
+        "inputTokens": 1248,
+        "outputTokens": 193
+      },
+      "signals": {
+        "externalEvidence": 0.38,
+        "relevantStateChanged": 0.28,
+        "assumptionContradicted": 0.05,
+        "strategyNovelty": 0.57,
+        "blockerChanged": "BLOCKER_RESOLVED",
+        "successClaimed": 0.5,
+        "verifiedSuccess": 0.35
+      }
+    },
+    {
+      "design": "B",
+      "fixtureId": "prod-ssl-narrow",
+      "expected": "PRODUCTIVE_EXPLORATION",
+      "predicted": "PRODUCTIVE_EXPLORATION",
+      "correct": true,
+      "latencyMs": 235,
+      "usage": {
+        "inputTokens": 1231,
+        "outputTokens": 191
+      },
+      "signals": {
+        "externalEvidence": 0.58,
+        "relevantStateChanged": 0.22,
+        "assumptionContradicted": 0.05,
+        "strategyNovelty": 0.78,
+        "blockerChanged": "NEW_BLOCKER",
+        "successClaimed": 0.17,
+        "verifiedSuccess": 0.45
+      }
+    },
+    {
+      "design": "B",
+      "fixtureId": "prod-ci-disk-narrow",
+      "expected": "PRODUCTIVE_EXPLORATION",
+      "predicted": "PRODUCTIVE_EXPLORATION",
+      "correct": true,
+      "latencyMs": 127,
+      "usage": {
+        "inputTokens": 1236,
+        "outputTokens": 191
+      },
+      "signals": {
+        "externalEvidence": 0.63,
+        "relevantStateChanged": 0.32,
+        "assumptionContradicted": 0.09,
+        "strategyNovelty": 0.79,
+        "blockerChanged": "NEW_BLOCKER",
+        "successClaimed": 0.37,
+        "verifiedSuccess": 0.46
+      }
+    },
+    {
+      "design": "B",
+      "fixtureId": "prod-rate-limit-narrow",
+      "expected": "PRODUCTIVE_EXPLORATION",
+      "predicted": "PRODUCTIVE_EXPLORATION",
+      "correct": true,
+      "latencyMs": 185,
+      "usage": {
+        "inputTokens": 1210,
+        "outputTokens": 192
+      },
+      "signals": {
+        "externalEvidence": 0.61,
+        "relevantStateChanged": 0.2,
+        "assumptionContradicted": 0.08,
+        "strategyNovelty": 0.67,
+        "blockerChanged": "SAME_BLOCKER",
+        "successClaimed": 0.08,
+        "verifiedSuccess": 0.41
+      }
+    },
+    {
+      "design": "B",
+      "fixtureId": "prod-deadlock-narrow",
+      "expected": "PRODUCTIVE_EXPLORATION",
+      "predicted": "UNCERTAIN",
+      "correct": false,
+      "latencyMs": 106,
+      "usage": {
+        "inputTokens": 1181,
+        "outputTokens": 192
+      },
+      "signals": {
+        "externalEvidence": 0.45,
+        "relevantStateChanged": 0.32,
+        "assumptionContradicted": 0.04,
+        "strategyNovelty": 0.41,
+        "blockerChanged": "SAME_BLOCKER",
+        "successClaimed": 0.42,
+        "verifiedSuccess": 0.33
+      }
+    },
+    {
+      "design": "B",
+      "fixtureId": "prod-timeout-signature",
+      "expected": "PRODUCTIVE_EXPLORATION",
+      "predicted": "PRODUCTIVE_EXPLORATION",
+      "correct": true,
+      "latencyMs": 215,
+      "usage": {
+        "inputTokens": 1252,
+        "outputTokens": 192
+      },
+      "signals": {
+        "externalEvidence": 0.74,
+        "relevantStateChanged": 0.18,
+        "assumptionContradicted": 0.08,
+        "strategyNovelty": 0.78,
+        "blockerChanged": "SAME_BLOCKER",
+        "successClaimed": 0.07,
+        "verifiedSuccess": 0.44
+      }
+    },
+    {
+      "design": "B",
+      "fixtureId": "unverified-deploy",
+      "expected": "UNVERIFIED_SUCCESS",
+      "predicted": "UNVERIFIED_SUCCESS",
+      "correct": true,
+      "latencyMs": 237,
+      "usage": {
+        "inputTokens": 1197,
+        "outputTokens": 193
+      },
+      "signals": {
+        "externalEvidence": 0.62,
+        "relevantStateChanged": 0.74,
+        "assumptionContradicted": 0.07,
+        "strategyNovelty": 0.12,
+        "blockerChanged": "BLOCKER_RESOLVED",
+        "successClaimed": 0.97,
+        "verifiedSuccess": 0.25
+      }
+    },
+    {
+      "design": "B",
+      "fixtureId": "verified-deploy",
+      "expected": "VERIFIED_SUCCESS",
+      "predicted": "VERIFIED_SUCCESS",
+      "correct": true,
+      "latencyMs": 410,
+      "usage": {
+        "inputTokens": 1199,
+        "outputTokens": 193
+      },
+      "signals": {
+        "externalEvidence": 0.84,
+        "relevantStateChanged": 0.9,
+        "assumptionContradicted": 0.04,
+        "strategyNovelty": 0.21,
+        "blockerChanged": "BLOCKER_RESOLVED",
+        "successClaimed": 0.85,
+        "verifiedSuccess": 0.82
+      }
+    },
+    {
+      "design": "B",
+      "fixtureId": "unverified-tests",
+      "expected": "UNVERIFIED_SUCCESS",
+      "predicted": "UNVERIFIED_SUCCESS",
+      "correct": true,
+      "latencyMs": 159,
+      "usage": {
+        "inputTokens": 1176,
+        "outputTokens": 192
+      },
+      "signals": {
+        "externalEvidence": 0.15,
+        "relevantStateChanged": 0.54,
+        "assumptionContradicted": 0.08,
+        "strategyNovelty": 0.06,
+        "blockerChanged": "SAME_BLOCKER",
+        "successClaimed": 0.94,
+        "verifiedSuccess": 0.14
+      }
+    },
+    {
+      "design": "B",
+      "fixtureId": "verified-tests",
+      "expected": "VERIFIED_SUCCESS",
+      "predicted": "UNVERIFIED_SUCCESS",
+      "correct": false,
+      "latencyMs": 149,
+      "usage": {
+        "inputTokens": 1178,
+        "outputTokens": 193
+      },
+      "signals": {
+        "externalEvidence": 0.52,
+        "relevantStateChanged": 0.75,
+        "assumptionContradicted": 0.05,
+        "strategyNovelty": 0.1,
+        "blockerChanged": "BLOCKER_RESOLVED",
+        "successClaimed": 0.95,
+        "verifiedSuccess": 0.33
+      }
+    },
+    {
+      "design": "B",
+      "fixtureId": "unverified-migration",
+      "expected": "UNVERIFIED_SUCCESS",
+      "predicted": "UNVERIFIED_SUCCESS",
+      "correct": true,
+      "latencyMs": 110,
+      "usage": {
+        "inputTokens": 1171,
+        "outputTokens": 192
+      },
+      "signals": {
+        "externalEvidence": 0.58,
+        "relevantStateChanged": 0.39,
+        "assumptionContradicted": 0.06,
+        "strategyNovelty": 0.19,
+        "blockerChanged": "SAME_BLOCKER",
+        "successClaimed": 0.95,
+        "verifiedSuccess": 0.17
+      }
+    },
+    {
+      "design": "B",
+      "fixtureId": "verified-migration",
+      "expected": "VERIFIED_SUCCESS",
+      "predicted": "UNVERIFIED_SUCCESS",
+      "correct": false,
+      "latencyMs": 166,
+      "usage": {
+        "inputTokens": 1174,
+        "outputTokens": 192
+      },
+      "signals": {
+        "externalEvidence": 0.53,
+        "relevantStateChanged": 0.68,
+        "assumptionContradicted": 0.05,
+        "strategyNovelty": 0.3,
+        "blockerChanged": "NO_CLEAR_BLOCKER",
+        "successClaimed": 0.92,
+        "verifiedSuccess": 0.45
+      }
+    },
+    {
+      "design": "B",
+      "fixtureId": "unverified-bugfix",
+      "expected": "UNVERIFIED_SUCCESS",
+      "predicted": "UNVERIFIED_SUCCESS",
+      "correct": true,
+      "latencyMs": 129,
+      "usage": {
+        "inputTokens": 1169,
+        "outputTokens": 192
+      },
+      "signals": {
+        "externalEvidence": 0.06,
+        "relevantStateChanged": 0.44,
+        "assumptionContradicted": 0.05,
+        "strategyNovelty": 0.14,
+        "blockerChanged": "SAME_BLOCKER",
+        "successClaimed": 0.97,
+        "verifiedSuccess": 0.11
+      }
+    },
+    {
+      "design": "B",
+      "fixtureId": "verified-bugfix",
+      "expected": "VERIFIED_SUCCESS",
+      "predicted": "UNVERIFIED_SUCCESS",
+      "correct": false,
+      "latencyMs": 248,
+      "usage": {
+        "inputTokens": 1175,
+        "outputTokens": 193
+      },
+      "signals": {
+        "externalEvidence": 0.52,
+        "relevantStateChanged": 0.57,
+        "assumptionContradicted": 0.04,
+        "strategyNovelty": 0.13,
+        "blockerChanged": "BLOCKER_RESOLVED",
+        "successClaimed": 0.88,
+        "verifiedSuccess": 0.31
+      }
+    },
+    {
+      "design": "B",
+      "fixtureId": "unverified-cache-fix",
+      "expected": "UNVERIFIED_SUCCESS",
+      "predicted": "UNVERIFIED_SUCCESS",
+      "correct": true,
+      "latencyMs": 151,
+      "usage": {
+        "inputTokens": 1188,
+        "outputTokens": 192
+      },
+      "signals": {
+        "externalEvidence": 0.22,
+        "relevantStateChanged": 0.52,
+        "assumptionContradicted": 0.07,
+        "strategyNovelty": 0.14,
+        "blockerChanged": "SAME_BLOCKER",
+        "successClaimed": 0.96,
+        "verifiedSuccess": 0.13
+      }
+    },
+    {
+      "design": "B",
+      "fixtureId": "verified-cache-fix",
+      "expected": "VERIFIED_SUCCESS",
+      "predicted": "VERIFIED_SUCCESS",
+      "correct": true,
+      "latencyMs": 213,
+      "usage": {
+        "inputTokens": 1188,
+        "outputTokens": 193
+      },
+      "signals": {
+        "externalEvidence": 0.8,
+        "relevantStateChanged": 0.85,
+        "assumptionContradicted": 0.04,
+        "strategyNovelty": 0.17,
+        "blockerChanged": "BLOCKER_RESOLVED",
+        "successClaimed": 0.88,
+        "verifiedSuccess": 0.78
+      }
+    },
+    {
+      "design": "B",
+      "fixtureId": "unverified-email",
+      "expected": "UNVERIFIED_SUCCESS",
+      "predicted": "UNVERIFIED_SUCCESS",
+      "correct": true,
+      "latencyMs": 103,
+      "usage": {
+        "inputTokens": 1169,
+        "outputTokens": 193
+      },
+      "signals": {
+        "externalEvidence": 0.1,
+        "relevantStateChanged": 0.52,
+        "assumptionContradicted": 0.06,
+        "strategyNovelty": 0.11,
+        "blockerChanged": "BLOCKER_RESOLVED",
+        "successClaimed": 0.98,
+        "verifiedSuccess": 0.11
+      }
+    },
+    {
+      "design": "B",
+      "fixtureId": "verified-email",
+      "expected": "VERIFIED_SUCCESS",
+      "predicted": "VERIFIED_SUCCESS",
+      "correct": true,
+      "latencyMs": 204,
+      "usage": {
+        "inputTokens": 1166,
+        "outputTokens": 193
+      },
+      "signals": {
+        "externalEvidence": 0.69,
+        "relevantStateChanged": 0.81,
+        "assumptionContradicted": 0.04,
+        "strategyNovelty": 0.18,
+        "blockerChanged": "BLOCKER_RESOLVED",
+        "successClaimed": 0.89,
+        "verifiedSuccess": 0.65
+      }
+    },
+    {
+      "design": "B",
+      "fixtureId": "unverified-perf",
+      "expected": "UNVERIFIED_SUCCESS",
+      "predicted": "UNVERIFIED_SUCCESS",
+      "correct": true,
+      "latencyMs": 250,
+      "usage": {
+        "inputTokens": 1169,
+        "outputTokens": 192
+      },
+      "signals": {
+        "externalEvidence": 0.21,
+        "relevantStateChanged": 0.74,
+        "assumptionContradicted": 0.05,
+        "strategyNovelty": 0.08,
+        "blockerChanged": "SAME_BLOCKER",
+        "successClaimed": 0.97,
+        "verifiedSuccess": 0.13
+      }
+    },
+    {
+      "design": "B",
+      "fixtureId": "verified-perf",
+      "expected": "VERIFIED_SUCCESS",
+      "predicted": "UNVERIFIED_SUCCESS",
+      "correct": false,
+      "latencyMs": 170,
+      "usage": {
+        "inputTokens": 1187,
+        "outputTokens": 193
+      },
+      "signals": {
+        "externalEvidence": 0.68,
+        "relevantStateChanged": 0.83,
+        "assumptionContradicted": 0.04,
+        "strategyNovelty": 0.13,
+        "blockerChanged": "BLOCKER_RESOLVED",
+        "successClaimed": 0.93,
+        "verifiedSuccess": 0.54
+      }
+    },
+    {
+      "design": "B",
+      "fixtureId": "unverified-a11y",
+      "expected": "UNVERIFIED_SUCCESS",
+      "predicted": "UNVERIFIED_SUCCESS",
+      "correct": true,
+      "latencyMs": 188,
+      "usage": {
+        "inputTokens": 1195,
+        "outputTokens": 192
+      },
+      "signals": {
+        "externalEvidence": 0.12,
+        "relevantStateChanged": 0.44,
+        "assumptionContradicted": 0.14,
+        "strategyNovelty": 0.07,
+        "blockerChanged": "SAME_BLOCKER",
+        "successClaimed": 0.98,
+        "verifiedSuccess": 0.1
+      }
+    },
+    {
+      "design": "B",
+      "fixtureId": "verified-a11y",
+      "expected": "VERIFIED_SUCCESS",
+      "predicted": "UNVERIFIED_SUCCESS",
+      "correct": false,
+      "latencyMs": 286,
+      "usage": {
+        "inputTokens": 1203,
+        "outputTokens": 193
+      },
+      "signals": {
+        "externalEvidence": 0.63,
+        "relevantStateChanged": 0.59,
+        "assumptionContradicted": 0.05,
+        "strategyNovelty": 0.48,
+        "blockerChanged": "BLOCKER_RESOLVED",
+        "successClaimed": 0.88,
+        "verifiedSuccess": 0.38
+      }
+    },
+    {
+      "design": "B",
+      "fixtureId": "unverified-security",
+      "expected": "UNVERIFIED_SUCCESS",
+      "predicted": "UNVERIFIED_SUCCESS",
+      "correct": true,
+      "latencyMs": 134,
+      "usage": {
+        "inputTokens": 1171,
+        "outputTokens": 191
+      },
+      "signals": {
+        "externalEvidence": 0.07,
+        "relevantStateChanged": 0.53,
+        "assumptionContradicted": 0.05,
+        "strategyNovelty": 0.3,
+        "blockerChanged": "NEW_BLOCKER",
+        "successClaimed": 0.97,
+        "verifiedSuccess": 0.11
+      }
+    },
+    {
+      "design": "B",
+      "fixtureId": "verified-security",
+      "expected": "VERIFIED_SUCCESS",
+      "predicted": "UNVERIFIED_SUCCESS",
+      "correct": false,
+      "latencyMs": 149,
+      "usage": {
+        "inputTokens": 1171,
+        "outputTokens": 193
+      },
+      "signals": {
+        "externalEvidence": 0.68,
+        "relevantStateChanged": 0.57,
+        "assumptionContradicted": 0.04,
+        "strategyNovelty": 0.45,
+        "blockerChanged": "BLOCKER_RESOLVED",
+        "successClaimed": 0.96,
+        "verifiedSuccess": 0.45
+      }
+    },
+    {
+      "design": "B",
+      "fixtureId": "unverified-webhook",
+      "expected": "UNVERIFIED_SUCCESS",
+      "predicted": "UNVERIFIED_SUCCESS",
+      "correct": true,
+      "latencyMs": 185,
+      "usage": {
+        "inputTokens": 1166,
+        "outputTokens": 193
+      },
+      "signals": {
+        "externalEvidence": 0.11,
+        "relevantStateChanged": 0.52,
+        "assumptionContradicted": 0.05,
+        "strategyNovelty": 0.11,
+        "blockerChanged": "BLOCKER_RESOLVED",
+        "successClaimed": 0.97,
+        "verifiedSuccess": 0.11
+      }
+    },
+    {
+      "design": "B",
+      "fixtureId": "verified-webhook",
+      "expected": "VERIFIED_SUCCESS",
+      "predicted": "VERIFIED_SUCCESS",
+      "correct": true,
+      "latencyMs": 185,
+      "usage": {
+        "inputTokens": 1175,
+        "outputTokens": 193
+      },
+      "signals": {
+        "externalEvidence": 0.82,
+        "relevantStateChanged": 0.74,
+        "assumptionContradicted": 0.05,
+        "strategyNovelty": 0.18,
+        "blockerChanged": "BLOCKER_RESOLVED",
+        "successClaimed": 0.76,
+        "verifiedSuccess": 0.75
+      }
+    }
+  ],
+  "resultsC": [
+    {
+      "design": "C",
+      "fixtureId": "busy-dns-tls",
+      "expected": "SEMANTIC_BUSYWORK",
+      "predicted": "SEMANTIC_BUSYWORK",
+      "correct": true,
+      "latencyMs": 99,
+      "usage": {
+        "inputTokens": 1685,
+        "outputTokens": 260
+      },
+      "signals": {
+        "externalEvidence": 0.51,
+        "relevantStateChanged": 0.19,
+        "assumptionContradicted": 0.77,
+        "strategyNovelty": 0.69,
+        "blockerChanged": "SAME_BLOCKER",
+        "successClaimed": 0.03,
+        "verifiedSuccess": 0.35,
+        "progressing": 0.3,
+        "state": "STALLED",
+        "p_COMPLETE": 0,
+        "p_PROGRESSING": 0.36,
+        "p_REGRESSING": 0,
+        "p_STALLED": 0.64
+      }
+    },
+    {
+      "design": "C",
+      "fixtureId": "prod-dns-tls",
+      "expected": "PRODUCTIVE_EXPLORATION",
+      "predicted": "PRODUCTIVE_EXPLORATION",
+      "correct": true,
+      "latencyMs": 168,
+      "usage": {
+        "inputTokens": 1723,
+        "outputTokens": 259
+      },
+      "signals": {
+        "externalEvidence": 0.4,
+        "relevantStateChanged": 0.37,
+        "assumptionContradicted": 0.24,
+        "strategyNovelty": 0.74,
+        "blockerChanged": "NEW_BLOCKER",
+        "successClaimed": 0.09,
+        "verifiedSuccess": 0.36,
+        "progressing": 0.72,
+        "state": "PROGRESSING",
+        "p_REGRESSING": 0,
+        "p_PROGRESSING": 1,
+        "p_STALLED": 0,
+        "p_COMPLETE": 0
+      }
+    },
+    {
+      "design": "C",
+      "fixtureId": "busy-parser",
+      "expected": "SEMANTIC_BUSYWORK",
+      "predicted": "SEMANTIC_BUSYWORK",
+      "correct": true,
+      "latencyMs": 153,
+      "usage": {
+        "inputTokens": 1706,
+        "outputTokens": 260
+      },
+      "signals": {
+        "externalEvidence": 0.29,
+        "relevantStateChanged": 0.17,
+        "assumptionContradicted": 0.9,
+        "strategyNovelty": 0.19,
+        "blockerChanged": "SAME_BLOCKER",
+        "successClaimed": 0.07,
+        "verifiedSuccess": 0.28,
+        "progressing": 0.17,
+        "state": "STALLED",
+        "p_PROGRESSING": 0.08,
+        "p_STALLED": 0.92,
+        "p_REGRESSING": 0,
+        "p_COMPLETE": 0
+      }
+    },
+    {
+      "design": "C",
+      "fixtureId": "prod-parser",
+      "expected": "PRODUCTIVE_EXPLORATION",
+      "predicted": "UNVERIFIED_SUCCESS",
+      "correct": false,
+      "latencyMs": 676,
+      "usage": {
+        "inputTokens": 1740,
+        "outputTokens": 261
+      },
+      "signals": {
+        "externalEvidence": 0.5,
+        "relevantStateChanged": 0.38,
+        "assumptionContradicted": 0.08,
+        "strategyNovelty": 0.79,
+        "blockerChanged": "BLOCKER_RESOLVED",
+        "successClaimed": 0.61,
+        "verifiedSuccess": 0.32,
+        "progressing": 0.88,
+        "state": "PROGRESSING",
+        "p_COMPLETE": 0.01,
+        "p_PROGRESSING": 0.99,
+        "p_STALLED": 0,
+        "p_REGRESSING": 0
+      }
+    },
+    {
+      "design": "C",
+      "fixtureId": "busy-permissions",
+      "expected": "SEMANTIC_BUSYWORK",
+      "predicted": "SEMANTIC_BUSYWORK",
+      "correct": true,
+      "latencyMs": 198,
+      "usage": {
+        "inputTokens": 1670,
+        "outputTokens": 260
+      },
+      "signals": {
+        "externalEvidence": 0.47,
+        "relevantStateChanged": 0.13,
+        "assumptionContradicted": 0.58,
+        "strategyNovelty": 0.28,
+        "blockerChanged": "SAME_BLOCKER",
+        "successClaimed": 0.04,
+        "verifiedSuccess": 0.33,
+        "progressing": 0.25,
+        "state": "STALLED",
+        "p_COMPLETE": 0,
+        "p_REGRESSING": 0,
+        "p_STALLED": 0.97,
+        "p_PROGRESSING": 0.03
+      }
+    },
+    {
+      "design": "C",
+      "fixtureId": "prod-permissions",
+      "expected": "PRODUCTIVE_EXPLORATION",
+      "predicted": "PRODUCTIVE_EXPLORATION",
+      "correct": true,
+      "latencyMs": 129,
+      "usage": {
+        "inputTokens": 1689,
+        "outputTokens": 259
+      },
+      "signals": {
+        "externalEvidence": 0.47,
+        "relevantStateChanged": 0.43,
+        "assumptionContradicted": 0.09,
+        "strategyNovelty": 0.75,
+        "blockerChanged": "NEW_BLOCKER",
+        "successClaimed": 0.38,
+        "verifiedSuccess": 0.41,
+        "progressing": 0.81,
+        "state": "PROGRESSING",
+        "p_REGRESSING": 0,
+        "p_PROGRESSING": 1,
+        "p_STALLED": 0,
+        "p_COMPLETE": 0
+      }
+    },
+    {
+      "design": "C",
+      "fixtureId": "busy-cache",
+      "expected": "SEMANTIC_BUSYWORK",
+      "predicted": "SEMANTIC_BUSYWORK",
+      "correct": true,
+      "latencyMs": 198,
+      "usage": {
+        "inputTokens": 1703,
+        "outputTokens": 260
+      },
+      "signals": {
+        "externalEvidence": 0.27,
+        "relevantStateChanged": 0.11,
+        "assumptionContradicted": 0.51,
+        "strategyNovelty": 0.09,
+        "blockerChanged": "SAME_BLOCKER",
+        "successClaimed": 0.06,
+        "verifiedSuccess": 0.24,
+        "progressing": 0.11,
+        "state": "STALLED",
+        "p_COMPLETE": 0,
+        "p_PROGRESSING": 0.02,
+        "p_STALLED": 0.98,
+        "p_REGRESSING": 0
+      }
+    },
+    {
+      "design": "C",
+      "fixtureId": "prod-cache",
+      "expected": "PRODUCTIVE_EXPLORATION",
+      "predicted": "PRODUCTIVE_EXPLORATION",
+      "correct": true,
+      "latencyMs": 196,
+      "usage": {
+        "inputTokens": 1659,
+        "outputTokens": 259
+      },
+      "signals": {
+        "externalEvidence": 0.37,
+        "relevantStateChanged": 0.26,
+        "assumptionContradicted": 0.07,
+        "strategyNovelty": 0.74,
+        "blockerChanged": "NEW_BLOCKER",
+        "successClaimed": 0.28,
+        "verifiedSuccess": 0.34,
+        "progressing": 0.82,
+        "state": "PROGRESSING",
+        "p_COMPLETE": 0,
+        "p_REGRESSING": 0,
+        "p_STALLED": 0,
+        "p_PROGRESSING": 1
+      }
+    },
+    {
+      "design": "C",
+      "fixtureId": "busy-retry",
+      "expected": "SEMANTIC_BUSYWORK",
+      "predicted": "SEMANTIC_BUSYWORK",
+      "correct": true,
+      "latencyMs": 298,
+      "usage": {
+        "inputTokens": 1686,
+        "outputTokens": 260
+      },
+      "signals": {
+        "externalEvidence": 0.6,
+        "relevantStateChanged": 0.12,
+        "assumptionContradicted": 0.16,
+        "strategyNovelty": 0.14,
+        "blockerChanged": "SAME_BLOCKER",
+        "successClaimed": 0.03,
+        "verifiedSuccess": 0.3,
+        "progressing": 0.1,
+        "state": "STALLED",
+        "p_PROGRESSING": 0,
+        "p_REGRESSING": 0,
+        "p_COMPLETE": 0,
+        "p_STALLED": 1
+      }
+    },
+    {
+      "design": "C",
+      "fixtureId": "prod-retry",
+      "expected": "PRODUCTIVE_EXPLORATION",
+      "predicted": "VERIFIED_SUCCESS",
+      "correct": false,
+      "latencyMs": 229,
+      "usage": {
+        "inputTokens": 1668,
+        "outputTokens": 260
+      },
+      "signals": {
+        "externalEvidence": 0.84,
+        "relevantStateChanged": 0.52,
+        "assumptionContradicted": 0.06,
+        "strategyNovelty": 0.21,
+        "blockerChanged": "BLOCKER_RESOLVED",
+        "successClaimed": 0.93,
+        "verifiedSuccess": 0.85,
+        "progressing": 0.93,
+        "state": "COMPLETE",
+        "p_COMPLETE": 0.98,
+        "p_STALLED": 0,
+        "p_PROGRESSING": 0.02,
+        "p_REGRESSING": 0
+      }
+    },
+    {
+      "design": "C",
+      "fixtureId": "busy-docker",
+      "expected": "SEMANTIC_BUSYWORK",
+      "predicted": "SEMANTIC_BUSYWORK",
+      "correct": true,
+      "latencyMs": 132,
+      "usage": {
+        "inputTokens": 1684,
+        "outputTokens": 260
+      },
+      "signals": {
+        "externalEvidence": 0.44,
+        "relevantStateChanged": 0.29,
+        "assumptionContradicted": 0.34,
+        "strategyNovelty": 0.26,
+        "blockerChanged": "SAME_BLOCKER",
+        "successClaimed": 0.05,
+        "verifiedSuccess": 0.27,
+        "progressing": 0.14,
+        "state": "STALLED",
+        "p_COMPLETE": 0,
+        "p_STALLED": 1,
+        "p_REGRESSING": 0,
+        "p_PROGRESSING": 0
+      }
+    },
+    {
+      "design": "C",
+      "fixtureId": "prod-docker",
+      "expected": "PRODUCTIVE_EXPLORATION",
+      "predicted": "PRODUCTIVE_EXPLORATION",
+      "correct": true,
+      "latencyMs": 149,
+      "usage": {
+        "inputTokens": 1700,
+        "outputTokens": 259
+      },
+      "signals": {
+        "externalEvidence": 0.66,
+        "relevantStateChanged": 0.36,
+        "assumptionContradicted": 0.07,
+        "strategyNovelty": 0.69,
+        "blockerChanged": "NEW_BLOCKER",
+        "successClaimed": 0.12,
+        "verifiedSuccess": 0.41,
+        "progressing": 0.84,
+        "state": "PROGRESSING",
+        "p_COMPLETE": 0,
+        "p_PROGRESSING": 1,
+        "p_STALLED": 0,
+        "p_REGRESSING": 0
+      }
+    },
+    {
+      "design": "C",
+      "fixtureId": "busy-sql",
+      "expected": "SEMANTIC_BUSYWORK",
+      "predicted": "SEMANTIC_BUSYWORK",
+      "correct": true,
+      "latencyMs": 125,
+      "usage": {
+        "inputTokens": 1720,
+        "outputTokens": 260
+      },
+      "signals": {
+        "externalEvidence": 0.61,
+        "relevantStateChanged": 0.33,
+        "assumptionContradicted": 0.79,
+        "strategyNovelty": 0.35,
+        "blockerChanged": "SAME_BLOCKER",
+        "successClaimed": 0.06,
+        "verifiedSuccess": 0.31,
+        "progressing": 0.1,
+        "state": "STALLED",
+        "p_COMPLETE": 0,
+        "p_PROGRESSING": 0,
+        "p_STALLED": 1,
+        "p_REGRESSING": 0
+      }
+    },
+    {
+      "design": "C",
+      "fixtureId": "prod-sql",
+      "expected": "PRODUCTIVE_EXPLORATION",
+      "predicted": "PRODUCTIVE_EXPLORATION",
+      "correct": true,
+      "latencyMs": 215,
+      "usage": {
+        "inputTokens": 1664,
+        "outputTokens": 259
+      },
+      "signals": {
+        "externalEvidence": 0.61,
+        "relevantStateChanged": 0.59,
+        "assumptionContradicted": 0.07,
+        "strategyNovelty": 0.77,
+        "blockerChanged": "NEW_BLOCKER",
+        "successClaimed": 0.16,
+        "verifiedSuccess": 0.46,
+        "progressing": 0.85,
+        "state": "PROGRESSING",
+        "p_STALLED": 0,
+        "p_REGRESSING": 0,
+        "p_PROGRESSING": 1,
+        "p_COMPLETE": 0
+      }
+    },
+    {
+      "design": "C",
+      "fixtureId": "busy-jwt",
+      "expected": "SEMANTIC_BUSYWORK",
+      "predicted": "SEMANTIC_BUSYWORK",
+      "correct": true,
+      "latencyMs": 141,
+      "usage": {
+        "inputTokens": 1703,
+        "outputTokens": 260
+      },
+      "signals": {
+        "externalEvidence": 0.6,
+        "relevantStateChanged": 0.2,
+        "assumptionContradicted": 0.84,
+        "strategyNovelty": 0.22,
+        "blockerChanged": "SAME_BLOCKER",
+        "successClaimed": 0.05,
+        "verifiedSuccess": 0.35,
+        "progressing": 0.23,
+        "state": "STALLED",
+        "p_STALLED": 0.79,
+        "p_COMPLETE": 0,
+        "p_REGRESSING": 0,
+        "p_PROGRESSING": 0.21
+      }
+    },
+    {
+      "design": "C",
+      "fixtureId": "prod-jwt",
+      "expected": "PRODUCTIVE_EXPLORATION",
+      "predicted": "PRODUCTIVE_EXPLORATION",
+      "correct": true,
+      "latencyMs": 284,
+      "usage": {
+        "inputTokens": 1679,
+        "outputTokens": 259
+      },
+      "signals": {
+        "externalEvidence": 0.58,
+        "relevantStateChanged": 0.33,
+        "assumptionContradicted": 0.07,
+        "strategyNovelty": 0.61,
+        "blockerChanged": "NEW_BLOCKER",
+        "successClaimed": 0.45,
+        "verifiedSuccess": 0.42,
+        "progressing": 0.83,
+        "state": "PROGRESSING",
+        "p_COMPLETE": 0,
+        "p_REGRESSING": 0,
+        "p_PROGRESSING": 1,
+        "p_STALLED": 0
+      }
+    },
+    {
+      "design": "C",
+      "fixtureId": "busy-flaky-test",
+      "expected": "SEMANTIC_BUSYWORK",
+      "predicted": "SEMANTIC_BUSYWORK",
+      "correct": true,
+      "latencyMs": 240,
+      "usage": {
+        "inputTokens": 1699,
+        "outputTokens": 260
+      },
+      "signals": {
+        "externalEvidence": 0.54,
+        "relevantStateChanged": 0.49,
+        "assumptionContradicted": 0.55,
+        "strategyNovelty": 0.52,
+        "blockerChanged": "SAME_BLOCKER",
+        "successClaimed": 0.05,
+        "verifiedSuccess": 0.32,
+        "progressing": 0.21,
+        "state": "STALLED",
+        "p_REGRESSING": 0,
+        "p_PROGRESSING": 0.03,
+        "p_STALLED": 0.97,
+        "p_COMPLETE": 0
+      }
+    },
+    {
+      "design": "C",
+      "fixtureId": "busy-wrong-env",
+      "expected": "SEMANTIC_BUSYWORK",
+      "predicted": "SEMANTIC_BUSYWORK",
+      "correct": true,
+      "latencyMs": 171,
+      "usage": {
+        "inputTokens": 1717,
+        "outputTokens": 260
+      },
+      "signals": {
+        "externalEvidence": 0.87,
+        "relevantStateChanged": 0.12,
+        "assumptionContradicted": 0.47,
+        "strategyNovelty": 0.2,
+        "blockerChanged": "SAME_BLOCKER",
+        "successClaimed": 0.07,
+        "verifiedSuccess": 0.33,
+        "progressing": 0.16,
+        "state": "STALLED",
+        "p_REGRESSING": 0,
+        "p_COMPLETE": 0,
+        "p_STALLED": 0.98,
+        "p_PROGRESSING": 0.02
+      }
+    },
+    {
+      "design": "C",
+      "fixtureId": "busy-memleak",
+      "expected": "SEMANTIC_BUSYWORK",
+      "predicted": "SEMANTIC_BUSYWORK",
+      "correct": true,
+      "latencyMs": 126,
+      "usage": {
+        "inputTokens": 1716,
+        "outputTokens": 260
+      },
+      "signals": {
+        "externalEvidence": 0.47,
+        "relevantStateChanged": 0.14,
+        "assumptionContradicted": 0.06,
+        "strategyNovelty": 0.28,
+        "blockerChanged": "SAME_BLOCKER",
+        "successClaimed": 0.04,
+        "verifiedSuccess": 0.3,
+        "progressing": 0.19,
+        "state": "STALLED",
+        "p_STALLED": 0.98,
+        "p_PROGRESSING": 0.02,
+        "p_REGRESSING": 0,
+        "p_COMPLETE": 0
+      }
+    },
+    {
+      "design": "C",
+      "fixtureId": "busy-cert-chain",
+      "expected": "SEMANTIC_BUSYWORK",
+      "predicted": "PRODUCTIVE_EXPLORATION",
+      "correct": false,
+      "latencyMs": 143,
+      "usage": {
+        "inputTokens": 1673,
+        "outputTokens": 260
+      },
+      "signals": {
+        "externalEvidence": 0.46,
+        "relevantStateChanged": 0.12,
+        "assumptionContradicted": 0.06,
+        "strategyNovelty": 0.35,
+        "blockerChanged": "SAME_BLOCKER",
+        "successClaimed": 0.03,
+        "verifiedSuccess": 0.36,
+        "progressing": 0.5,
+        "state": "PROGRESSING",
+        "p_STALLED": 0.1,
+        "p_COMPLETE": 0,
+        "p_PROGRESSING": 0.9,
+        "p_REGRESSING": 0
+      }
+    },
+    {
+      "design": "C",
+      "fixtureId": "busy-ci-disk",
+      "expected": "SEMANTIC_BUSYWORK",
+      "predicted": "SEMANTIC_BUSYWORK",
+      "correct": true,
+      "latencyMs": 149,
+      "usage": {
+        "inputTokens": 1705,
+        "outputTokens": 260
+      },
+      "signals": {
+        "externalEvidence": 0.55,
+        "relevantStateChanged": 0.18,
+        "assumptionContradicted": 0.85,
+        "strategyNovelty": 0.51,
+        "blockerChanged": "SAME_BLOCKER",
+        "successClaimed": 0.04,
+        "verifiedSuccess": 0.32,
+        "progressing": 0.13,
+        "state": "STALLED",
+        "p_STALLED": 0.99,
+        "p_COMPLETE": 0,
+        "p_PROGRESSING": 0.01,
+        "p_REGRESSING": 0
+      }
+    },
+    {
+      "design": "C",
+      "fixtureId": "busy-rate-limit",
+      "expected": "SEMANTIC_BUSYWORK",
+      "predicted": "SEMANTIC_BUSYWORK",
+      "correct": true,
+      "latencyMs": 322,
+      "usage": {
+        "inputTokens": 1706,
+        "outputTokens": 260
+      },
+      "signals": {
+        "externalEvidence": 0.71,
+        "relevantStateChanged": 0.17,
+        "assumptionContradicted": 0.73,
+        "strategyNovelty": 0.32,
+        "blockerChanged": "SAME_BLOCKER",
+        "successClaimed": 0.05,
+        "verifiedSuccess": 0.3,
+        "progressing": 0.13,
+        "state": "STALLED",
+        "p_COMPLETE": 0,
+        "p_STALLED": 0.95,
+        "p_PROGRESSING": 0.05,
+        "p_REGRESSING": 0
+      }
+    },
+    {
+      "design": "C",
+      "fixtureId": "busy-deadlock",
+      "expected": "SEMANTIC_BUSYWORK",
+      "predicted": "SEMANTIC_BUSYWORK",
+      "correct": true,
+      "latencyMs": 115,
+      "usage": {
+        "inputTokens": 1687,
+        "outputTokens": 260
+      },
+      "signals": {
+        "externalEvidence": 0.28,
+        "relevantStateChanged": 0.26,
+        "assumptionContradicted": 0.57,
+        "strategyNovelty": 0.32,
+        "blockerChanged": "SAME_BLOCKER",
+        "successClaimed": 0.05,
+        "verifiedSuccess": 0.32,
+        "progressing": 0.11,
+        "state": "STALLED",
+        "p_COMPLETE": 0,
+        "p_STALLED": 0.97,
+        "p_PROGRESSING": 0.03,
+        "p_REGRESSING": 0
+      }
+    },
+    {
+      "design": "C",
+      "fixtureId": "prod-flaky-narrow",
+      "expected": "PRODUCTIVE_EXPLORATION",
+      "predicted": "PRODUCTIVE_EXPLORATION",
+      "correct": true,
+      "latencyMs": 307,
+      "usage": {
+        "inputTokens": 1692,
+        "outputTokens": 259
+      },
+      "signals": {
+        "externalEvidence": 0.68,
+        "relevantStateChanged": 0.31,
+        "assumptionContradicted": 0.06,
+        "strategyNovelty": 0.82,
+        "blockerChanged": "NEW_BLOCKER",
+        "successClaimed": 0.12,
+        "verifiedSuccess": 0.42,
+        "progressing": 0.87,
+        "state": "PROGRESSING",
+        "p_REGRESSING": 0,
+        "p_PROGRESSING": 1,
+        "p_COMPLETE": 0,
+        "p_STALLED": 0
+      }
+    },
+    {
+      "design": "C",
+      "fixtureId": "prod-memleak-narrow",
+      "expected": "PRODUCTIVE_EXPLORATION",
+      "predicted": "PRODUCTIVE_EXPLORATION",
+      "correct": true,
+      "latencyMs": 124,
+      "usage": {
+        "inputTokens": 1699,
+        "outputTokens": 260
+      },
+      "signals": {
+        "externalEvidence": 0.37,
+        "relevantStateChanged": 0.28,
+        "assumptionContradicted": 0.05,
+        "strategyNovelty": 0.61,
+        "blockerChanged": "SAME_BLOCKER",
+        "successClaimed": 0.42,
+        "verifiedSuccess": 0.33,
+        "progressing": 0.85,
+        "state": "PROGRESSING",
+        "p_PROGRESSING": 1,
+        "p_REGRESSING": 0,
+        "p_STALLED": 0,
+        "p_COMPLETE": 0
+      }
+    },
+    {
+      "design": "C",
+      "fixtureId": "prod-ssl-narrow",
+      "expected": "PRODUCTIVE_EXPLORATION",
+      "predicted": "PRODUCTIVE_EXPLORATION",
+      "correct": true,
+      "latencyMs": 297,
+      "usage": {
+        "inputTokens": 1682,
+        "outputTokens": 259
+      },
+      "signals": {
+        "externalEvidence": 0.6,
+        "relevantStateChanged": 0.22,
+        "assumptionContradicted": 0.05,
+        "strategyNovelty": 0.75,
+        "blockerChanged": "NEW_BLOCKER",
+        "successClaimed": 0.18,
+        "verifiedSuccess": 0.44,
+        "progressing": 0.88,
+        "state": "PROGRESSING",
+        "p_PROGRESSING": 1,
+        "p_STALLED": 0,
+        "p_REGRESSING": 0,
+        "p_COMPLETE": 0
+      }
+    },
+    {
+      "design": "C",
+      "fixtureId": "prod-ci-disk-narrow",
+      "expected": "PRODUCTIVE_EXPLORATION",
+      "predicted": "PRODUCTIVE_EXPLORATION",
+      "correct": true,
+      "latencyMs": 106,
+      "usage": {
+        "inputTokens": 1687,
+        "outputTokens": 259
+      },
+      "signals": {
+        "externalEvidence": 0.6,
+        "relevantStateChanged": 0.33,
+        "assumptionContradicted": 0.09,
+        "strategyNovelty": 0.78,
+        "blockerChanged": "NEW_BLOCKER",
+        "successClaimed": 0.36,
+        "verifiedSuccess": 0.46,
+        "progressing": 0.77,
+        "state": "PROGRESSING",
+        "p_REGRESSING": 0,
+        "p_PROGRESSING": 1,
+        "p_STALLED": 0,
+        "p_COMPLETE": 0
+      }
+    },
+    {
+      "design": "C",
+      "fixtureId": "prod-rate-limit-narrow",
+      "expected": "PRODUCTIVE_EXPLORATION",
+      "predicted": "PRODUCTIVE_EXPLORATION",
+      "correct": true,
+      "latencyMs": 155,
+      "usage": {
+        "inputTokens": 1661,
+        "outputTokens": 260
+      },
+      "signals": {
+        "externalEvidence": 0.62,
+        "relevantStateChanged": 0.2,
+        "assumptionContradicted": 0.08,
+        "strategyNovelty": 0.69,
+        "blockerChanged": "SAME_BLOCKER",
+        "successClaimed": 0.08,
+        "verifiedSuccess": 0.42,
+        "progressing": 0.79,
+        "state": "PROGRESSING",
+        "p_STALLED": 0,
+        "p_REGRESSING": 0,
+        "p_PROGRESSING": 1,
+        "p_COMPLETE": 0
+      }
+    },
+    {
+      "design": "C",
+      "fixtureId": "prod-deadlock-narrow",
+      "expected": "PRODUCTIVE_EXPLORATION",
+      "predicted": "PRODUCTIVE_EXPLORATION",
+      "correct": true,
+      "latencyMs": 116,
+      "usage": {
+        "inputTokens": 1632,
+        "outputTokens": 260
+      },
+      "signals": {
+        "externalEvidence": 0.46,
+        "relevantStateChanged": 0.33,
+        "assumptionContradicted": 0.05,
+        "strategyNovelty": 0.45,
+        "blockerChanged": "SAME_BLOCKER",
+        "successClaimed": 0.37,
+        "verifiedSuccess": 0.39,
+        "progressing": 0.87,
+        "state": "PROGRESSING",
+        "p_COMPLETE": 0,
+        "p_STALLED": 0,
+        "p_REGRESSING": 0,
+        "p_PROGRESSING": 1
+      }
+    },
+    {
+      "design": "C",
+      "fixtureId": "prod-timeout-signature",
+      "expected": "PRODUCTIVE_EXPLORATION",
+      "predicted": "PRODUCTIVE_EXPLORATION",
+      "correct": true,
+      "latencyMs": 131,
+      "usage": {
+        "inputTokens": 1703,
+        "outputTokens": 260
+      },
+      "signals": {
+        "externalEvidence": 0.74,
+        "relevantStateChanged": 0.2,
+        "assumptionContradicted": 0.08,
+        "strategyNovelty": 0.79,
+        "blockerChanged": "SAME_BLOCKER",
+        "successClaimed": 0.07,
+        "verifiedSuccess": 0.45,
+        "progressing": 0.85,
+        "state": "PROGRESSING",
+        "p_STALLED": 0,
+        "p_REGRESSING": 0,
+        "p_PROGRESSING": 1,
+        "p_COMPLETE": 0
+      }
+    },
+    {
+      "design": "C",
+      "fixtureId": "unverified-deploy",
+      "expected": "UNVERIFIED_SUCCESS",
+      "predicted": "UNVERIFIED_SUCCESS",
+      "correct": true,
+      "latencyMs": 134,
+      "usage": {
+        "inputTokens": 1648,
+        "outputTokens": 261
+      },
+      "signals": {
+        "externalEvidence": 0.62,
+        "relevantStateChanged": 0.72,
+        "assumptionContradicted": 0.06,
+        "strategyNovelty": 0.11,
+        "blockerChanged": "BLOCKER_RESOLVED",
+        "successClaimed": 0.98,
+        "verifiedSuccess": 0.23,
+        "progressing": 0.53,
+        "state": "PROGRESSING",
+        "p_PROGRESSING": 0.95,
+        "p_REGRESSING": 0,
+        "p_STALLED": 0,
+        "p_COMPLETE": 0.05
+      }
+    },
+    {
+      "design": "C",
+      "fixtureId": "verified-deploy",
+      "expected": "VERIFIED_SUCCESS",
+      "predicted": "VERIFIED_SUCCESS",
+      "correct": true,
+      "latencyMs": 122,
+      "usage": {
+        "inputTokens": 1650,
+        "outputTokens": 260
+      },
+      "signals": {
+        "externalEvidence": 0.83,
+        "relevantStateChanged": 0.9,
+        "assumptionContradicted": 0.04,
+        "strategyNovelty": 0.21,
+        "blockerChanged": "BLOCKER_RESOLVED",
+        "successClaimed": 0.83,
+        "verifiedSuccess": 0.83,
+        "progressing": 0.9,
+        "state": "COMPLETE",
+        "p_STALLED": 0,
+        "p_COMPLETE": 0.89,
+        "p_REGRESSING": 0,
+        "p_PROGRESSING": 0.11
+      }
+    },
+    {
+      "design": "C",
+      "fixtureId": "unverified-tests",
+      "expected": "UNVERIFIED_SUCCESS",
+      "predicted": "UNVERIFIED_SUCCESS",
+      "correct": true,
+      "latencyMs": 158,
+      "usage": {
+        "inputTokens": 1627,
+        "outputTokens": 260
+      },
+      "signals": {
+        "externalEvidence": 0.13,
+        "relevantStateChanged": 0.54,
+        "assumptionContradicted": 0.08,
+        "strategyNovelty": 0.06,
+        "blockerChanged": "SAME_BLOCKER",
+        "successClaimed": 0.93,
+        "verifiedSuccess": 0.14,
+        "progressing": 0.27,
+        "state": "PROGRESSING",
+        "p_STALLED": 0.05,
+        "p_REGRESSING": 0,
+        "p_PROGRESSING": 0.95,
+        "p_COMPLETE": 0
+      }
+    },
+    {
+      "design": "C",
+      "fixtureId": "verified-tests",
+      "expected": "VERIFIED_SUCCESS",
+      "predicted": "UNVERIFIED_SUCCESS",
+      "correct": false,
+      "latencyMs": 235,
+      "usage": {
+        "inputTokens": 1629,
+        "outputTokens": 260
+      },
+      "signals": {
+        "externalEvidence": 0.49,
+        "relevantStateChanged": 0.73,
+        "assumptionContradicted": 0.05,
+        "strategyNovelty": 0.1,
+        "blockerChanged": "BLOCKER_RESOLVED",
+        "successClaimed": 0.95,
+        "verifiedSuccess": 0.29,
+        "progressing": 0.78,
+        "state": "COMPLETE",
+        "p_COMPLETE": 0.67,
+        "p_STALLED": 0.01,
+        "p_REGRESSING": 0,
+        "p_PROGRESSING": 0.32
+      }
+    },
+    {
+      "design": "C",
+      "fixtureId": "unverified-migration",
+      "expected": "UNVERIFIED_SUCCESS",
+      "predicted": "UNVERIFIED_SUCCESS",
+      "correct": true,
+      "latencyMs": 169,
+      "usage": {
+        "inputTokens": 1622,
+        "outputTokens": 260
+      },
+      "signals": {
+        "externalEvidence": 0.58,
+        "relevantStateChanged": 0.38,
+        "assumptionContradicted": 0.06,
+        "strategyNovelty": 0.21,
+        "blockerChanged": "SAME_BLOCKER",
+        "successClaimed": 0.95,
+        "verifiedSuccess": 0.15,
+        "progressing": 0.55,
+        "state": "PROGRESSING",
+        "p_COMPLETE": 0.01,
+        "p_REGRESSING": 0,
+        "p_PROGRESSING": 0.99,
+        "p_STALLED": 0
+      }
+    },
+    {
+      "design": "C",
+      "fixtureId": "verified-migration",
+      "expected": "VERIFIED_SUCCESS",
+      "predicted": "UNVERIFIED_SUCCESS",
+      "correct": false,
+      "latencyMs": 204,
+      "usage": {
+        "inputTokens": 1625,
+        "outputTokens": 259
+      },
+      "signals": {
+        "externalEvidence": 0.51,
+        "relevantStateChanged": 0.65,
+        "assumptionContradicted": 0.05,
+        "strategyNovelty": 0.31,
+        "blockerChanged": "NO_CLEAR_BLOCKER",
+        "successClaimed": 0.91,
+        "verifiedSuccess": 0.4,
+        "progressing": 0.78,
+        "state": "COMPLETE",
+        "p_REGRESSING": 0,
+        "p_PROGRESSING": 0.36,
+        "p_STALLED": 0.01,
+        "p_COMPLETE": 0.63
+      }
+    },
+    {
+      "design": "C",
+      "fixtureId": "unverified-bugfix",
+      "expected": "UNVERIFIED_SUCCESS",
+      "predicted": "UNVERIFIED_SUCCESS",
+      "correct": true,
+      "latencyMs": 432,
+      "usage": {
+        "inputTokens": 1620,
+        "outputTokens": 260
+      },
+      "signals": {
+        "externalEvidence": 0.06,
+        "relevantStateChanged": 0.45,
+        "assumptionContradicted": 0.05,
+        "strategyNovelty": 0.11,
+        "blockerChanged": "SAME_BLOCKER",
+        "successClaimed": 0.98,
+        "verifiedSuccess": 0.12,
+        "progressing": 0.43,
+        "state": "PROGRESSING",
+        "p_COMPLETE": 0,
+        "p_PROGRESSING": 1,
+        "p_STALLED": 0,
+        "p_REGRESSING": 0
+      }
+    },
+    {
+      "design": "C",
+      "fixtureId": "verified-bugfix",
+      "expected": "VERIFIED_SUCCESS",
+      "predicted": "UNVERIFIED_SUCCESS",
+      "correct": false,
+      "latencyMs": 238,
+      "usage": {
+        "inputTokens": 1626,
+        "outputTokens": 261
+      },
+      "signals": {
+        "externalEvidence": 0.51,
+        "relevantStateChanged": 0.59,
+        "assumptionContradicted": 0.04,
+        "strategyNovelty": 0.14,
+        "blockerChanged": "BLOCKER_RESOLVED",
+        "successClaimed": 0.91,
+        "verifiedSuccess": 0.32,
+        "progressing": 0.8,
+        "state": "PROGRESSING",
+        "p_REGRESSING": 0,
+        "p_PROGRESSING": 0.69,
+        "p_COMPLETE": 0.31,
+        "p_STALLED": 0
+      }
+    },
+    {
+      "design": "C",
+      "fixtureId": "unverified-cache-fix",
+      "expected": "UNVERIFIED_SUCCESS",
+      "predicted": "UNVERIFIED_SUCCESS",
+      "correct": true,
+      "latencyMs": 169,
+      "usage": {
+        "inputTokens": 1639,
+        "outputTokens": 260
+      },
+      "signals": {
+        "externalEvidence": 0.24,
+        "relevantStateChanged": 0.54,
+        "assumptionContradicted": 0.07,
+        "strategyNovelty": 0.13,
+        "blockerChanged": "SAME_BLOCKER",
+        "successClaimed": 0.96,
+        "verifiedSuccess": 0.1,
+        "progressing": 0.39,
+        "state": "PROGRESSING",
+        "p_REGRESSING": 0,
+        "p_COMPLETE": 0,
+        "p_STALLED": 0.01,
+        "p_PROGRESSING": 0.99
+      }
+    },
+    {
+      "design": "C",
+      "fixtureId": "verified-cache-fix",
+      "expected": "VERIFIED_SUCCESS",
+      "predicted": "VERIFIED_SUCCESS",
+      "correct": true,
+      "latencyMs": 239,
+      "usage": {
+        "inputTokens": 1639,
+        "outputTokens": 260
+      },
+      "signals": {
+        "externalEvidence": 0.79,
+        "relevantStateChanged": 0.84,
+        "assumptionContradicted": 0.04,
+        "strategyNovelty": 0.19,
+        "blockerChanged": "BLOCKER_RESOLVED",
+        "successClaimed": 0.9,
+        "verifiedSuccess": 0.78,
+        "progressing": 0.88,
+        "state": "COMPLETE",
+        "p_COMPLETE": 0.7,
+        "p_PROGRESSING": 0.3,
+        "p_STALLED": 0,
+        "p_REGRESSING": 0
+      }
+    },
+    {
+      "design": "C",
+      "fixtureId": "unverified-email",
+      "expected": "UNVERIFIED_SUCCESS",
+      "predicted": "UNVERIFIED_SUCCESS",
+      "correct": true,
+      "latencyMs": 117,
+      "usage": {
+        "inputTokens": 1620,
+        "outputTokens": 261
+      },
+      "signals": {
+        "externalEvidence": 0.1,
+        "relevantStateChanged": 0.53,
+        "assumptionContradicted": 0.06,
+        "strategyNovelty": 0.1,
+        "blockerChanged": "BLOCKER_RESOLVED",
+        "successClaimed": 0.98,
+        "verifiedSuccess": 0.12,
+        "progressing": 0.37,
+        "state": "PROGRESSING",
+        "p_REGRESSING": 0,
+        "p_PROGRESSING": 1,
+        "p_STALLED": 0,
+        "p_COMPLETE": 0
+      }
+    },
+    {
+      "design": "C",
+      "fixtureId": "verified-email",
+      "expected": "VERIFIED_SUCCESS",
+      "predicted": "UNVERIFIED_SUCCESS",
+      "correct": false,
+      "latencyMs": 175,
+      "usage": {
+        "inputTokens": 1617,
+        "outputTokens": 261
+      },
+      "signals": {
+        "externalEvidence": 0.67,
+        "relevantStateChanged": 0.8,
+        "assumptionContradicted": 0.04,
+        "strategyNovelty": 0.18,
+        "blockerChanged": "BLOCKER_RESOLVED",
+        "successClaimed": 0.89,
+        "verifiedSuccess": 0.64,
+        "progressing": 0.85,
+        "state": "PROGRESSING",
+        "p_REGRESSING": 0,
+        "p_COMPLETE": 0.44,
+        "p_STALLED": 0,
+        "p_PROGRESSING": 0.56
+      }
+    },
+    {
+      "design": "C",
+      "fixtureId": "unverified-perf",
+      "expected": "UNVERIFIED_SUCCESS",
+      "predicted": "UNVERIFIED_SUCCESS",
+      "correct": true,
+      "latencyMs": 209,
+      "usage": {
+        "inputTokens": 1620,
+        "outputTokens": 260
+      },
+      "signals": {
+        "externalEvidence": 0.22,
+        "relevantStateChanged": 0.76,
+        "assumptionContradicted": 0.06,
+        "strategyNovelty": 0.09,
+        "blockerChanged": "SAME_BLOCKER",
+        "successClaimed": 0.97,
+        "verifiedSuccess": 0.11,
+        "progressing": 0.44,
+        "state": "PROGRESSING",
+        "p_STALLED": 0,
+        "p_PROGRESSING": 1,
+        "p_REGRESSING": 0,
+        "p_COMPLETE": 0
+      }
+    },
+    {
+      "design": "C",
+      "fixtureId": "verified-perf",
+      "expected": "VERIFIED_SUCCESS",
+      "predicted": "UNVERIFIED_SUCCESS",
+      "correct": false,
+      "latencyMs": 140,
+      "usage": {
+        "inputTokens": 1638,
+        "outputTokens": 260
+      },
+      "signals": {
+        "externalEvidence": 0.66,
+        "relevantStateChanged": 0.82,
+        "assumptionContradicted": 0.03,
+        "strategyNovelty": 0.14,
+        "blockerChanged": "BLOCKER_RESOLVED",
+        "successClaimed": 0.94,
+        "verifiedSuccess": 0.54,
+        "progressing": 0.86,
+        "state": "COMPLETE",
+        "p_PROGRESSING": 0.19,
+        "p_COMPLETE": 0.81,
+        "p_REGRESSING": 0,
+        "p_STALLED": 0
+      }
+    },
+    {
+      "design": "C",
+      "fixtureId": "unverified-a11y",
+      "expected": "UNVERIFIED_SUCCESS",
+      "predicted": "UNVERIFIED_SUCCESS",
+      "correct": true,
+      "latencyMs": 212,
+      "usage": {
+        "inputTokens": 1646,
+        "outputTokens": 260
+      },
+      "signals": {
+        "externalEvidence": 0.11,
+        "relevantStateChanged": 0.48,
+        "assumptionContradicted": 0.14,
+        "strategyNovelty": 0.07,
+        "blockerChanged": "SAME_BLOCKER",
+        "successClaimed": 0.98,
+        "verifiedSuccess": 0.09,
+        "progressing": 0.51,
+        "state": "PROGRESSING",
+        "p_COMPLETE": 0,
+        "p_STALLED": 0.02,
+        "p_PROGRESSING": 0.95,
+        "p_REGRESSING": 0.03
+      }
+    },
+    {
+      "design": "C",
+      "fixtureId": "verified-a11y",
+      "expected": "VERIFIED_SUCCESS",
+      "predicted": "UNVERIFIED_SUCCESS",
+      "correct": false,
+      "latencyMs": 128,
+      "usage": {
+        "inputTokens": 1654,
+        "outputTokens": 261
+      },
+      "signals": {
+        "externalEvidence": 0.6,
+        "relevantStateChanged": 0.58,
+        "assumptionContradicted": 0.05,
+        "strategyNovelty": 0.45,
+        "blockerChanged": "BLOCKER_RESOLVED",
+        "successClaimed": 0.9,
+        "verifiedSuccess": 0.37,
+        "progressing": 0.79,
+        "state": "PROGRESSING",
+        "p_PROGRESSING": 0.62,
+        "p_STALLED": 0,
+        "p_REGRESSING": 0,
+        "p_COMPLETE": 0.38
+      }
+    },
+    {
+      "design": "C",
+      "fixtureId": "unverified-security",
+      "expected": "UNVERIFIED_SUCCESS",
+      "predicted": "UNVERIFIED_SUCCESS",
+      "correct": true,
+      "latencyMs": 211,
+      "usage": {
+        "inputTokens": 1622,
+        "outputTokens": 259
+      },
+      "signals": {
+        "externalEvidence": 0.07,
+        "relevantStateChanged": 0.56,
+        "assumptionContradicted": 0.05,
+        "strategyNovelty": 0.29,
+        "blockerChanged": "NEW_BLOCKER",
+        "successClaimed": 0.98,
+        "verifiedSuccess": 0.12,
+        "progressing": 0.58,
+        "state": "PROGRESSING",
+        "p_COMPLETE": 0,
+        "p_PROGRESSING": 1,
+        "p_STALLED": 0,
+        "p_REGRESSING": 0
+      }
+    },
+    {
+      "design": "C",
+      "fixtureId": "verified-security",
+      "expected": "VERIFIED_SUCCESS",
+      "predicted": "UNVERIFIED_SUCCESS",
+      "correct": false,
+      "latencyMs": 161,
+      "usage": {
+        "inputTokens": 1622,
+        "outputTokens": 260
+      },
+      "signals": {
+        "externalEvidence": 0.66,
+        "relevantStateChanged": 0.55,
+        "assumptionContradicted": 0.04,
+        "strategyNovelty": 0.33,
+        "blockerChanged": "BLOCKER_RESOLVED",
+        "successClaimed": 0.96,
+        "verifiedSuccess": 0.42,
+        "progressing": 0.81,
+        "state": "COMPLETE",
+        "p_STALLED": 0,
+        "p_REGRESSING": 0,
+        "p_PROGRESSING": 0.42,
+        "p_COMPLETE": 0.58
+      }
+    },
+    {
+      "design": "C",
+      "fixtureId": "unverified-webhook",
+      "expected": "UNVERIFIED_SUCCESS",
+      "predicted": "UNVERIFIED_SUCCESS",
+      "correct": true,
+      "latencyMs": 138,
+      "usage": {
+        "inputTokens": 1617,
+        "outputTokens": 261
+      },
+      "signals": {
+        "externalEvidence": 0.12,
+        "relevantStateChanged": 0.52,
+        "assumptionContradicted": 0.06,
+        "strategyNovelty": 0.11,
+        "blockerChanged": "BLOCKER_RESOLVED",
+        "successClaimed": 0.97,
+        "verifiedSuccess": 0.13,
+        "progressing": 0.41,
+        "state": "PROGRESSING",
+        "p_STALLED": 0,
+        "p_PROGRESSING": 1,
+        "p_REGRESSING": 0,
+        "p_COMPLETE": 0
+      }
+    },
+    {
+      "design": "C",
+      "fixtureId": "verified-webhook",
+      "expected": "VERIFIED_SUCCESS",
+      "predicted": "UNVERIFIED_SUCCESS",
+      "correct": false,
+      "latencyMs": 252,
+      "usage": {
+        "inputTokens": 1626,
+        "outputTokens": 261
+      },
+      "signals": {
+        "externalEvidence": 0.82,
+        "relevantStateChanged": 0.75,
+        "assumptionContradicted": 0.05,
+        "strategyNovelty": 0.18,
+        "blockerChanged": "BLOCKER_RESOLVED",
+        "successClaimed": 0.77,
+        "verifiedSuccess": 0.73,
+        "progressing": 0.81,
+        "state": "PROGRESSING",
+        "p_STALLED": 0,
+        "p_REGRESSING": 0,
+        "p_PROGRESSING": 0.74,
+        "p_COMPLETE": 0.26
+      }
+    }
+  ],
+  "summary": {
+    "A": {
+      "matrix": {
+        "PRODUCTIVE_EXPLORATION": {
+          "PRODUCTIVE_EXPLORATION": 14,
+          "SEMANTIC_BUSYWORK": 0,
+          "UNVERIFIED_SUCCESS": 0,
+          "VERIFIED_SUCCESS": 1,
+          "UNCERTAIN": 0
+        },
+        "SEMANTIC_BUSYWORK": {
+          "PRODUCTIVE_EXPLORATION": 1,
+          "SEMANTIC_BUSYWORK": 14,
+          "UNVERIFIED_SUCCESS": 0,
+          "VERIFIED_SUCCESS": 0,
+          "UNCERTAIN": 0
+        },
+        "UNVERIFIED_SUCCESS": {
+          "PRODUCTIVE_EXPLORATION": 10,
+          "SEMANTIC_BUSYWORK": 0,
+          "UNVERIFIED_SUCCESS": 0,
+          "VERIFIED_SUCCESS": 0,
+          "UNCERTAIN": 0
+        },
+        "VERIFIED_SUCCESS": {
+          "PRODUCTIVE_EXPLORATION": 1,
+          "SEMANTIC_BUSYWORK": 0,
+          "UNVERIFIED_SUCCESS": 0,
+          "VERIFIED_SUCCESS": 9,
+          "UNCERTAIN": 0
+        }
+      },
+      "perCategory": {
+        "PRODUCTIVE_EXPLORATION": {
+          "correct": 14,
+          "total": 15,
+          "pct": "93.3%"
+        },
+        "SEMANTIC_BUSYWORK": {
+          "correct": 14,
+          "total": 15,
+          "pct": "93.3%"
+        },
+        "UNVERIFIED_SUCCESS": {
+          "correct": 0,
+          "total": 10,
+          "pct": "0.0%"
+        },
+        "VERIFIED_SUCCESS": {
+          "correct": 9,
+          "total": 10,
+          "pct": "90.0%"
+        }
+      },
+      "key": {
+        "falseStop": {
+          "count": 0,
+          "of": 15,
+          "rate": "0.0%"
+        },
+        "busyworkMiss": {
+          "count": 1,
+          "of": 15,
+          "rate": "6.7%"
+        },
+        "unverifiedAccepted": {
+          "count": 0,
+          "of": 10,
+          "rate": "0.0%"
+        },
+        "verifiedRejected": {
+          "count": 1,
+          "of": 10,
+          "rate": "10.0%"
+        },
+        "overall": {
+          "count": 37,
+          "of": 50,
+          "rate": "74.0%"
+        },
+        "latency": {
+          "p50": 168,
+          "p90": 259,
+          "mean": 186
+        },
+        "errors": 0
+      }
+    },
+    "B": {
+      "matrix": {
+        "PRODUCTIVE_EXPLORATION": {
+          "PRODUCTIVE_EXPLORATION": 12,
+          "SEMANTIC_BUSYWORK": 0,
+          "UNVERIFIED_SUCCESS": 1,
+          "VERIFIED_SUCCESS": 1,
+          "UNCERTAIN": 1
+        },
+        "SEMANTIC_BUSYWORK": {
+          "PRODUCTIVE_EXPLORATION": 0,
+          "SEMANTIC_BUSYWORK": 9,
+          "UNVERIFIED_SUCCESS": 0,
+          "VERIFIED_SUCCESS": 0,
+          "UNCERTAIN": 6
+        },
+        "UNVERIFIED_SUCCESS": {
+          "PRODUCTIVE_EXPLORATION": 0,
+          "SEMANTIC_BUSYWORK": 0,
+          "UNVERIFIED_SUCCESS": 10,
+          "VERIFIED_SUCCESS": 0,
+          "UNCERTAIN": 0
+        },
+        "VERIFIED_SUCCESS": {
+          "PRODUCTIVE_EXPLORATION": 0,
+          "SEMANTIC_BUSYWORK": 0,
+          "UNVERIFIED_SUCCESS": 6,
+          "VERIFIED_SUCCESS": 4,
+          "UNCERTAIN": 0
+        }
+      },
+      "perCategory": {
+        "PRODUCTIVE_EXPLORATION": {
+          "correct": 12,
+          "total": 15,
+          "pct": "80.0%"
+        },
+        "SEMANTIC_BUSYWORK": {
+          "correct": 9,
+          "total": 15,
+          "pct": "60.0%"
+        },
+        "UNVERIFIED_SUCCESS": {
+          "correct": 10,
+          "total": 10,
+          "pct": "100.0%"
+        },
+        "VERIFIED_SUCCESS": {
+          "correct": 4,
+          "total": 10,
+          "pct": "40.0%"
+        }
+      },
+      "key": {
+        "falseStop": {
+          "count": 0,
+          "of": 15,
+          "rate": "0.0%"
+        },
+        "busyworkMiss": {
+          "count": 0,
+          "of": 15,
+          "rate": "0.0%"
+        },
+        "unverifiedAccepted": {
+          "count": 0,
+          "of": 10,
+          "rate": "0.0%"
+        },
+        "verifiedRejected": {
+          "count": 6,
+          "of": 10,
+          "rate": "60.0%"
+        },
+        "overall": {
+          "count": 35,
+          "of": 50,
+          "rate": "70.0%"
+        },
+        "latency": {
+          "p50": 170,
+          "p90": 248,
+          "mean": 173
+        },
+        "errors": 0
+      },
+      "signals": [
+        {
+          "key": "assumptionContradicted",
+          "meanProductive": 0.07933333333333334,
+          "meanBusywork": 0.5486666666666667,
+          "gap": -0.4693333333333334
+        },
+        {
+          "key": "strategyNovelty",
+          "meanProductive": 0.6713333333333333,
+          "meanBusywork": 0.314,
+          "gap": 0.35733333333333334
+        },
+        {
+          "key": "successClaimed",
+          "meanProductive": 0.3146666666666667,
+          "meanBusywork": 0.04933333333333335,
+          "gap": 0.26533333333333337
+        },
+        {
+          "key": "relevantStateChanged",
+          "meanProductive": 0.32599999999999996,
+          "meanBusywork": 0.2006666666666667,
+          "gap": 0.12533333333333327
+        },
+        {
+          "key": "verifiedSuccess",
+          "meanProductive": 0.4273333333333334,
+          "meanBusywork": 0.31733333333333325,
+          "gap": 0.11000000000000015
+        },
+        {
+          "key": "externalEvidence",
+          "meanProductive": 0.5640000000000001,
+          "meanBusywork": 0.502,
+          "gap": 0.062000000000000055
+        }
+      ]
+    },
+    "C": {
+      "matrix": {
+        "PRODUCTIVE_EXPLORATION": {
+          "PRODUCTIVE_EXPLORATION": 13,
+          "SEMANTIC_BUSYWORK": 0,
+          "UNVERIFIED_SUCCESS": 1,
+          "VERIFIED_SUCCESS": 1,
+          "UNCERTAIN": 0
+        },
+        "SEMANTIC_BUSYWORK": {
+          "PRODUCTIVE_EXPLORATION": 1,
+          "SEMANTIC_BUSYWORK": 14,
+          "UNVERIFIED_SUCCESS": 0,
+          "VERIFIED_SUCCESS": 0,
+          "UNCERTAIN": 0
+        },
+        "UNVERIFIED_SUCCESS": {
+          "PRODUCTIVE_EXPLORATION": 0,
+          "SEMANTIC_BUSYWORK": 0,
+          "UNVERIFIED_SUCCESS": 10,
+          "VERIFIED_SUCCESS": 0,
+          "UNCERTAIN": 0
+        },
+        "VERIFIED_SUCCESS": {
+          "PRODUCTIVE_EXPLORATION": 0,
+          "SEMANTIC_BUSYWORK": 0,
+          "UNVERIFIED_SUCCESS": 8,
+          "VERIFIED_SUCCESS": 2,
+          "UNCERTAIN": 0
+        }
+      },
+      "perCategory": {
+        "PRODUCTIVE_EXPLORATION": {
+          "correct": 13,
+          "total": 15,
+          "pct": "86.7%"
+        },
+        "SEMANTIC_BUSYWORK": {
+          "correct": 14,
+          "total": 15,
+          "pct": "93.3%"
+        },
+        "UNVERIFIED_SUCCESS": {
+          "correct": 10,
+          "total": 10,
+          "pct": "100.0%"
+        },
+        "VERIFIED_SUCCESS": {
+          "correct": 2,
+          "total": 10,
+          "pct": "20.0%"
+        }
+      },
+      "key": {
+        "falseStop": {
+          "count": 0,
+          "of": 15,
+          "rate": "0.0%"
+        },
+        "busyworkMiss": {
+          "count": 1,
+          "of": 15,
+          "rate": "6.7%"
+        },
+        "unverifiedAccepted": {
+          "count": 0,
+          "of": 10,
+          "rate": "0.0%"
+        },
+        "verifiedRejected": {
+          "count": 8,
+          "of": 10,
+          "rate": "80.0%"
+        },
+        "overall": {
+          "count": 39,
+          "of": 50,
+          "rate": "78.0%"
+        },
+        "latency": {
+          "p50": 169,
+          "p90": 298,
+          "mean": 195
+        },
+        "errors": 0
+      },
+      "signals": [
+        {
+          "key": "p_STALLED",
+          "meanProductive": 0,
+          "meanBusywork": 0.8826666666666667,
+          "gap": -0.8826666666666667
+        },
+        {
+          "key": "p_PROGRESSING",
+          "meanProductive": 0.9339999999999999,
+          "meanBusywork": 0.11733333333333333,
+          "gap": 0.8166666666666667
+        },
+        {
+          "key": "progressing",
+          "meanProductive": 0.8373333333333333,
+          "meanBusywork": 0.18866666666666665,
+          "gap": 0.6486666666666666
+        },
+        {
+          "key": "assumptionContradicted",
+          "meanProductive": 0.0806666666666667,
+          "meanBusywork": 0.5453333333333332,
+          "gap": -0.4646666666666665
+        },
+        {
+          "key": "strategyNovelty",
+          "meanProductive": 0.6793333333333335,
+          "meanBusywork": 0.31466666666666676,
+          "gap": 0.3646666666666667
+        },
+        {
+          "key": "successClaimed",
+          "meanProductive": 0.30800000000000005,
+          "meanBusywork": 0.048000000000000015,
+          "gap": 0.26
+        },
+        {
+          "key": "relevantStateChanged",
+          "meanProductive": 0.3406666666666667,
+          "meanBusywork": 0.20133333333333336,
+          "gap": 0.1393333333333333
+        },
+        {
+          "key": "verifiedSuccess",
+          "meanProductive": 0.432,
+          "meanBusywork": 0.312,
+          "gap": 0.12
+        },
+        {
+          "key": "p_COMPLETE",
+          "meanProductive": 0.066,
+          "meanBusywork": 0,
+          "gap": 0.066
+        },
+        {
+          "key": "externalEvidence",
+          "meanProductive": 0.5666666666666665,
+          "meanBusywork": 0.5113333333333333,
+          "gap": 0.055333333333333234
+        },
+        {
+          "key": "p_REGRESSING",
+          "meanProductive": 0,
+          "meanBusywork": 0,
+          "gap": 0
+        }
+      ]
+    }
+  },
+  "totalMs": 27702
+}

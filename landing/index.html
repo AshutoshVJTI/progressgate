@@ -1,0 +1,374 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>ProgressGate</title>
+<style>
+  :root {
+    --paper: #f3f0e8;
+    --paper-2: #eae5d8;
+    --ink: #16140f;
+    --ink-muted: #625d51;
+    --rule: #d4cdbc;
+    --accent: #3f6b12;
+    --accent-bright: #b6ff3c;
+    --dark: #141310;
+    --dark-2: #1c1a15;
+    --dark-rule: #38352c;
+    --amber: #b3860a;
+    --amber-dark: #c9a94a;
+    --red: #a3341f;
+    --red-dark: #e2664f;
+    --sans: "Helvetica Neue", Helvetica, Arial, "Segoe UI", sans-serif;
+    --mono: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--sans);
+    -webkit-font-smoothing: antialiased;
+  }
+  .wrap { max-width: 1120px; margin: 0 auto; padding: 0 clamp(20px, 4vw, 40px); }
+  code, .mono { font-family: var(--mono); }
+  a { color: inherit; }
+
+  /* ---------- nav ---------- */
+  nav.top {
+    display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; row-gap: 10px;
+    padding: 18px 0; border-bottom: 1px solid var(--rule);
+  }
+  .nav-left { display: flex; align-items: baseline; gap: 10px; }
+  .brand-link { color: inherit; text-decoration: none; }
+  .brand-link:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
+  .rule-mark { width: 4px; height: 15px; background: var(--accent-bright); border: 1px solid var(--ink); flex: none; }
+  .brand-name { font-weight: 700; font-size: 15px; letter-spacing: -0.01em; }
+  .nav-meta { font-family: var(--mono); font-size: 11px; color: var(--ink-muted); letter-spacing: 0.02em; }
+  .nav-right { display: flex; gap: 22px; font-size: 13px; }
+  .nav-right a { text-decoration: none; color: var(--ink); border-bottom: 1px solid transparent; padding-bottom: 2px; }
+  .nav-right a:hover { border-bottom-color: var(--ink); }
+
+  /* ---------- hero ---------- */
+  .hero {
+    display: grid; grid-template-columns: 1.05fr 1fr; gap: 10px;
+    padding: 56px 0 64px; align-items: start; border-bottom: 1px solid var(--rule);
+  }
+  .hero > div { min-width: 0; }
+  h1.headline {
+    font-size: clamp(42px, 6.2vw, 78px); line-height: 0.98; font-weight: 800;
+    letter-spacing: -0.03em; margin: 0 0 24px; text-align: left;
+  }
+  p.lede { font-size: clamp(16px, 1.6vw, 19px); color: var(--ink-muted); max-width: 46ch; line-height: 1.5; margin: 0 0 28px; }
+  .cta-row { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 18px; }
+  .btn {
+    display: inline-block; text-decoration: none; font-size: 14px; font-weight: 700;
+    padding: 12px 20px; border-radius: 2px; border: 1.5px solid var(--ink);
+  }
+  .btn-primary { background: var(--ink); color: var(--paper); }
+  .btn-secondary { background: transparent; color: var(--ink); }
+  .btn-secondary:hover { background: var(--paper-2); }
+  .install-heading { font-size: 13px; font-weight: 700; color: var(--ink); margin: 0 0 10px; }
+  .install-group { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; }
+  .install-row {
+    display: inline-flex; align-items: center; gap: 10px; border: 1px solid var(--rule);
+    background: var(--paper-2); padding: 10px 14px; border-radius: 2px; font-family: var(--mono);
+    font-size: 13px; color: var(--ink);
+  }
+  .install-row button {
+    font-family: var(--mono); font-size: 11px; background: none; border: 1px solid var(--rule);
+    border-radius: 2px; padding: 3px 8px; cursor: pointer; color: var(--ink-muted);
+  }
+  .install-row button:hover { border-color: var(--ink); color: var(--ink); }
+  .prompt-btn {
+    font-family: var(--mono); font-size: 12px; background: none; border: 1px solid var(--rule);
+    border-radius: 2px; padding: 10px 14px; cursor: pointer; color: var(--ink-muted);
+  }
+  .prompt-btn:hover { border-color: var(--ink); color: var(--ink); }
+
+  /* ---------- hero visual ---------- */
+  .schematic { padding-top: 4px; min-width: 0; }
+  .schematic-copy { margin: 0 0 20px; max-width: 38ch; }
+  .schematic-copy .title {
+    font-family: var(--mono); font-size: 15px; font-weight: 700; line-height: 1.25;
+    letter-spacing: 0.04em; margin: 0 0 12px; text-transform: uppercase;
+  }
+  .schematic-copy p { color: var(--ink-muted); font-size: 13px; line-height: 1.5; margin: 0; }
+  .schematic img {
+    display: block; width: 100%; height: auto; aspect-ratio: 2172 / 724;
+    object-fit: contain;
+  }
+
+  /* ---------- section scaffolding ---------- */
+  section { padding: 0; }
+  .section-pad { padding: 52px 0; border-bottom: 1px solid var(--rule); }
+  .section-label {
+    font-family: var(--mono); font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--accent); margin-bottom: 10px;
+  }
+  h2 { font-size: 22px; font-weight: 700; margin: 0 0 16px; letter-spacing: -0.01em; }
+
+  /* ---------- trace panel ---------- */
+  .trace-panel { background: var(--dark); color: #ece9df; padding: 40px 0; }
+  .trace-head { display: flex; align-items: baseline; justify-content: space-between; gap: 16px; margin-bottom: 26px; flex-wrap: wrap; }
+  .trace-head .section-label { color: var(--accent-bright); margin-bottom: 6px; }
+  .trace-head h2 { color: #f5f3ec; margin: 0; }
+  .trace-goal { font-family: var(--mono); font-size: 12px; color: #9a9587; }
+
+  .trace-scroll { overflow-x: auto; overflow-y: hidden; }
+  table.trace { border-collapse: separate; border-spacing: 0; width: 100%; min-width: 760px; font-size: 13.5px; }
+  table.trace thead th {
+    text-align: left; font-family: var(--mono); font-size: 10.5px; letter-spacing: 0.08em; text-transform: uppercase;
+    color: #b0aa93; font-weight: 400; padding: 0 12px 10px 0; border-bottom: 1px solid var(--dark-rule);
+  }
+  table.trace td { padding: 14px 12px 14px 0; border-bottom: 1px solid var(--dark-rule); vertical-align: top; }
+  table.trace tr:last-child td { border-bottom: 1px solid var(--dark-rule); }
+  td.step-num { font-family: var(--mono); color: #6f6b5d; width: 32px; }
+  td.action-cell { max-width: 420px; }
+  td.action-cell .a { color: #f5f3ec; font-weight: 600; }
+  td.action-cell .r { color: #d2ccb9; font-size: 12.5px; margin-top: 3px; }
+  td.gate-cell { font-family: var(--mono); font-weight: 700; font-size: 12.5px; white-space: nowrap; }
+  td.gate-cell.CONTINUE { color: var(--accent-bright); }
+  td.gate-cell.REPLAN { color: var(--amber-dark); }
+  td.gate-cell.HALT { color: var(--red-dark); }
+  td.signal-cell { font-family: var(--mono); font-size: 11.5px; color: #d2ccb9; white-space: nowrap; }
+
+  .trace-row { opacity: 0; transform: translateY(4px); transition: opacity 0.35s ease, transform 0.35s ease; }
+  .trace-row.visible { opacity: 1; transform: translateY(0); }
+
+  .trace-result {
+    margin-top: 26px; padding-top: 20px; border-top: 1px solid var(--dark-rule);
+    display: flex; align-items: baseline; justify-content: space-between; gap: 16px; flex-wrap: wrap; min-height: 24px;
+  }
+  .trace-result .msg { font-size: 14px; color: #f5f3ec; }
+  .trace-result .msg .halt-word { color: var(--red-dark); font-weight: 700; }
+  .trace-result a { font-family: var(--mono); font-size: 12.5px; color: var(--accent-bright); text-decoration: none; }
+  .trace-result a:hover { text-decoration: underline; }
+
+  /* ---------- integration + why ---------- */
+  .split {
+    display: grid; grid-template-columns: 1fr 1px 1fr; gap: 40px; padding: 52px 0; border-bottom: 1px solid var(--rule);
+  }
+  .split > div { min-width: 0; }
+  .split-rule { background: var(--rule); }
+  pre.code-block {
+    background: var(--paper-2); border: 1px solid var(--rule); border-radius: 2px;
+    padding: 18px; overflow-x: auto; font-size: 12.5px; line-height: 1.65; color: var(--ink); margin: 0;
+  }
+  pre.code-block .c { color: var(--ink-muted); }
+  pre.code-block .k { color: #4a5a8c; }
+  pre.code-block .s { color: var(--accent); }
+  .why p { font-size: 14px; color: var(--ink-muted); line-height: 1.65; margin: 0 0 14px; max-width: 46ch; }
+
+  /* ---------- footer ---------- */
+  footer {
+    padding: 26px 0 44px; display: flex; align-items: baseline; justify-content: space-between;
+    gap: 16px; flex-wrap: wrap; font-size: 12.5px; color: var(--ink-muted);
+  }
+  footer .f-left { font-family: var(--mono); }
+  footer .f-right { text-align: right; font-family: var(--mono); }
+  footer .f-right div:first-child { color: var(--ink); }
+  footer a { text-decoration: underline; }
+
+  /* ---------- responsive ---------- */
+  @media (max-width: 860px) {
+    .hero { grid-template-columns: 1fr; }
+    .split { grid-template-columns: 1fr; }
+    .split-rule { display: none; }
+    .trace-panel { padding: 32px 0; }
+  }
+  @media (max-width: 520px) {
+    .nav-right { gap: 14px; }
+    h1.headline { font-size: 42px; }
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <nav class="top">
+      <a class="nav-left brand-link" href="./index.html" aria-label="ProgressGate home">
+        <div class="rule-mark"></div>
+        <span class="brand-name">ProgressGate</span>
+        <span class="nav-meta">v0.1.0 &middot; Experimental</span>
+      </a>
+      <div class="nav-right">
+        <a href="https://github.com/ashutoshvjti/progressgate" rel="noopener">GitHub</a>
+        <a href="https://www.npmjs.com/package/progressgate" rel="noopener">npm</a>
+        <a href="../demo/index.html">Demo</a>
+      </div>
+    </nav>
+
+    <header class="hero">
+      <div>
+        <h1 class="headline">Stop paying<br />agents to spin.</h1>
+        <p class="lede">ProgressGate detects semantic stagnation in AI agent loops, even when every action looks different.</p>
+        <div class="cta-row">
+          <a class="btn btn-primary" href="https://github.com/ashutoshvjti/progressgate" rel="noopener">View on GitHub</a>
+          <a class="btn btn-secondary" href="../demo/index.html">Try the demo</a>
+        </div>
+        <p class="install-heading">Add it to an agent</p>
+        <div class="install-group">
+          <div class="install-row">
+            <span>$ npm install progressgate</span>
+            <button type="button" id="copyBtn">copy</button>
+          </div>
+          <button type="button" class="prompt-btn" id="copyPromptBtn">Copy integration prompt</button>
+        </div>
+      </div>
+
+      <div class="schematic">
+        <div class="schematic-copy">
+          <p class="title">Different actions.<br />Same broken assumption.</p>
+          <p>ProgressGate looks past surface novelty and checks whether your agent is actually making progress.</p>
+        </div>
+        <img src="hero-circuit-clean.png" alt="Four different agent actions lead to an open circuit breaker." />
+      </div>
+    </header>
+  </div>
+
+  <section class="trace-panel">
+    <div class="wrap">
+      <div class="trace-head">
+        <div>
+          <div class="section-label">Example</div>
+          <h2>progressgate demo: failing deployment</h2>
+        </div>
+        <div class="trace-goal">goal: Fix the failing deployment</div>
+      </div>
+
+      <div class="trace-scroll">
+        <table class="trace">
+          <thead>
+            <tr>
+              <th>Step</th>
+              <th>Agent action / result</th>
+              <th>Gate</th>
+              <th>Key signals</th>
+            </tr>
+          </thead>
+          <tbody id="traceBody"></tbody>
+        </table>
+      </div>
+
+      <div class="trace-result">
+        <div class="msg" id="traceMsg"></div>
+        <a href="../demo/index.html">Open the full interactive demo</a>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap">
+    <div class="split">
+      <div>
+        <div class="section-label">Integration</div>
+        <h2>Check progress before the next agent step</h2>
+        <pre class="code-block"><span class="c">// once per run</span>
+<span class="k">const</span> run = gate.<span class="s">run</span>({ goal });
+
+<span class="c">// before your next expensive model call</span>
+<span class="k">const</span> result = <span class="k">await</span> run.<span class="s">observe</span>(step);
+
+<span class="k">if</span> (result.decision === <span class="s">"HALT"</span>) <span class="k">return</span> stop();
+<span class="k">if</span> (result.decision === <span class="s">"REPLAN"</span>) injectFeedback(result.reasonCode);
+<span class="c">// CONTINUE / WARN -&gt; proceed as normal</span></pre>
+      </div>
+      <div class="split-rule"></div>
+      <div class="why">
+        <div class="section-label">Limits</div>
+        <h2>Why step limits aren't enough</h2>
+        <p>A step count can't tell productive exploration from busywork. It cuts off a real investigation at the same count it lets a spinning agent burn through, because it has no idea the agent is still testing the same falsified assumption.</p>
+        <p>ProgressGate looks at whether the underlying assumption changed, not how many actions were taken.</p>
+      </div>
+    </div>
+
+    <footer>
+      <div class="f-left">Uses TypeSafe Jev for semantic judgments.</div>
+      <div class="f-right">
+        <div>ProgressGate (open source)</div>
+        <div>Detect stagnation. Save compute.</div>
+      </div>
+    </footer>
+  </div>
+
+<script>
+// Real captured data from a ProgressGate run against the live Jev API (see demo/data.json,
+// scenario B). Inlined here so this trace needs no network fetch.
+const DEMO_STEPS = [
+  { action: "checked deploy logs", result: "permission denied writing to /var/app/releases", decision: "CONTINUE", progress: 0.62, contradicted: 0.04, stalled: 0.38 },
+  { action: "changed deploy path to /tmp/app-release", result: "permission denied on the new path too", decision: "REPLAN", progress: 0.16, contradicted: 0.32, stalled: 0.80 },
+  { action: "tried running the deploy with sudo", result: "sudo is unavailable on this host", decision: "REPLAN", progress: 0.12, contradicted: 0.15, stalled: 0.81 },
+  { action: "searched for an alternate deploy path with different default ownership", result: "same underlying permission problem on that path", decision: "REPLAN", progress: 0.10, contradicted: 0.34, stalled: 0.86 },
+  { action: "switched the deploy script to run as a different service account", result: "still permission denied, the new account has the same restrictive group", decision: "HALT", progress: 0.13, contradicted: 0.36, stalled: 0.87 },
+];
+
+function buildRow(i) {
+  const s = DEMO_STEPS[i];
+  const tr = document.createElement("tr");
+  tr.className = "trace-row";
+  tr.innerHTML =
+    '<td class="step-num">' + String(i + 1).padStart(2, "0") + '</td>' +
+    '<td class="action-cell"><div class="a">' + s.action + '</div><div class="r">' + s.result + '</div></td>' +
+    '<td class="gate-cell ' + s.decision + '">' + s.decision + '</td>' +
+    '<td class="signal-cell">progress ' + s.progress.toFixed(2) + ' / contradicted ' + s.contradicted.toFixed(2) + ' / stalled ' + s.stalled.toFixed(2) + '</td>';
+  return tr;
+}
+
+// All rows are inserted into the DOM up front (hidden via opacity) so the table's
+// height is fixed from the first frame. Only visibility changes as the trace plays,
+// which is what keeps the sections below the panel from shifting.
+function buildAllRows() {
+  const body = document.getElementById("traceBody");
+  body.innerHTML = "";
+  return DEMO_STEPS.map((_, i) => {
+    const row = buildRow(i);
+    body.appendChild(row);
+    return row;
+  });
+}
+
+async function playTrace() {
+  const msg = document.getElementById("traceMsg");
+  msg.textContent = "";
+  const rows = buildAllRows();
+  for (let i = 0; i < DEMO_STEPS.length; i++) {
+    requestAnimationFrame(() => rows[i].classList.add("visible"));
+    if (DEMO_STEPS[i].decision === "HALT") {
+      msg.innerHTML = 'Circuit opened. <span class="halt-word">Semantic stagnation detected.</span> Stopped before another agent step.';
+    }
+    await new Promise((r) => setTimeout(r, 900));
+  }
+  await new Promise((r) => setTimeout(r, 2400));
+  playTrace();
+}
+
+document.getElementById("copyBtn").addEventListener("click", () => {
+  navigator.clipboard.writeText("npm install progressgate").then(() => {
+    const btn = document.getElementById("copyBtn");
+    const prev = btn.textContent;
+    btn.textContent = "copied";
+    setTimeout(() => { btn.textContent = prev; }, 1200);
+  });
+});
+
+const INTEGRATION_PROMPT = "Add ProgressGate to this agent project.\n\n" +
+  "Install progressgate, locate the agent's execution loop, and call ProgressGate between completed tool/action steps and the next model call.\n\n" +
+  "Use the stateful run API.\n\n" +
+  "On REPLAN, feed the reason back into the agent before continuing.\n" +
+  "Do not enable automatic HALT.\n" +
+  "Do not change existing completion logic, permission checks, or retry budgets.";
+
+document.getElementById("copyPromptBtn").addEventListener("click", () => {
+  navigator.clipboard.writeText(INTEGRATION_PROMPT).then(() => {
+    const btn = document.getElementById("copyPromptBtn");
+    const prev = btn.textContent;
+    btn.textContent = "Copied";
+    setTimeout(() => { btn.textContent = prev; }, 1200);
+  });
+});
+
+playTrace();
+</script>
+</body>
+</html>

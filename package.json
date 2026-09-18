@@ -1,0 +1,54 @@
+{
+  "name": "progressgate",
+  "version": "0.1.0",
+  "description": "Detects semantic stagnation in AI agent loops -- actions that keep pursuing the same contradicted assumption. Built on TypeSafe Jev.",
+  "keywords": ["ai-agents", "llm", "agent-loop", "circuit-breaker", "typesafe", "jev"],
+  "license": "MIT",
+  "author": "Ashutosh Mathore",
+  "homepage": "https://github.com/ashutoshvjti/progressgate#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ashutoshvjti/progressgate.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ashutoshvjti/progressgate/issues"
+  },
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "test": "tsx --test tests/*.test.ts",
+    "prepublishOnly": "npm run build && npm test",
+    "quickstart": "npm run build && tsx examples/quickstart.ts",
+    "evaluate": "tsx experiments/evaluate.ts",
+    "evaluate:adversarial": "tsx experiments/run-adversarial-eval.ts",
+    "demo:build": "tsx demo/generate-data.ts",
+    "demo": "node demo/serve.mjs",
+    "live-agent-test": "tsx experiments/live-agent-test/run.ts",
+    "landing": "node landing/serve.mjs"
+  },
+  "dependencies": {
+    "@typesafe-ai/sdk": "^0.6.0"
+  },
+  "devDependencies": {
+    "@anthropic-ai/sdk": "^0.126.0",
+    "@types/node": "^20",
+    "tsx": "^4.23.13",
+    "typescript": "^5"
+  }
+}

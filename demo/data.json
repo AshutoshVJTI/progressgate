@@ -1,0 +1,213 @@
+{
+  "generatedAt": "2026-09-18T05:06:52.536Z",
+  "note": "All decisions and signals below are real, captured ProgressGate SDK output against the live Jev API (not simulated). The demo UI replays this recording for deterministic, repeatable playback.",
+  "assumptions": {
+    "assumedMaxStepsWithoutGate": 14,
+    "tokensPerWastedAgentStep": {
+      "input": 3200,
+      "output": 900
+    },
+    "costPerMillionTokens": {
+      "input": 3,
+      "output": 15
+    }
+  },
+  "scenarios": [
+    {
+      "id": "A",
+      "label": "Productive exploration",
+      "goal": "Fix the failing deployment",
+      "steps": [
+        {
+          "index": 1,
+          "action": "checked deploy logs",
+          "result": "error: EACCES writing to /var/app/releases",
+          "decision": "CONTINUE",
+          "reasonCode": "STRONG_PROGRESS",
+          "confidence": 0.91,
+          "signals": {
+            "assumptionContradicted": 0.04,
+            "strategyNovelty": 0.24,
+            "materialProgress": 0.13,
+            "newUsefulEvidence": 0.91,
+            "regression": 0.07,
+            "holisticStalled": 0.4
+          },
+          "consecutiveStagnation": 0
+        },
+        {
+          "index": 2,
+          "action": "inspected directory ownership",
+          "result": "/var/app/releases is owned by root, deploy user is www-data",
+          "decision": "CONTINUE",
+          "reasonCode": "STRONG_PROGRESS",
+          "confidence": 0.78,
+          "signals": {
+            "assumptionContradicted": 0.06,
+            "strategyNovelty": 0.26,
+            "materialProgress": 0.14,
+            "newUsefulEvidence": 0.78,
+            "regression": 0.06,
+            "holisticStalled": 0.26
+          },
+          "consecutiveStagnation": 0
+        },
+        {
+          "index": 3,
+          "action": "checked deploy user permissions history",
+          "result": "ownership changed 2 days ago during a manual server patch",
+          "decision": "CONTINUE",
+          "reasonCode": "STRONG_PROGRESS",
+          "confidence": 0.82,
+          "signals": {
+            "assumptionContradicted": 0.08,
+            "strategyNovelty": 0.38,
+            "materialProgress": 0.14,
+            "newUsefulEvidence": 0.82,
+            "regression": 0.07,
+            "holisticStalled": 0.37
+          },
+          "consecutiveStagnation": 0
+        },
+        {
+          "index": 4,
+          "action": "chown -R www-data:www-data /var/app/releases",
+          "result": "ownership corrected on the release directory",
+          "decision": "CONTINUE",
+          "reasonCode": "WEAK_PROGRESS",
+          "confidence": 0.6,
+          "signals": {
+            "assumptionContradicted": 0.07,
+            "strategyNovelty": 0.17,
+            "materialProgress": 0.59,
+            "newUsefulEvidence": 0.6,
+            "regression": 0.07,
+            "holisticStalled": 0.16
+          },
+          "consecutiveStagnation": 0
+        },
+        {
+          "index": 5,
+          "action": "ran the deploy and checked the health endpoint",
+          "result": "deploy completed successfully, /health returns 200, new version live",
+          "decision": "CONTINUE",
+          "reasonCode": "STRONG_PROGRESS",
+          "confidence": 0.84,
+          "signals": {
+            "assumptionContradicted": 0.05,
+            "strategyNovelty": 0.2,
+            "materialProgress": 0.75,
+            "newUsefulEvidence": 0.84,
+            "regression": 0.05,
+            "holisticStalled": 0.03
+          },
+          "consecutiveStagnation": 0
+        }
+      ],
+      "haltedAtStep": null,
+      "estimate": null
+    },
+    {
+      "id": "B",
+      "label": "Semantic busywork",
+      "goal": "Fix the failing deployment",
+      "steps": [
+        {
+          "index": 1,
+          "action": "checked deploy logs",
+          "result": "permission denied writing to /var/app/releases",
+          "decision": "CONTINUE",
+          "reasonCode": "STRONG_PROGRESS",
+          "confidence": 0.9,
+          "signals": {
+            "assumptionContradicted": 0.04,
+            "strategyNovelty": 0.23,
+            "materialProgress": 0.12,
+            "newUsefulEvidence": 0.9,
+            "regression": 0.07,
+            "holisticStalled": 0.38
+          },
+          "consecutiveStagnation": 0
+        },
+        {
+          "index": 2,
+          "action": "changed deploy path to /tmp/app-release",
+          "result": "permission denied on the new path too",
+          "decision": "REPLAN",
+          "reasonCode": "REPEATED_STAGNATION",
+          "confidence": 0.8,
+          "signals": {
+            "assumptionContradicted": 0.32,
+            "strategyNovelty": 0.31,
+            "materialProgress": 0.16,
+            "newUsefulEvidence": 0.61,
+            "regression": 0.26,
+            "holisticStalled": 0.8
+          },
+          "consecutiveStagnation": 1
+        },
+        {
+          "index": 3,
+          "action": "tried running the deploy with sudo",
+          "result": "sudo is unavailable on this host",
+          "decision": "REPLAN",
+          "reasonCode": "REPEATED_STAGNATION",
+          "confidence": 0.81,
+          "signals": {
+            "assumptionContradicted": 0.15,
+            "strategyNovelty": 0.62,
+            "materialProgress": 0.12,
+            "newUsefulEvidence": 0.86,
+            "regression": 0.16,
+            "holisticStalled": 0.81
+          },
+          "consecutiveStagnation": 2
+        },
+        {
+          "index": 4,
+          "action": "searched for an alternate deploy path with different default ownership",
+          "result": "same underlying permission problem on that path",
+          "decision": "REPLAN",
+          "reasonCode": "REPEATED_STAGNATION",
+          "confidence": 0.86,
+          "signals": {
+            "assumptionContradicted": 0.34,
+            "strategyNovelty": 0.28,
+            "materialProgress": 0.1,
+            "newUsefulEvidence": 0.28,
+            "regression": 0.12,
+            "holisticStalled": 0.86
+          },
+          "consecutiveStagnation": 3
+        },
+        {
+          "index": 5,
+          "action": "switched the deploy script to run as a different service account",
+          "result": "still permission denied, the new account has the same restrictive group",
+          "decision": "HALT",
+          "reasonCode": "PERSISTENT_STAGNATION",
+          "confidence": 0.87,
+          "signals": {
+            "assumptionContradicted": 0.36,
+            "strategyNovelty": 0.56,
+            "materialProgress": 0.13,
+            "newUsefulEvidence": 0.56,
+            "regression": 0.16,
+            "holisticStalled": 0.87
+          },
+          "consecutiveStagnation": 4
+        }
+      ],
+      "haltedAtStep": 5,
+      "estimate": {
+        "assumedMaxStepsWithoutGate": 14,
+        "stepsPrevented": 9,
+        "tokensAvoided": {
+          "input": 28800,
+          "output": 8100
+        },
+        "estimatedCostAvoidedUsd": 0.2079
+      }
+    }
+  ]
+}

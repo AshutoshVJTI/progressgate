@@ -1,0 +1,1523 @@
+{
+  "results": [
+    {
+      "id": "prog-01",
+      "category": "meaningful-progress",
+      "obvious": true,
+      "expected": "PROGRESSING",
+      "actual": "COMPLETE",
+      "judgment": {
+        "advancedProbability": 0.95,
+        "progressingProbability": 0.94,
+        "repeatingProbability": 0.75,
+        "newEvidenceProbability": 0.89,
+        "state": "COMPLETE",
+        "stateConfidence": 0.99,
+        "stateProbabilities": {
+          "COMPLETE": 0.99,
+          "STALLED": 0,
+          "REGRESSING": 0,
+          "PROGRESSING": 0.01
+        },
+        "usage": {
+          "inputTokens": 1109,
+          "outputTokens": 124
+        },
+        "latencyMs": 341
+      },
+      "correct": false
+    },
+    {
+      "id": "prog-02",
+      "category": "meaningful-progress",
+      "obvious": true,
+      "expected": "PROGRESSING",
+      "actual": "COMPLETE",
+      "judgment": {
+        "advancedProbability": 0.91,
+        "progressingProbability": 0.96,
+        "repeatingProbability": 0.82,
+        "newEvidenceProbability": 0.87,
+        "state": "COMPLETE",
+        "stateConfidence": 0.81,
+        "stateProbabilities": {
+          "STALLED": 0,
+          "COMPLETE": 0.86,
+          "PROGRESSING": 0.14,
+          "REGRESSING": 0
+        },
+        "usage": {
+          "inputTokens": 1130,
+          "outputTokens": 124
+        },
+        "latencyMs": 193
+      },
+      "correct": false
+    },
+    {
+      "id": "prog-03",
+      "category": "meaningful-progress",
+      "obvious": true,
+      "expected": "PROGRESSING",
+      "actual": "COMPLETE",
+      "judgment": {
+        "advancedProbability": 0.8,
+        "progressingProbability": 0.97,
+        "repeatingProbability": 0.83,
+        "newEvidenceProbability": 0.83,
+        "state": "COMPLETE",
+        "stateConfidence": 0.75,
+        "stateProbabilities": {
+          "REGRESSING": 0,
+          "PROGRESSING": 0.19,
+          "COMPLETE": 0.81,
+          "STALLED": 0
+        },
+        "usage": {
+          "inputTokens": 1128,
+          "outputTokens": 124
+        },
+        "latencyMs": 235
+      },
+      "correct": false
+    },
+    {
+      "id": "prog-04",
+      "category": "meaningful-progress",
+      "obvious": false,
+      "expected": "PROGRESSING",
+      "actual": "PROGRESSING",
+      "judgment": {
+        "advancedProbability": 0.91,
+        "progressingProbability": 0.96,
+        "repeatingProbability": 0.89,
+        "newEvidenceProbability": 0.93,
+        "state": "PROGRESSING",
+        "stateConfidence": 0.64,
+        "stateProbabilities": {
+          "COMPLETE": 0.27,
+          "STALLED": 0,
+          "REGRESSING": 0,
+          "PROGRESSING": 0.73
+        },
+        "usage": {
+          "inputTokens": 1099,
+          "outputTokens": 125
+        },
+        "latencyMs": 140
+      },
+      "correct": true
+    },
+    {
+      "id": "prog-05",
+      "category": "meaningful-progress",
+      "obvious": false,
+      "expected": "PROGRESSING",
+      "actual": "COMPLETE",
+      "judgment": {
+        "advancedProbability": 0.95,
+        "progressingProbability": 0.97,
+        "repeatingProbability": 0.7,
+        "newEvidenceProbability": 0.9,
+        "state": "COMPLETE",
+        "stateConfidence": 0.93,
+        "stateProbabilities": {
+          "REGRESSING": 0,
+          "STALLED": 0,
+          "PROGRESSING": 0.05,
+          "COMPLETE": 0.95
+        },
+        "usage": {
+          "inputTokens": 1091,
+          "outputTokens": 124
+        },
+        "latencyMs": 240
+      },
+      "correct": false
+    },
+    {
+      "id": "loop-01",
+      "category": "exact-loop",
+      "obvious": true,
+      "expected": "STALLED",
+      "actual": "STALLED",
+      "judgment": {
+        "advancedProbability": 0.05,
+        "progressingProbability": 0.07,
+        "repeatingProbability": 0.96,
+        "newEvidenceProbability": 0.08,
+        "state": "STALLED",
+        "stateConfidence": 1,
+        "stateProbabilities": {
+          "STALLED": 1,
+          "REGRESSING": 0,
+          "PROGRESSING": 0,
+          "COMPLETE": 0
+        },
+        "usage": {
+          "inputTokens": 1084,
+          "outputTokens": 125
+        },
+        "latencyMs": 149
+      },
+      "correct": true
+    },
+    {
+      "id": "loop-02",
+      "category": "exact-loop",
+      "obvious": true,
+      "expected": "STALLED",
+      "actual": "STALLED",
+      "judgment": {
+        "advancedProbability": 0.06,
+        "progressingProbability": 0.12,
+        "repeatingProbability": 0.97,
+        "newEvidenceProbability": 0.09,
+        "state": "STALLED",
+        "stateConfidence": 1,
+        "stateProbabilities": {
+          "PROGRESSING": 0,
+          "REGRESSING": 0,
+          "COMPLETE": 0,
+          "STALLED": 1
+        },
+        "usage": {
+          "inputTokens": 1101,
+          "outputTokens": 125
+        },
+        "latencyMs": 133
+      },
+      "correct": true
+    },
+    {
+      "id": "loop-03",
+      "category": "exact-loop",
+      "obvious": true,
+      "expected": "STALLED",
+      "actual": "STALLED",
+      "judgment": {
+        "advancedProbability": 0.06,
+        "progressingProbability": 0.09,
+        "repeatingProbability": 0.97,
+        "newEvidenceProbability": 0.11,
+        "state": "STALLED",
+        "stateConfidence": 1,
+        "stateProbabilities": {
+          "COMPLETE": 0,
+          "STALLED": 1,
+          "REGRESSING": 0,
+          "PROGRESSING": 0
+        },
+        "usage": {
+          "inputTokens": 1097,
+          "outputTokens": 125
+        },
+        "latencyMs": 126
+      },
+      "correct": true
+    },
+    {
+      "id": "assume-01",
+      "category": "same-assumption-different-actions",
+      "obvious": true,
+      "expected": "STALLED",
+      "actual": "STALLED",
+      "judgment": {
+        "advancedProbability": 0.23,
+        "progressingProbability": 0.28,
+        "repeatingProbability": 0.85,
+        "newEvidenceProbability": 0.41,
+        "state": "STALLED",
+        "stateConfidence": 0.96,
+        "stateProbabilities": {
+          "STALLED": 0.97,
+          "REGRESSING": 0,
+          "PROGRESSING": 0.03,
+          "COMPLETE": 0
+        },
+        "usage": {
+          "inputTokens": 1083,
+          "outputTokens": 125
+        },
+        "latencyMs": 122
+      },
+      "correct": true
+    },
+    {
+      "id": "assume-02",
+      "category": "same-assumption-different-actions",
+      "obvious": true,
+      "expected": "STALLED",
+      "actual": "STALLED",
+      "judgment": {
+        "advancedProbability": 0.15,
+        "progressingProbability": 0.13,
+        "repeatingProbability": 0.78,
+        "newEvidenceProbability": 0.39,
+        "state": "STALLED",
+        "stateConfidence": 1,
+        "stateProbabilities": {
+          "STALLED": 1,
+          "REGRESSING": 0,
+          "PROGRESSING": 0,
+          "COMPLETE": 0
+        },
+        "usage": {
+          "inputTokens": 1075,
+          "outputTokens": 125
+        },
+        "latencyMs": 139
+      },
+      "correct": true
+    },
+    {
+      "id": "assume-03",
+      "category": "same-assumption-different-actions",
+      "obvious": false,
+      "expected": "STALLED",
+      "actual": "STALLED",
+      "judgment": {
+        "advancedProbability": 0.1,
+        "progressingProbability": 0.33,
+        "repeatingProbability": 0.93,
+        "newEvidenceProbability": 0.3,
+        "state": "STALLED",
+        "stateConfidence": 0.97,
+        "stateProbabilities": {
+          "COMPLETE": 0,
+          "PROGRESSING": 0.02,
+          "STALLED": 0.98,
+          "REGRESSING": 0
+        },
+        "usage": {
+          "inputTokens": 1100,
+          "outputTokens": 125
+        },
+        "latencyMs": 101
+      },
+      "correct": true
+    },
+    {
+      "id": "assume-04",
+      "category": "same-assumption-different-actions",
+      "obvious": false,
+      "expected": "STALLED",
+      "actual": "STALLED",
+      "judgment": {
+        "advancedProbability": 0.16,
+        "progressingProbability": 0.16,
+        "repeatingProbability": 0.85,
+        "newEvidenceProbability": 0.35,
+        "state": "STALLED",
+        "stateConfidence": 0.97,
+        "stateProbabilities": {
+          "PROGRESSING": 0.02,
+          "STALLED": 0.98,
+          "COMPLETE": 0,
+          "REGRESSING": 0
+        },
+        "usage": {
+          "inputTokens": 1086,
+          "outputTokens": 125
+        },
+        "latencyMs": 163
+      },
+      "correct": true
+    },
+    {
+      "id": "assume-05",
+      "category": "same-assumption-different-actions",
+      "obvious": false,
+      "expected": "STALLED",
+      "actual": "PROGRESSING",
+      "judgment": {
+        "advancedProbability": 0.56,
+        "progressingProbability": 0.69,
+        "repeatingProbability": 0.85,
+        "newEvidenceProbability": 0.87,
+        "state": "PROGRESSING",
+        "stateConfidence": 0.66,
+        "stateProbabilities": {
+          "REGRESSING": 0,
+          "PROGRESSING": 0.75,
+          "COMPLETE": 0,
+          "STALLED": 0.25
+        },
+        "usage": {
+          "inputTokens": 1095,
+          "outputTokens": 125
+        },
+        "latencyMs": 144
+      },
+      "correct": false
+    },
+    {
+      "id": "research-01",
+      "category": "broad-research-no-signal",
+      "obvious": false,
+      "expected": "STALLED",
+      "actual": "STALLED",
+      "judgment": {
+        "advancedProbability": 0.15,
+        "progressingProbability": 0.11,
+        "repeatingProbability": 0.94,
+        "newEvidenceProbability": 0.16,
+        "state": "STALLED",
+        "stateConfidence": 1,
+        "stateProbabilities": {
+          "STALLED": 1,
+          "PROGRESSING": 0,
+          "REGRESSING": 0,
+          "COMPLETE": 0
+        },
+        "usage": {
+          "inputTokens": 1121,
+          "outputTokens": 125
+        },
+        "latencyMs": 256
+      },
+      "correct": true
+    },
+    {
+      "id": "research-02",
+      "category": "broad-research-no-signal",
+      "obvious": false,
+      "expected": "STALLED",
+      "actual": "STALLED",
+      "judgment": {
+        "advancedProbability": 0.16,
+        "progressingProbability": 0.16,
+        "repeatingProbability": 0.92,
+        "newEvidenceProbability": 0.22,
+        "state": "STALLED",
+        "stateConfidence": 0.99,
+        "stateProbabilities": {
+          "COMPLETE": 0,
+          "STALLED": 0.99,
+          "PROGRESSING": 0.01,
+          "REGRESSING": 0
+        },
+        "usage": {
+          "inputTokens": 1097,
+          "outputTokens": 125
+        },
+        "latencyMs": 482
+      },
+      "correct": true
+    },
+    {
+      "id": "research-03",
+      "category": "broad-research-no-signal",
+      "obvious": false,
+      "expected": "STALLED",
+      "actual": "STALLED",
+      "judgment": {
+        "advancedProbability": 0.07,
+        "progressingProbability": 0.09,
+        "repeatingProbability": 0.81,
+        "newEvidenceProbability": 0.21,
+        "state": "STALLED",
+        "stateConfidence": 0.99,
+        "stateProbabilities": {
+          "REGRESSING": 0,
+          "STALLED": 1,
+          "PROGRESSING": 0,
+          "COMPLETE": 0
+        },
+        "usage": {
+          "inputTokens": 1106,
+          "outputTokens": 125
+        },
+        "latencyMs": 317
+      },
+      "correct": true
+    },
+    {
+      "id": "argsloop-01",
+      "category": "repeated-calls-different-args-no-change",
+      "obvious": true,
+      "expected": "STALLED",
+      "actual": "STALLED",
+      "judgment": {
+        "advancedProbability": 0.16,
+        "progressingProbability": 0.13,
+        "repeatingProbability": 0.86,
+        "newEvidenceProbability": 0.33,
+        "state": "STALLED",
+        "stateConfidence": 0.99,
+        "stateProbabilities": {
+          "REGRESSING": 0,
+          "STALLED": 1,
+          "PROGRESSING": 0,
+          "COMPLETE": 0
+        },
+        "usage": {
+          "inputTokens": 1080,
+          "outputTokens": 125
+        },
+        "latencyMs": 149
+      },
+      "correct": true
+    },
+    {
+      "id": "argsloop-02",
+      "category": "repeated-calls-different-args-no-change",
+      "obvious": true,
+      "expected": "STALLED",
+      "actual": "STALLED",
+      "judgment": {
+        "advancedProbability": 0.49,
+        "progressingProbability": 0.41,
+        "repeatingProbability": 0.92,
+        "newEvidenceProbability": 0.82,
+        "state": "STALLED",
+        "stateConfidence": 0.4,
+        "stateProbabilities": {
+          "REGRESSING": 0,
+          "PROGRESSING": 0.45,
+          "COMPLETE": 0,
+          "STALLED": 0.55
+        },
+        "usage": {
+          "inputTokens": 1115,
+          "outputTokens": 125
+        },
+        "latencyMs": 136
+      },
+      "correct": true
+    },
+    {
+      "id": "argsloop-03",
+      "category": "repeated-calls-different-args-no-change",
+      "obvious": false,
+      "expected": "STALLED",
+      "actual": "STALLED",
+      "judgment": {
+        "advancedProbability": 0.1,
+        "progressingProbability": 0.09,
+        "repeatingProbability": 0.88,
+        "newEvidenceProbability": 0.26,
+        "state": "STALLED",
+        "stateConfidence": 1,
+        "stateProbabilities": {
+          "PROGRESSING": 0,
+          "COMPLETE": 0,
+          "REGRESSING": 0,
+          "STALLED": 1
+        },
+        "usage": {
+          "inputTokens": 1089,
+          "outputTokens": 125
+        },
+        "latencyMs": 207
+      },
+      "correct": true
+    },
+    {
+      "id": "argsloop-04",
+      "category": "repeated-calls-different-args-no-change",
+      "obvious": false,
+      "expected": "STALLED",
+      "actual": "STALLED",
+      "judgment": {
+        "advancedProbability": 0.31,
+        "progressingProbability": 0.42,
+        "repeatingProbability": 0.73,
+        "newEvidenceProbability": 0.53,
+        "state": "STALLED",
+        "stateConfidence": 0.67,
+        "stateProbabilities": {
+          "STALLED": 0.75,
+          "PROGRESSING": 0.25,
+          "COMPLETE": 0,
+          "REGRESSING": 0
+        },
+        "usage": {
+          "inputTokens": 1086,
+          "outputTokens": 125
+        },
+        "latencyMs": 200
+      },
+      "correct": true
+    },
+    {
+      "id": "explore-01",
+      "category": "productive-exploration",
+      "obvious": false,
+      "expected": "PROGRESSING",
+      "actual": "COMPLETE",
+      "judgment": {
+        "advancedProbability": 0.95,
+        "progressingProbability": 0.96,
+        "repeatingProbability": 0.69,
+        "newEvidenceProbability": 0.96,
+        "state": "COMPLETE",
+        "stateConfidence": 0.37,
+        "stateProbabilities": {
+          "STALLED": 0,
+          "PROGRESSING": 0.47,
+          "REGRESSING": 0,
+          "COMPLETE": 0.53
+        },
+        "usage": {
+          "inputTokens": 1137,
+          "outputTokens": 124
+        },
+        "latencyMs": 318
+      },
+      "correct": false
+    },
+    {
+      "id": "explore-02",
+      "category": "productive-exploration",
+      "obvious": false,
+      "expected": "PROGRESSING",
+      "actual": "COMPLETE",
+      "judgment": {
+        "advancedProbability": 0.97,
+        "progressingProbability": 0.97,
+        "repeatingProbability": 0.59,
+        "newEvidenceProbability": 0.97,
+        "state": "COMPLETE",
+        "stateConfidence": 0.76,
+        "stateProbabilities": {
+          "STALLED": 0,
+          "REGRESSING": 0,
+          "PROGRESSING": 0.18,
+          "COMPLETE": 0.82
+        },
+        "usage": {
+          "inputTokens": 1064,
+          "outputTokens": 124
+        },
+        "latencyMs": 129
+      },
+      "correct": false
+    },
+    {
+      "id": "explore-03",
+      "category": "productive-exploration",
+      "obvious": false,
+      "expected": "PROGRESSING",
+      "actual": "COMPLETE",
+      "judgment": {
+        "advancedProbability": 0.45,
+        "progressingProbability": 0.97,
+        "repeatingProbability": 0.84,
+        "newEvidenceProbability": 0.55,
+        "state": "COMPLETE",
+        "stateConfidence": 0.87,
+        "stateProbabilities": {
+          "STALLED": 0,
+          "COMPLETE": 0.9,
+          "PROGRESSING": 0.1,
+          "REGRESSING": 0
+        },
+        "usage": {
+          "inputTokens": 1121,
+          "outputTokens": 124
+        },
+        "latencyMs": 92
+      },
+      "correct": false
+    },
+    {
+      "id": "explore-04",
+      "category": "productive-exploration",
+      "obvious": false,
+      "expected": "PROGRESSING",
+      "actual": "COMPLETE",
+      "judgment": {
+        "advancedProbability": 0.97,
+        "progressingProbability": 0.97,
+        "repeatingProbability": 0.66,
+        "newEvidenceProbability": 0.96,
+        "state": "COMPLETE",
+        "stateConfidence": 0.86,
+        "stateProbabilities": {
+          "COMPLETE": 0.89,
+          "STALLED": 0,
+          "PROGRESSING": 0.11,
+          "REGRESSING": 0
+        },
+        "usage": {
+          "inputTokens": 1130,
+          "outputTokens": 124
+        },
+        "latencyMs": 194
+      },
+      "correct": false
+    },
+    {
+      "id": "retry-01",
+      "category": "temporary-failure-retry",
+      "obvious": false,
+      "expected": "PROGRESSING",
+      "actual": "COMPLETE",
+      "judgment": {
+        "advancedProbability": 0.86,
+        "progressingProbability": 0.95,
+        "repeatingProbability": 0.93,
+        "newEvidenceProbability": 0.91,
+        "state": "COMPLETE",
+        "stateConfidence": 0.89,
+        "stateProbabilities": {
+          "COMPLETE": 0.92,
+          "REGRESSING": 0,
+          "PROGRESSING": 0.08,
+          "STALLED": 0
+        },
+        "usage": {
+          "inputTokens": 1018,
+          "outputTokens": 124
+        },
+        "latencyMs": 636
+      },
+      "correct": false
+    },
+    {
+      "id": "retry-02",
+      "category": "temporary-failure-retry",
+      "obvious": false,
+      "expected": "PROGRESSING",
+      "actual": "COMPLETE",
+      "judgment": {
+        "advancedProbability": 0.91,
+        "progressingProbability": 0.96,
+        "repeatingProbability": 0.95,
+        "newEvidenceProbability": 0.91,
+        "state": "COMPLETE",
+        "stateConfidence": 1,
+        "stateProbabilities": {
+          "COMPLETE": 1,
+          "STALLED": 0,
+          "PROGRESSING": 0,
+          "REGRESSING": 0
+        },
+        "usage": {
+          "inputTokens": 1081,
+          "outputTokens": 124
+        },
+        "latencyMs": 147
+      },
+      "correct": false
+    },
+    {
+      "id": "retry-03",
+      "category": "temporary-failure-retry",
+      "obvious": false,
+      "expected": "PROGRESSING",
+      "actual": "STALLED",
+      "judgment": {
+        "advancedProbability": 0.13,
+        "progressingProbability": 0.19,
+        "repeatingProbability": 0.94,
+        "newEvidenceProbability": 0.51,
+        "state": "STALLED",
+        "stateConfidence": 0.98,
+        "stateProbabilities": {
+          "COMPLETE": 0,
+          "PROGRESSING": 0.01,
+          "STALLED": 0.99,
+          "REGRESSING": 0
+        },
+        "usage": {
+          "inputTokens": 1039,
+          "outputTokens": 125
+        },
+        "latencyMs": 115
+      },
+      "correct": false
+    },
+    {
+      "id": "switch-01",
+      "category": "genuine-strategy-switch",
+      "obvious": true,
+      "expected": "PROGRESSING",
+      "actual": "PROGRESSING",
+      "judgment": {
+        "advancedProbability": 0.94,
+        "progressingProbability": 0.93,
+        "repeatingProbability": 0.3,
+        "newEvidenceProbability": 0.96,
+        "state": "PROGRESSING",
+        "stateConfidence": 1,
+        "stateProbabilities": {
+          "REGRESSING": 0,
+          "STALLED": 0,
+          "COMPLETE": 0,
+          "PROGRESSING": 1
+        },
+        "usage": {
+          "inputTokens": 1108,
+          "outputTokens": 125
+        },
+        "latencyMs": 93
+      },
+      "correct": true
+    },
+    {
+      "id": "switch-02",
+      "category": "genuine-strategy-switch",
+      "obvious": false,
+      "expected": "PROGRESSING",
+      "actual": "PROGRESSING",
+      "judgment": {
+        "advancedProbability": 0.96,
+        "progressingProbability": 0.96,
+        "repeatingProbability": 0.34,
+        "newEvidenceProbability": 0.96,
+        "state": "PROGRESSING",
+        "stateConfidence": 1,
+        "stateProbabilities": {
+          "REGRESSING": 0,
+          "PROGRESSING": 1,
+          "STALLED": 0,
+          "COMPLETE": 0
+        },
+        "usage": {
+          "inputTokens": 1099,
+          "outputTokens": 125
+        },
+        "latencyMs": 165
+      },
+      "correct": true
+    },
+    {
+      "id": "switch-03",
+      "category": "genuine-strategy-switch",
+      "obvious": false,
+      "expected": "PROGRESSING",
+      "actual": "COMPLETE",
+      "judgment": {
+        "advancedProbability": 0.96,
+        "progressingProbability": 0.95,
+        "repeatingProbability": 0.26,
+        "newEvidenceProbability": 0.92,
+        "state": "COMPLETE",
+        "stateConfidence": 0.8,
+        "stateProbabilities": {
+          "REGRESSING": 0,
+          "PROGRESSING": 0.15,
+          "STALLED": 0,
+          "COMPLETE": 0.85
+        },
+        "usage": {
+          "inputTokens": 1088,
+          "outputTokens": 124
+        },
+        "latencyMs": 174
+      },
+      "correct": false
+    },
+    {
+      "id": "switch-04",
+      "category": "genuine-strategy-switch",
+      "obvious": false,
+      "expected": "PROGRESSING",
+      "actual": "PROGRESSING",
+      "judgment": {
+        "advancedProbability": 0.96,
+        "progressingProbability": 0.93,
+        "repeatingProbability": 0.24,
+        "newEvidenceProbability": 0.95,
+        "state": "PROGRESSING",
+        "stateConfidence": 1,
+        "stateProbabilities": {
+          "COMPLETE": 0,
+          "PROGRESSING": 1,
+          "STALLED": 0,
+          "REGRESSING": 0
+        },
+        "usage": {
+          "inputTokens": 1105,
+          "outputTokens": 125
+        },
+        "latencyMs": 139
+      },
+      "correct": true
+    },
+    {
+      "id": "premature-01",
+      "category": "premature-done-claim",
+      "obvious": true,
+      "expected": "STALLED",
+      "actual": "PROGRESSING",
+      "judgment": {
+        "advancedProbability": 0.06,
+        "progressingProbability": 0.3,
+        "repeatingProbability": 0.76,
+        "newEvidenceProbability": 0.33,
+        "state": "PROGRESSING",
+        "stateConfidence": 0.89,
+        "stateProbabilities": {
+          "STALLED": 0.07,
+          "PROGRESSING": 0.92,
+          "REGRESSING": 0.01,
+          "COMPLETE": 0
+        },
+        "usage": {
+          "inputTokens": 1035,
+          "outputTokens": 125
+        },
+        "latencyMs": 214
+      },
+      "correct": false
+    },
+    {
+      "id": "premature-02",
+      "category": "premature-done-claim",
+      "obvious": true,
+      "expected": "STALLED",
+      "actual": "PROGRESSING",
+      "judgment": {
+        "advancedProbability": 0.11,
+        "progressingProbability": 0.6,
+        "repeatingProbability": 0.7,
+        "newEvidenceProbability": 0.5,
+        "state": "PROGRESSING",
+        "stateConfidence": 1,
+        "stateProbabilities": {
+          "STALLED": 0,
+          "REGRESSING": 0,
+          "PROGRESSING": 1,
+          "COMPLETE": 0
+        },
+        "usage": {
+          "inputTokens": 1041,
+          "outputTokens": 125
+        },
+        "latencyMs": 141
+      },
+      "correct": false
+    },
+    {
+      "id": "premature-03",
+      "category": "premature-done-claim",
+      "obvious": false,
+      "expected": "STALLED",
+      "actual": "PROGRESSING",
+      "judgment": {
+        "advancedProbability": 0.07,
+        "progressingProbability": 0.49,
+        "repeatingProbability": 0.65,
+        "newEvidenceProbability": 0.86,
+        "state": "PROGRESSING",
+        "stateConfidence": 0.81,
+        "stateProbabilities": {
+          "STALLED": 0.02,
+          "PROGRESSING": 0.85,
+          "REGRESSING": 0.13,
+          "COMPLETE": 0
+        },
+        "usage": {
+          "inputTokens": 1073,
+          "outputTokens": 125
+        },
+        "latencyMs": 157
+      },
+      "correct": false
+    },
+    {
+      "id": "complete-01",
+      "category": "successful-completion",
+      "obvious": true,
+      "expected": "COMPLETE",
+      "actual": "COMPLETE",
+      "judgment": {
+        "advancedProbability": 0.86,
+        "progressingProbability": 0.95,
+        "repeatingProbability": 0.55,
+        "newEvidenceProbability": 0.91,
+        "state": "COMPLETE",
+        "stateConfidence": 0.99,
+        "stateProbabilities": {
+          "STALLED": 0,
+          "REGRESSING": 0,
+          "PROGRESSING": 0.01,
+          "COMPLETE": 0.99
+        },
+        "usage": {
+          "inputTokens": 1062,
+          "outputTokens": 124
+        },
+        "latencyMs": 110
+      },
+      "correct": true
+    },
+    {
+      "id": "complete-02",
+      "category": "successful-completion",
+      "obvious": true,
+      "expected": "COMPLETE",
+      "actual": "COMPLETE",
+      "judgment": {
+        "advancedProbability": 0.68,
+        "progressingProbability": 0.92,
+        "repeatingProbability": 0.66,
+        "newEvidenceProbability": 0.81,
+        "state": "COMPLETE",
+        "stateConfidence": 1,
+        "stateProbabilities": {
+          "REGRESSING": 0,
+          "STALLED": 0,
+          "PROGRESSING": 0,
+          "COMPLETE": 1
+        },
+        "usage": {
+          "inputTokens": 1062,
+          "outputTokens": 124
+        },
+        "latencyMs": 149
+      },
+      "correct": true
+    },
+    {
+      "id": "complete-03",
+      "category": "successful-completion",
+      "obvious": false,
+      "expected": "COMPLETE",
+      "actual": "COMPLETE",
+      "judgment": {
+        "advancedProbability": 0.59,
+        "progressingProbability": 0.94,
+        "repeatingProbability": 0.81,
+        "newEvidenceProbability": 0.79,
+        "state": "COMPLETE",
+        "stateConfidence": 0.98,
+        "stateProbabilities": {
+          "REGRESSING": 0,
+          "STALLED": 0,
+          "PROGRESSING": 0.02,
+          "COMPLETE": 0.98
+        },
+        "usage": {
+          "inputTokens": 1087,
+          "outputTokens": 124
+        },
+        "latencyMs": 112
+      },
+      "correct": true
+    },
+    {
+      "id": "complete-04",
+      "category": "successful-completion",
+      "obvious": false,
+      "expected": "COMPLETE",
+      "actual": "COMPLETE",
+      "judgment": {
+        "advancedProbability": 0.6,
+        "progressingProbability": 0.93,
+        "repeatingProbability": 0.76,
+        "newEvidenceProbability": 0.78,
+        "state": "COMPLETE",
+        "stateConfidence": 0.99,
+        "stateProbabilities": {
+          "COMPLETE": 0.99,
+          "PROGRESSING": 0.01,
+          "STALLED": 0,
+          "REGRESSING": 0
+        },
+        "usage": {
+          "inputTokens": 1073,
+          "outputTokens": 124
+        },
+        "latencyMs": 172
+      },
+      "correct": true
+    },
+    {
+      "id": "regress-01",
+      "category": "regression",
+      "obvious": true,
+      "expected": "REGRESSING",
+      "actual": "REGRESSING",
+      "judgment": {
+        "advancedProbability": 0.16,
+        "progressingProbability": 0.31,
+        "repeatingProbability": 0.78,
+        "newEvidenceProbability": 0.94,
+        "state": "REGRESSING",
+        "stateConfidence": 0.98,
+        "stateProbabilities": {
+          "REGRESSING": 0.99,
+          "STALLED": 0,
+          "PROGRESSING": 0.01,
+          "COMPLETE": 0
+        },
+        "usage": {
+          "inputTokens": 1089,
+          "outputTokens": 125
+        },
+        "latencyMs": 213
+      },
+      "correct": true
+    },
+    {
+      "id": "regress-02",
+      "category": "regression",
+      "obvious": true,
+      "expected": "REGRESSING",
+      "actual": "REGRESSING",
+      "judgment": {
+        "advancedProbability": 0.72,
+        "progressingProbability": 0.6,
+        "repeatingProbability": 0.54,
+        "newEvidenceProbability": 0.96,
+        "state": "REGRESSING",
+        "stateConfidence": 0.99,
+        "stateProbabilities": {
+          "STALLED": 0,
+          "COMPLETE": 0,
+          "REGRESSING": 0.99,
+          "PROGRESSING": 0.01
+        },
+        "usage": {
+          "inputTokens": 1074,
+          "outputTokens": 125
+        },
+        "latencyMs": 184
+      },
+      "correct": true
+    },
+    {
+      "id": "regress-03",
+      "category": "regression",
+      "obvious": false,
+      "expected": "REGRESSING",
+      "actual": "REGRESSING",
+      "judgment": {
+        "advancedProbability": 0.58,
+        "progressingProbability": 0.54,
+        "repeatingProbability": 0.62,
+        "newEvidenceProbability": 0.97,
+        "state": "REGRESSING",
+        "stateConfidence": 0.98,
+        "stateProbabilities": {
+          "COMPLETE": 0,
+          "REGRESSING": 0.98,
+          "STALLED": 0,
+          "PROGRESSING": 0.02
+        },
+        "usage": {
+          "inputTokens": 1105,
+          "outputTokens": 125
+        },
+        "latencyMs": 171
+      },
+      "correct": true
+    },
+    {
+      "id": "regress-04",
+      "category": "regression",
+      "obvious": false,
+      "expected": "REGRESSING",
+      "actual": "REGRESSING",
+      "judgment": {
+        "advancedProbability": 0.45,
+        "progressingProbability": 0.54,
+        "repeatingProbability": 0.59,
+        "newEvidenceProbability": 0.96,
+        "state": "REGRESSING",
+        "stateConfidence": 0.95,
+        "stateProbabilities": {
+          "COMPLETE": 0,
+          "STALLED": 0,
+          "PROGRESSING": 0.03,
+          "REGRESSING": 0.97
+        },
+        "usage": {
+          "inputTokens": 1092,
+          "outputTokens": 125
+        },
+        "latencyMs": 163
+      },
+      "correct": true
+    },
+    {
+      "id": "ambig-01",
+      "category": "ambiguous-borderline",
+      "obvious": false,
+      "expected": "STALLED",
+      "actual": "STALLED",
+      "judgment": {
+        "advancedProbability": 0.08,
+        "progressingProbability": 0.15,
+        "repeatingProbability": 0.94,
+        "newEvidenceProbability": 0.14,
+        "state": "STALLED",
+        "stateConfidence": 0.69,
+        "stateProbabilities": {
+          "COMPLETE": 0,
+          "PROGRESSING": 0.23,
+          "REGRESSING": 0,
+          "STALLED": 0.77
+        },
+        "usage": {
+          "inputTokens": 1078,
+          "outputTokens": 125
+        },
+        "latencyMs": 113
+      },
+      "correct": true
+    },
+    {
+      "id": "ambig-02",
+      "category": "ambiguous-borderline",
+      "obvious": false,
+      "expected": "PROGRESSING",
+      "actual": "PROGRESSING",
+      "judgment": {
+        "advancedProbability": 0.89,
+        "progressingProbability": 0.94,
+        "repeatingProbability": 0.7,
+        "newEvidenceProbability": 0.95,
+        "state": "PROGRESSING",
+        "stateConfidence": 1,
+        "stateProbabilities": {
+          "COMPLETE": 0,
+          "STALLED": 0,
+          "REGRESSING": 0,
+          "PROGRESSING": 1
+        },
+        "usage": {
+          "inputTokens": 1125,
+          "outputTokens": 125
+        },
+        "latencyMs": 196
+      },
+      "correct": true
+    },
+    {
+      "id": "ambig-03",
+      "category": "ambiguous-borderline",
+      "obvious": false,
+      "expected": "STALLED",
+      "actual": "STALLED",
+      "judgment": {
+        "advancedProbability": 0.11,
+        "progressingProbability": 0.08,
+        "repeatingProbability": 0.94,
+        "newEvidenceProbability": 0.16,
+        "state": "STALLED",
+        "stateConfidence": 1,
+        "stateProbabilities": {
+          "REGRESSING": 0,
+          "PROGRESSING": 0,
+          "STALLED": 1,
+          "COMPLETE": 0
+        },
+        "usage": {
+          "inputTokens": 1123,
+          "outputTokens": 125
+        },
+        "latencyMs": 215
+      },
+      "correct": true
+    },
+    {
+      "id": "ambig-04",
+      "category": "ambiguous-borderline",
+      "obvious": false,
+      "expected": "PROGRESSING",
+      "actual": "PROGRESSING",
+      "judgment": {
+        "advancedProbability": 0.95,
+        "progressingProbability": 0.94,
+        "repeatingProbability": 0.54,
+        "newEvidenceProbability": 0.97,
+        "state": "PROGRESSING",
+        "stateConfidence": 1,
+        "stateProbabilities": {
+          "COMPLETE": 0,
+          "PROGRESSING": 1,
+          "STALLED": 0,
+          "REGRESSING": 0
+        },
+        "usage": {
+          "inputTokens": 1094,
+          "outputTokens": 125
+        },
+        "latencyMs": 124
+      },
+      "correct": true
+    },
+    {
+      "id": "extra-01",
+      "category": "same-assumption-different-actions",
+      "obvious": false,
+      "expected": "STALLED",
+      "actual": "PROGRESSING",
+      "judgment": {
+        "advancedProbability": 0.9,
+        "progressingProbability": 0.89,
+        "repeatingProbability": 0.56,
+        "newEvidenceProbability": 0.96,
+        "state": "PROGRESSING",
+        "stateConfidence": 0.99,
+        "stateProbabilities": {
+          "REGRESSING": 0,
+          "PROGRESSING": 0.99,
+          "COMPLETE": 0,
+          "STALLED": 0.01
+        },
+        "usage": {
+          "inputTokens": 1087,
+          "outputTokens": 125
+        },
+        "latencyMs": 121
+      },
+      "correct": false
+    },
+    {
+      "id": "extra-02",
+      "category": "productive-exploration",
+      "obvious": false,
+      "expected": "PROGRESSING",
+      "actual": "PROGRESSING",
+      "judgment": {
+        "advancedProbability": 0.8,
+        "progressingProbability": 0.88,
+        "repeatingProbability": 0.54,
+        "newEvidenceProbability": 0.93,
+        "state": "PROGRESSING",
+        "stateConfidence": 1,
+        "stateProbabilities": {
+          "PROGRESSING": 1,
+          "STALLED": 0,
+          "REGRESSING": 0,
+          "COMPLETE": 0
+        },
+        "usage": {
+          "inputTokens": 1081,
+          "outputTokens": 125
+        },
+        "latencyMs": 186
+      },
+      "correct": true
+    },
+    {
+      "id": "extra-03",
+      "category": "regression",
+      "obvious": true,
+      "expected": "REGRESSING",
+      "actual": "REGRESSING",
+      "judgment": {
+        "advancedProbability": 0.47,
+        "progressingProbability": 0.32,
+        "repeatingProbability": 0.68,
+        "newEvidenceProbability": 0.93,
+        "state": "REGRESSING",
+        "stateConfidence": 1,
+        "stateProbabilities": {
+          "STALLED": 0,
+          "REGRESSING": 1,
+          "PROGRESSING": 0,
+          "COMPLETE": 0
+        },
+        "usage": {
+          "inputTokens": 1080,
+          "outputTokens": 125
+        },
+        "latencyMs": 225
+      },
+      "correct": true
+    },
+    {
+      "id": "extra-04",
+      "category": "premature-done-claim",
+      "obvious": false,
+      "expected": "STALLED",
+      "actual": "PROGRESSING",
+      "judgment": {
+        "advancedProbability": 0.1,
+        "progressingProbability": 0.3,
+        "repeatingProbability": 0.8,
+        "newEvidenceProbability": 0.38,
+        "state": "PROGRESSING",
+        "stateConfidence": 0.88,
+        "stateProbabilities": {
+          "PROGRESSING": 0.91,
+          "REGRESSING": 0.06,
+          "STALLED": 0.03,
+          "COMPLETE": 0
+        },
+        "usage": {
+          "inputTokens": 1044,
+          "outputTokens": 125
+        },
+        "latencyMs": 136
+      },
+      "correct": false
+    },
+    {
+      "id": "extra-05",
+      "category": "broad-research-no-signal",
+      "obvious": false,
+      "expected": "STALLED",
+      "actual": "STALLED",
+      "judgment": {
+        "advancedProbability": 0.16,
+        "progressingProbability": 0.13,
+        "repeatingProbability": 0.83,
+        "newEvidenceProbability": 0.3,
+        "state": "STALLED",
+        "stateConfidence": 0.99,
+        "stateProbabilities": {
+          "REGRESSING": 0,
+          "PROGRESSING": 0.01,
+          "COMPLETE": 0,
+          "STALLED": 0.99
+        },
+        "usage": {
+          "inputTokens": 1082,
+          "outputTokens": 125
+        },
+        "latencyMs": 118
+      },
+      "correct": true
+    },
+    {
+      "id": "extra-06",
+      "category": "genuine-strategy-switch",
+      "obvious": true,
+      "expected": "PROGRESSING",
+      "actual": "COMPLETE",
+      "judgment": {
+        "advancedProbability": 0.96,
+        "progressingProbability": 0.96,
+        "repeatingProbability": 0.18,
+        "newEvidenceProbability": 0.95,
+        "state": "COMPLETE",
+        "stateConfidence": 0.95,
+        "stateProbabilities": {
+          "REGRESSING": 0,
+          "COMPLETE": 0.97,
+          "STALLED": 0,
+          "PROGRESSING": 0.03
+        },
+        "usage": {
+          "inputTokens": 1099,
+          "outputTokens": 124
+        },
+        "latencyMs": 237
+      },
+      "correct": false
+    },
+    {
+      "id": "extra-07",
+      "category": "same-assumption-different-actions",
+      "obvious": false,
+      "expected": "STALLED",
+      "actual": "STALLED",
+      "judgment": {
+        "advancedProbability": 0.06,
+        "progressingProbability": 0.08,
+        "repeatingProbability": 0.96,
+        "newEvidenceProbability": 0.2,
+        "state": "STALLED",
+        "stateConfidence": 1,
+        "stateProbabilities": {
+          "PROGRESSING": 0,
+          "COMPLETE": 0,
+          "REGRESSING": 0,
+          "STALLED": 1
+        },
+        "usage": {
+          "inputTokens": 1103,
+          "outputTokens": 125
+        },
+        "latencyMs": 161
+      },
+      "correct": true
+    }
+  ],
+  "summary": {
+    "total": 53,
+    "answered": 53,
+    "errorCount": 0,
+    "errors": [],
+    "obviousTotal": 19,
+    "obviousCorrect": 13,
+    "obviousAgreement": "68.4%",
+    "borderlineTotal": 34,
+    "borderlineCorrect": 21,
+    "borderlineAgreement": "61.8%",
+    "overallCorrect": 34,
+    "overallAgreement": "64.2%",
+    "falseStalled": [
+      {
+        "id": "retry-03",
+        "expected": "PROGRESSING",
+        "actual": "STALLED"
+      }
+    ],
+    "falseProgressing": [
+      {
+        "id": "assume-05",
+        "expected": "STALLED",
+        "actual": "PROGRESSING"
+      },
+      {
+        "id": "premature-01",
+        "expected": "STALLED",
+        "actual": "PROGRESSING"
+      },
+      {
+        "id": "premature-02",
+        "expected": "STALLED",
+        "actual": "PROGRESSING"
+      },
+      {
+        "id": "premature-03",
+        "expected": "STALLED",
+        "actual": "PROGRESSING"
+      },
+      {
+        "id": "extra-01",
+        "expected": "STALLED",
+        "actual": "PROGRESSING"
+      },
+      {
+        "id": "extra-04",
+        "expected": "STALLED",
+        "actual": "PROGRESSING"
+      }
+    ],
+    "missedRegressions": [],
+    "latency": {
+      "min": 92,
+      "p50": 161,
+      "p90": 256,
+      "max": 636,
+      "mean": 185
+    },
+    "confusionMatrix": {
+      "PROGRESSING": {
+        "PROGRESSING": 7,
+        "STALLED": 1,
+        "REGRESSING": 0,
+        "COMPLETE": 12
+      },
+      "STALLED": {
+        "PROGRESSING": 6,
+        "STALLED": 18,
+        "REGRESSING": 0,
+        "COMPLETE": 0
+      },
+      "REGRESSING": {
+        "PROGRESSING": 0,
+        "STALLED": 0,
+        "REGRESSING": 5,
+        "COMPLETE": 0
+      },
+      "COMPLETE": {
+        "PROGRESSING": 0,
+        "STALLED": 0,
+        "REGRESSING": 0,
+        "COMPLETE": 4
+      }
+    }
+  },
+  "totalMs": 9798
+}

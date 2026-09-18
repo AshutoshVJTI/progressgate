@@ -1,0 +1,288 @@
+{
+  "generatedAt": "2026-09-18T04:55:04.081Z",
+  "model": "claude-haiku-4-5-20251001",
+  "runs": [
+    {
+      "label": "productive-exploration",
+      "goal": "Fix the failing deployment",
+      "toolsAvailable": [
+        "check_logs",
+        "change_deploy_path",
+        "try_sudo",
+        "switch_service_account",
+        "redeploy",
+        "check_ownership_history",
+        "check_account_status",
+        "reenable_account"
+      ],
+      "trajectory": [
+        {
+          "step": 1,
+          "action": "check_logs({})",
+          "result": "error: EACCES writing to /var/app/releases",
+          "gate": {
+            "decision": "CONTINUE",
+            "reasonCode": "STRONG_PROGRESS",
+            "confidence": 0.91,
+            "signals": {
+              "assumptionContradicted": 0.04,
+              "strategyNovelty": 0.24,
+              "materialProgress": 0.13,
+              "newUsefulEvidence": 0.91,
+              "regression": 0.08,
+              "holisticStalled": 0.44
+            },
+            "consecutiveStagnation": 0
+          }
+        },
+        {
+          "step": 2,
+          "action": "check_ownership_history({})",
+          "result": "/var/app/releases is owned by root, deploy user is www-data; ownership changed 2 days ago during a manual server patch",
+          "gate": {
+            "decision": "CONTINUE",
+            "reasonCode": "STRONG_PROGRESS",
+            "confidence": 0.9,
+            "signals": {
+              "assumptionContradicted": 0.06,
+              "strategyNovelty": 0.48,
+              "materialProgress": 0.16,
+              "newUsefulEvidence": 0.9,
+              "regression": 0.07,
+              "holisticStalled": 0.33
+            },
+            "consecutiveStagnation": 0
+          }
+        },
+        {
+          "step": 3,
+          "action": "check_account_status({})",
+          "result": "found it: the deploy service account was disabled yesterday during an unrelated offboarding sweep",
+          "gate": {
+            "decision": "CONTINUE",
+            "reasonCode": "STRONG_PROGRESS",
+            "confidence": 0.9,
+            "signals": {
+              "assumptionContradicted": 0.18,
+              "strategyNovelty": 0.69,
+              "materialProgress": 0.16,
+              "newUsefulEvidence": 0.9,
+              "regression": 0.1,
+              "holisticStalled": 0.31
+            },
+            "consecutiveStagnation": 0
+          }
+        },
+        {
+          "step": 4,
+          "action": "reenable_account({})",
+          "result": "deploy service account re-enabled successfully",
+          "gate": {
+            "decision": "CONTINUE",
+            "reasonCode": "STRONG_PROGRESS",
+            "confidence": 0.65,
+            "signals": {
+              "assumptionContradicted": 0.33,
+              "strategyNovelty": 0.49,
+              "materialProgress": 0.5,
+              "newUsefulEvidence": 0.65,
+              "regression": 0.07,
+              "holisticStalled": 0.35
+            },
+            "consecutiveStagnation": 0
+          }
+        },
+        {
+          "step": 5,
+          "action": "try_sudo({})",
+          "result": "sudo is unavailable on this host",
+          "gate": {
+            "decision": "WARN",
+            "reasonCode": "FIRST_STAGNATION_SIGNAL",
+            "confidence": 0.71,
+            "signals": {
+              "assumptionContradicted": 0.35,
+              "strategyNovelty": 0.51,
+              "materialProgress": 0.12,
+              "newUsefulEvidence": 0.84,
+              "regression": 0.14,
+              "holisticStalled": 0.71
+            },
+            "consecutiveStagnation": 1
+          }
+        },
+        {
+          "step": 6,
+          "action": "change_deploy_path({\"path\":\"/var/www/releases\"})",
+          "result": "permission denied on /var/www/releases too",
+          "gate": {
+            "decision": "REPLAN",
+            "reasonCode": "REPEATED_STAGNATION",
+            "confidence": 0.8,
+            "signals": {
+              "assumptionContradicted": 0.32,
+              "strategyNovelty": 0.4,
+              "materialProgress": 0.14,
+              "newUsefulEvidence": 0.78,
+              "regression": 0.21,
+              "holisticStalled": 0.8
+            },
+            "consecutiveStagnation": 2
+          }
+        },
+        {
+          "step": 7,
+          "action": "switch_service_account({\"account\":\"root\"})",
+          "result": "still permission denied, root has the same restrictive group",
+          "gate": {
+            "decision": "REPLAN",
+            "reasonCode": "REPEATED_STAGNATION",
+            "confidence": 0.84,
+            "signals": {
+              "assumptionContradicted": 0.42,
+              "strategyNovelty": 0.39,
+              "materialProgress": 0.16,
+              "newUsefulEvidence": 0.73,
+              "regression": 0.21,
+              "holisticStalled": 0.84
+            },
+            "consecutiveStagnation": 3
+          }
+        },
+        {
+          "step": 8,
+          "action": "redeploy({})",
+          "result": "deploy succeeded, /health returns 200, new version live",
+          "gate": {
+            "decision": "HALT",
+            "reasonCode": "PERSISTENT_STAGNATION",
+            "confidence": 0.65,
+            "signals": {
+              "assumptionContradicted": 0.65,
+              "strategyNovelty": 0.38,
+              "materialProgress": 0.42,
+              "newUsefulEvidence": 0.67,
+              "regression": 0.19,
+              "holisticStalled": 0.12
+            },
+            "consecutiveStagnation": 4
+          }
+        }
+      ],
+      "haltedByGate": true,
+      "finishedNaturally": false,
+      "stepsTaken": 8
+    },
+    {
+      "label": "semantic-spinning",
+      "goal": "Fix the failing deployment",
+      "toolsAvailable": [
+        "check_logs",
+        "change_deploy_path",
+        "try_sudo",
+        "switch_service_account",
+        "redeploy"
+      ],
+      "trajectory": [
+        {
+          "step": 1,
+          "action": "check_logs({})",
+          "result": "error: EACCES writing to /var/app/releases",
+          "gate": {
+            "decision": "CONTINUE",
+            "reasonCode": "STRONG_PROGRESS",
+            "confidence": 0.91,
+            "signals": {
+              "assumptionContradicted": 0.04,
+              "strategyNovelty": 0.22,
+              "materialProgress": 0.13,
+              "newUsefulEvidence": 0.91,
+              "regression": 0.08,
+              "holisticStalled": 0.44
+            },
+            "consecutiveStagnation": 0
+          }
+        },
+        {
+          "step": 2,
+          "action": "try_sudo({})",
+          "result": "sudo is unavailable on this host",
+          "gate": {
+            "decision": "REPLAN",
+            "reasonCode": "REPEATED_STAGNATION",
+            "confidence": 0.76,
+            "signals": {
+              "assumptionContradicted": 0.19,
+              "strategyNovelty": 0.33,
+              "materialProgress": 0.11,
+              "newUsefulEvidence": 0.85,
+              "regression": 0.11,
+              "holisticStalled": 0.76
+            },
+            "consecutiveStagnation": 1
+          }
+        },
+        {
+          "step": 3,
+          "action": "change_deploy_path({\"path\":\"/tmp/app/releases\"})",
+          "result": "permission denied on /tmp/app/releases too",
+          "gate": {
+            "decision": "REPLAN",
+            "reasonCode": "REPEATED_STAGNATION",
+            "confidence": 0.81,
+            "signals": {
+              "assumptionContradicted": 0.28,
+              "strategyNovelty": 0.31,
+              "materialProgress": 0.13,
+              "newUsefulEvidence": 0.72,
+              "regression": 0.17,
+              "holisticStalled": 0.81
+            },
+            "consecutiveStagnation": 2
+          }
+        },
+        {
+          "step": 4,
+          "action": "switch_service_account({\"account\":\"deploy\"})",
+          "result": "still permission denied, deploy has the same restrictive group",
+          "gate": {
+            "decision": "REPLAN",
+            "reasonCode": "REPEATED_STAGNATION",
+            "confidence": 0.83,
+            "signals": {
+              "assumptionContradicted": 0.19,
+              "strategyNovelty": 0.57,
+              "materialProgress": 0.16,
+              "newUsefulEvidence": 0.66,
+              "regression": 0.13,
+              "holisticStalled": 0.83
+            },
+            "consecutiveStagnation": 3
+          }
+        },
+        {
+          "step": 5,
+          "action": "redeploy({})",
+          "result": "permission denied writing to /var/app/releases",
+          "gate": {
+            "decision": "HALT",
+            "reasonCode": "PERSISTENT_STAGNATION",
+            "confidence": 0.9,
+            "signals": {
+              "assumptionContradicted": 0.55,
+              "strategyNovelty": 0.16,
+              "materialProgress": 0.1,
+              "newUsefulEvidence": 0.21,
+              "regression": 0.21,
+              "holisticStalled": 0.9
+            },
+            "consecutiveStagnation": 4
+          }
+        }
+      ],
+      "haltedByGate": true,
+      "finishedNaturally": false,
+      "stepsTaken": 5
+    }
+  ]
+}
