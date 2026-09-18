@@ -13,6 +13,7 @@ async function copyFile(source, destination) {
 await rm(SITE, { recursive: true, force: true });
 
 await copyFile(join(ROOT, "landing/index.html"), join(SITE, "index.html"));
+await copyFile(join(ROOT, "landing/favicon.svg"), join(SITE, "favicon.svg"));
 await copyFile(join(ROOT, "demo/index.html"), join(SITE, "demo/index.html"));
 await copyFile(join(ROOT, "demo/data.json"), join(SITE, "demo/data.json"));
 await copyFile(join(ROOT, "landing/hero-circuit-clean.png"), join(SITE, "assets/progressgate-circuit.png"));
