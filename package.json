@@ -39,6 +39,7 @@
     "evaluate:adversarial": "tsx experiments/run-adversarial-eval.ts",
     "demo:build": "tsx demo/generate-data.ts",
     "demo": "node demo/serve.mjs",
+    "site:build": "node site-build.mjs",
     "live-agent-test": "tsx experiments/live-agent-test/run.ts",
     "landing": "node landing/serve.mjs"
   },
